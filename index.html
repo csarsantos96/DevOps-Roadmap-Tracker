@@ -4022,6 +4022,7 @@
       .ptag-alemao{background:rgba(34,197,94,.15);color:#4ade80;border:1px solid rgba(34,197,94,.25)}
       .ptag-pos{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.25)}
       .ptag-sysdesign{background:rgba(236,72,153,.15);color:#f472b6;border:1px solid rgba(236,72,153,.25)}
+      .ptag-linux{background:rgba(249,115,22,.15);color:#fb923c;border:1px solid rgba(249,115,22,.25)}
       .ph-filters{display:flex;gap:6px;flex-wrap:wrap;padding:0 20px 12px}
       .ph-filter{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:4px 11px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;border-radius:2px;letter-spacing:1px;transition:all .15s}
       .ph-filter.on,.ph-filter:hover{border-color:var(--pick);color:var(--pick);background:rgba(99,102,241,.08)}
@@ -4099,6 +4100,7 @@
         <button class="ph-filter" onclick="phFilter('alemao',this)">ALEMAO</button>
         <button class="ph-filter" onclick="phFilter('pos',this)">POS FIAP</button>
         <button class="ph-filter" onclick="phFilter('sysdesign',this)">SYSTEM DESIGN</button>
+        <button class="ph-filter" onclick="phFilter('linux',this)">LINUX</button>
       </div>
       <div class="sec-label">// estatisticas</div>
       <div class="ps-grid" id="ps-grid"></div>
@@ -4402,6 +4404,7 @@
       {id:'alemao',    label:'Alemao',                     color:'#4ade80'},
       {id:'pos',       label:'Pos FIAP / Cybersec',        color:'#f87171'},
       {id:'sysdesign', label:'System Design',              color:'#f472b6'},
+      {id:'linux',     label:'Linux / RHCSA / Shell',         color:'#fb923c'},
     ];
     var PL_SUBJ_MAP = {};
     PL_SUBJECTS.forEach(function(s){ PL_SUBJ_MAP[s.id]=s; });
