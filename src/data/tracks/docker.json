@@ -1,0 +1,150 @@
+{
+  "id": "docker",
+  "name": "Docker (PICK)",
+  "icon": "🐳",
+  "color": "#2496ED",
+  "tagline": "Descomplicando o Docker — Jeferson Fernando / LinuxTips",
+  "estimated_hours": 80,
+  "source_courses": ["LinuxTips PICK — Descomplicando o Docker 2024 (você está cursando)", "Docker Documentation"],
+  "prereqs": ["linux:1", "linux:2"],
+  "feeds_certs": ["dca"],
+  "phase_relevance": ["fase1", "fase2", "fase3"],
+  "modules": [
+    {
+      "id": "docker.1",
+      "name": "Day 1 — Fundamentos de Containers",
+      "source": "PICK / Descomplicando o Docker - Day 1",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "docker.1.1", "name": "História: chroot → LXC → Docker", "minutes": 30 },
+        { "id": "docker.1.2", "name": "Container vs VM — namespaces e cgroups", "minutes": 60 },
+        { "id": "docker.1.3", "name": "Arquitetura Docker (daemon, client, registry)", "minutes": 45 },
+        { "id": "docker.1.4", "name": "Instalação Docker Engine (Ubuntu/Fedora)", "minutes": 30 },
+        { "id": "docker.1.5", "name": "Primeiro container: docker run hello-world", "minutes": 30 },
+        { "id": "docker.1.6", "name": "Comandos essenciais: ps, logs, exec, inspect, rm", "minutes": 90 },
+        { "id": "docker.1.7", "name": "Lifecycle de container e estados", "minutes": 30 },
+        { "id": "docker.1.8", "name": "Docker Hub — pull, push, search", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.docker.1.a", "name": "Subir nginx, acessar shell, ver logs", "type": "lab" },
+        { "id": "ex.docker.1.b", "name": "Subir 5 containers diferentes e gerenciar lifecycle", "type": "lab" }
+      ],
+      "checkpoint": "Operar containers básicos sem consultar comandos."
+    },
+    {
+      "id": "docker.2",
+      "name": "Day 2 — Imagens Docker",
+      "source": "PICK / Descomplicando o Docker - Day 2",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "docker.2.1", "name": "Anatomia de uma imagem (layers, manifest)", "minutes": 60 },
+        { "id": "docker.2.2", "name": "Dockerfile — instruções essenciais (FROM, RUN, COPY, CMD, ENTRYPOINT)", "minutes": 90 },
+        { "id": "docker.2.3", "name": "Build context e .dockerignore", "minutes": 30 },
+        { "id": "docker.2.4", "name": "Multi-stage builds", "minutes": 60 },
+        { "id": "docker.2.5", "name": "Tagging e versioning de imagens", "minutes": 30 },
+        { "id": "docker.2.6", "name": "Push para Docker Hub e registries privados", "minutes": 30 },
+        { "id": "docker.2.7", "name": "ENTRYPOINT vs CMD — diferenças e bom uso", "minutes": 30 },
+        { "id": "docker.2.8", "name": "ARG vs ENV — quando usar cada", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.docker.2.a", "name": "Imagem multi-stage de app Node/Python", "type": "lab" },
+        { "id": "ex.docker.2.b", "name": "Otimizar Dockerfile: reduzir layers e tamanho", "type": "lab" }
+      ],
+      "checkpoint": "Construir imagem multi-stage <100MB com build reproduzível."
+    },
+    {
+      "id": "docker.3",
+      "name": "Day 3 — Imagens Seguras e Distroless",
+      "source": "PICK / Descomplicando o Docker - Day 3",
+      "estimated_minutes": 300,
+      "topics": [
+        { "id": "docker.3.1", "name": "CVEs comuns em imagens base", "minutes": 30 },
+        { "id": "docker.3.2", "name": "Distroless — Google e Wolfi/Chainguard", "minutes": 60 },
+        { "id": "docker.3.3", "name": "Trivy — scan de vulnerabilidades", "minutes": 60 },
+        { "id": "docker.3.4", "name": "Hadolint — lint de Dockerfile", "minutes": 30 },
+        { "id": "docker.3.5", "name": "Imagens não-root, USER directive", "minutes": 30 },
+        { "id": "docker.3.6", "name": "Image signing (cosign, notary)", "minutes": 30 },
+        { "id": "docker.3.7", "name": "Buildah, kaniko — alternativas rootless", "minutes": 30 },
+        { "id": "docker.3.8", "name": "SBOM — Software Bill of Materials", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.docker.3.a", "name": "Migrar imagem alpine → distroless", "type": "lab" },
+        { "id": "ex.docker.3.b", "name": "Trivy scan: corrigir 5 CVEs criticas", "type": "lab" }
+      ],
+      "checkpoint": "Imagem hardened: distroless + non-root + 0 CVE crítica + signed."
+    },
+    {
+      "id": "docker.4",
+      "name": "Day 4 — Volumes e Persistência",
+      "source": "PICK / Descomplicando o Docker - Day 4",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "docker.4.1", "name": "Tipos de storage: volumes, bind mounts, tmpfs", "minutes": 45 },
+        { "id": "docker.4.2", "name": "Named volumes — criação e gestão", "minutes": 30 },
+        { "id": "docker.4.3", "name": "Bind mounts — quando usar", "minutes": 30 },
+        { "id": "docker.4.4", "name": "Volume drivers (NFS, sshfs, etc)", "minutes": 30 },
+        { "id": "docker.4.5", "name": "Backup e restore de volumes", "minutes": 30 },
+        { "id": "docker.4.6", "name": "Volumes com permissões corretas", "minutes": 30 },
+        { "id": "docker.4.7", "name": "Performance: storage drivers (overlay2, btrfs)", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.docker.4.a", "name": "Postgres com volume nomeado + backup script", "type": "lab" },
+        { "id": "ex.docker.4.b", "name": "Comparar performance overlay2 vs bind mount", "type": "lab" }
+      ],
+      "checkpoint": "Stack persistente sobrevive a docker rm/run sem perder dados."
+    },
+    {
+      "id": "docker.5",
+      "name": "Day 5 — Networking",
+      "source": "PICK / Descomplicando o Docker - Day 5",
+      "estimated_minutes": 300,
+      "topics": [
+        { "id": "docker.5.1", "name": "Drivers de rede (bridge, host, none, overlay, macvlan)", "minutes": 60 },
+        { "id": "docker.5.2", "name": "Bridge default vs user-defined", "minutes": 45 },
+        { "id": "docker.5.3", "name": "Service discovery via DNS interno", "minutes": 45 },
+        { "id": "docker.5.4", "name": "Port mapping e expose", "minutes": 30 },
+        { "id": "docker.5.5", "name": "Network namespaces na prática", "minutes": 30 },
+        { "id": "docker.5.6", "name": "Docker Compose networks", "minutes": 30 },
+        { "id": "docker.5.7", "name": "iptables e Docker — debugging de conexão", "minutes": 30 },
+        { "id": "docker.5.8", "name": "Comunicação entre containers em redes diferentes", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.docker.5.a", "name": "App de 3 tiers (web/api/db) com networks isoladas", "type": "lab" },
+        { "id": "ex.docker.5.b", "name": "Debug network: por que container A não fala com B?", "type": "lab" }
+      ],
+      "checkpoint": "Resolver problema de conectividade entre containers em <5min."
+    },
+    {
+      "id": "docker.6",
+      "name": "Day 6 — Docker Compose, Swarm e Orquestração",
+      "source": "PICK / Descomplicando o Docker - Day 6",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "docker.6.1", "name": "docker-compose.yml — sintaxe completa", "minutes": 60 },
+        { "id": "docker.6.2", "name": "depends_on, healthcheck, restart policies", "minutes": 45 },
+        { "id": "docker.6.3", "name": "Compose profiles e overrides", "minutes": 30 },
+        { "id": "docker.6.4", "name": "Variáveis: .env e variable interpolation", "minutes": 30 },
+        { "id": "docker.6.5", "name": "Docker Swarm — visão geral e quando usar", "minutes": 60 },
+        { "id": "docker.6.6", "name": "Swarm: services, replicas, rolling updates", "minutes": 60 },
+        { "id": "docker.6.7", "name": "Secrets e configs no Swarm", "minutes": 30 },
+        { "id": "docker.6.8", "name": "Introdução ao Kubernetes / Hashicorp Nomad", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.docker.6.a", "name": "Stack completa: app + db + redis + nginx em compose", "type": "lab" },
+        { "id": "ex.docker.6.b", "name": "Cluster Swarm 3 nodes com rolling update", "type": "lab" }
+      ],
+      "checkpoint": "Stack pronta para produção declarada em compose + healthchecks."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.docker.1",
+      "name": "🐳 SecureOps Stack — Docker",
+      "level": "portfolio",
+      "tags": ["Docker", "Compose", "Security"],
+      "description": "Stack completa em Docker Compose: app + db + cache + monitoring, com imagens distroless e scan automatizado por CVE.",
+      "consumes_modules": ["docker.2", "docker.3", "docker.4", "docker.5", "docker.6"],
+      "deliverables": ["Repo público", "docker-compose.yml limpo", "README inglês com badge de scan"]
+    }
+  ]
+}

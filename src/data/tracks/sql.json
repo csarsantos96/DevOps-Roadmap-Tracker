@@ -1,0 +1,115 @@
+{
+  "id": "sql",
+  "name": "SQL & Bancos Relacionais",
+  "icon": "🗄️",
+  "color": "#0ea5e9",
+  "tagline": "PostgreSQL, MySQL, Oracle — modelagem ao tuning",
+  "estimated_hours": 80,
+  "source_courses": ["Use The Index, Luke!", "PostgreSQL Tutorial", "Oracle SQL", "Stanford DB Course"],
+  "prereqs": [],
+  "feeds_certs": [],
+  "phase_relevance": ["fase2", "fase3"],
+  "modules": [
+    {
+      "id": "sql.1",
+      "name": "Modelagem Relacional",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "sql.1.1", "name": "Modelo entidade-relacionamento (ER)", "minutes": 60 },
+        { "id": "sql.1.2", "name": "Normalização (1FN, 2FN, 3FN, BCNF)", "minutes": 60 },
+        { "id": "sql.1.3", "name": "Quando desnormalizar", "minutes": 30 },
+        { "id": "sql.1.4", "name": "Chaves (primária, estrangeira, candidata)", "minutes": 30 },
+        { "id": "sql.1.5", "name": "Cardinalidade (1:1, 1:N, N:M)", "minutes": 30 },
+        { "id": "sql.1.6", "name": "Diagramas (dbdiagram.io, drawSQL)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.sql.1.a", "name": "Modelar e-commerce completo (ER + DDL)", "type": "design" },
+        { "id": "ex.sql.1.b", "name": "Refatorar schema desnormalizado", "type": "lab" }
+      ],
+      "checkpoint": "Schema 3FN para domínio real entregue com diagrama."
+    },
+    {
+      "id": "sql.2",
+      "name": "SQL — DML, DDL, DCL",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "sql.2.1", "name": "SELECT, WHERE, ORDER BY, LIMIT", "minutes": 45 },
+        { "id": "sql.2.2", "name": "JOINs (INNER, LEFT, RIGHT, FULL, CROSS)", "minutes": 90 },
+        { "id": "sql.2.3", "name": "GROUP BY, HAVING, agregações", "minutes": 60 },
+        { "id": "sql.2.4", "name": "Subqueries e CTEs (WITH)", "minutes": 60 },
+        { "id": "sql.2.5", "name": "Window functions (ROW_NUMBER, RANK, LAG)", "minutes": 60 },
+        { "id": "sql.2.6", "name": "DDL (CREATE, ALTER, DROP)", "minutes": 30 },
+        { "id": "sql.2.7", "name": "DML avançado (UPSERT, MERGE)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.sql.2.a", "name": "50 queries no LeetCode SQL (Easy/Medium)", "type": "drill" },
+        { "id": "ex.sql.2.b", "name": "Relatório complexo com window functions", "type": "lab" }
+      ],
+      "checkpoint": "Resolver problema de SQL avançado em <15min na entrevista."
+    },
+    {
+      "id": "sql.3",
+      "name": "Performance e Índices",
+      "estimated_minutes": 300,
+      "topics": [
+        { "id": "sql.3.1", "name": "B-tree indexes — como funcionam", "minutes": 60 },
+        { "id": "sql.3.2", "name": "Composite indexes e column order", "minutes": 60 },
+        { "id": "sql.3.3", "name": "EXPLAIN e EXPLAIN ANALYZE", "minutes": 60 },
+        { "id": "sql.3.4", "name": "Query plans e custos", "minutes": 45 },
+        { "id": "sql.3.5", "name": "Hash indexes, GIN, GiST (Postgres)", "minutes": 30 },
+        { "id": "sql.3.6", "name": "Statistics e VACUUM", "minutes": 30 },
+        { "id": "sql.3.7", "name": "N+1 problem e como resolver", "minutes": 15 }
+      ],
+      "exercises": [
+        { "id": "ex.sql.3.a", "name": "Tunar query lenta (40s → <1s) com índices", "type": "lab" },
+        { "id": "ex.sql.3.b", "name": "Detectar N+1 e refatorar para JOIN", "type": "lab" }
+      ],
+      "checkpoint": "Ler EXPLAIN e dizer onde está o gargalo em <5min."
+    },
+    {
+      "id": "sql.4",
+      "name": "Transações, Locks e Replicação",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "sql.4.1", "name": "ACID na prática", "minutes": 30 },
+        { "id": "sql.4.2", "name": "Isolation levels (RC, RR, Serializable)", "minutes": 60 },
+        { "id": "sql.4.3", "name": "Locks (row, table, advisory)", "minutes": 45 },
+        { "id": "sql.4.4", "name": "Deadlocks — detecção e prevenção", "minutes": 30 },
+        { "id": "sql.4.5", "name": "Replication (streaming, logical)", "minutes": 45 },
+        { "id": "sql.4.6", "name": "Backup e PITR (Point-in-Time Recovery)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.sql.4.a", "name": "Provocar deadlock proposital e resolver", "type": "lab" },
+        { "id": "ex.sql.4.b", "name": "Setup master-replica Postgres", "type": "lab" }
+      ],
+      "checkpoint": "Configurar Postgres com replicação e fazer failover."
+    },
+    {
+      "id": "sql.5",
+      "name": "PostgreSQL, MySQL, Oracle — diferenças",
+      "estimated_minutes": 180,
+      "topics": [
+        { "id": "sql.5.1", "name": "PostgreSQL — extensões, JSON, full-text search", "minutes": 60 },
+        { "id": "sql.5.2", "name": "MySQL — engines (InnoDB, MyISAM)", "minutes": 45 },
+        { "id": "sql.5.3", "name": "Oracle — PL/SQL básico, sequências", "minutes": 45 },
+        { "id": "sql.5.4", "name": "Migração entre dialects (gotchas)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.sql.5.a", "name": "Mesma feature em PG vs MySQL — comparar", "type": "lab" },
+        { "id": "ex.sql.5.b", "name": "PL/SQL Oracle: stored procedure simples", "type": "lab" }
+      ],
+      "checkpoint": "Escolher SGBD certo dado caso de uso (e justificar)."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.sql.1",
+      "name": "🗄️ Database Design Showcase",
+      "level": "portfolio",
+      "tags": ["SQL", "Postgres", "Modelagem"],
+      "description": "Repositório com 3 schemas reais modelados (e-commerce, social, financial), cada um com diagrama, queries clássicas e tuning de performance.",
+      "consumes_modules": ["sql.1", "sql.2", "sql.3"],
+      "deliverables": ["Repo com diagramas", "Scripts SQL .sql", "README inglês com benchmarks"]
+    }
+  ]
+}

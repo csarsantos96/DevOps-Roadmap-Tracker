@@ -1,0 +1,100 @@
+{
+  "id": "gcp",
+  "name": "Google Cloud",
+  "icon": "🌐",
+  "color": "#4285F4",
+  "tagline": "ACE → PCA — alternativa multi-cloud",
+  "estimated_hours": 80,
+  "source_courses": ["GCP Skills Boost", "Coursera Google Cloud Specialization", "GCP Free Tier labs"],
+  "prereqs": ["linux:1", "redes:1"],
+  "feeds_certs": ["gcpace", "gcppca"],
+  "phase_relevance": ["fase2", "fase3", "fase4"],
+  "modules": [
+    {
+      "id": "gcp.1",
+      "name": "Fundamentos GCP",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "gcp.1.1", "name": "Projects, Folders, Organizations", "minutes": 30 },
+        { "id": "gcp.1.2", "name": "Regions, Zones, Multi-regional", "minutes": 30 },
+        { "id": "gcp.1.3", "name": "IAM (members, roles, policies, service accounts)", "minutes": 60 },
+        { "id": "gcp.1.4", "name": "gcloud CLI", "minutes": 45 },
+        { "id": "gcp.1.5", "name": "Billing e budgets", "minutes": 30 },
+        { "id": "gcp.1.6", "name": "Cloud Shell e Console", "minutes": 15 },
+        { "id": "gcp.1.7", "name": "AWS vs GCP — equivalências", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.gcp.1.a", "name": "Projeto novo + service account + role least privilege", "type": "lab" },
+        { "id": "ex.gcp.1.b", "name": "Tabela de equivalências AWS↔GCP (top 20 serviços)", "type": "design" }
+      ],
+      "checkpoint": "Configurar GCP project com IAM correto e billing alerts."
+    },
+    {
+      "id": "gcp.2",
+      "name": "Compute na GCP",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "gcp.2.1", "name": "Compute Engine (VMs, machine types)", "minutes": 60 },
+        { "id": "gcp.2.2", "name": "Instance groups (managed/unmanaged), autoscaler", "minutes": 60 },
+        { "id": "gcp.2.3", "name": "GKE (Google Kubernetes Engine)", "minutes": 90 },
+        { "id": "gcp.2.4", "name": "Cloud Run — serverless containers", "minutes": 60 },
+        { "id": "gcp.2.5", "name": "Cloud Functions", "minutes": 30 },
+        { "id": "gcp.2.6", "name": "App Engine — Standard vs Flex", "minutes": 30 },
+        { "id": "gcp.2.7", "name": "Load Balancers (HTTP(S), TCP, Internal)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.gcp.2.a", "name": "Cluster GKE com app deployado", "type": "lab" },
+        { "id": "ex.gcp.2.b", "name": "API serverless em Cloud Run", "type": "lab" }
+      ],
+      "checkpoint": "App em GKE com HPA, ingress GCLB e cert-manager."
+    },
+    {
+      "id": "gcp.3",
+      "name": "Storage e Databases",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "gcp.3.1", "name": "Cloud Storage (buckets, classes, lifecycle)", "minutes": 45 },
+        { "id": "gcp.3.2", "name": "Persistent Disks", "minutes": 30 },
+        { "id": "gcp.3.3", "name": "Cloud SQL (Postgres, MySQL)", "minutes": 45 },
+        { "id": "gcp.3.4", "name": "Spanner — global SQL", "minutes": 30 },
+        { "id": "gcp.3.5", "name": "Firestore e Datastore", "minutes": 45 },
+        { "id": "gcp.3.6", "name": "BigQuery — data warehouse", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.gcp.3.a", "name": "Cloud SQL Postgres + app conectando", "type": "lab" },
+        { "id": "ex.gcp.3.b", "name": "Query no BigQuery em dataset público", "type": "lab" }
+      ],
+      "checkpoint": "Escolher storage certo dado caso (relacional, doc, analytics)."
+    },
+    {
+      "id": "gcp.4",
+      "name": "Networking, Security e DevOps",
+      "estimated_minutes": 300,
+      "topics": [
+        { "id": "gcp.4.1", "name": "VPC, subnets, firewall rules", "minutes": 60 },
+        { "id": "gcp.4.2", "name": "Cloud DNS, Cloud CDN", "minutes": 30 },
+        { "id": "gcp.4.3", "name": "VPC peering, Shared VPC", "minutes": 30 },
+        { "id": "gcp.4.4", "name": "KMS, Secret Manager", "minutes": 45 },
+        { "id": "gcp.4.5", "name": "Cloud Build + Artifact Registry", "minutes": 60 },
+        { "id": "gcp.4.6", "name": "Cloud Logging, Monitoring, Trace", "minutes": 45 },
+        { "id": "gcp.4.7", "name": "Deployment Manager / Terraform", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.gcp.4.a", "name": "Pipeline Cloud Build deployando em Cloud Run", "type": "lab" },
+        { "id": "ex.gcp.4.b", "name": "VPC com subnet privada e Cloud NAT", "type": "lab" }
+      ],
+      "checkpoint": "Simulado GCP ACE ≥ 75%."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.gcp.1",
+      "name": "🌐 Multi-Cloud App (AWS + GCP)",
+      "level": "portfolio",
+      "tags": ["GCP", "AWS", "Multi-cloud"],
+      "description": "Mesma app rodando em AWS (ECS) e GCP (Cloud Run), com Terraform versionado e comparação de custos.",
+      "consumes_modules": ["gcp.2", "gcp.4", "aws.2", "aws.4"],
+      "deliverables": ["Repo Terraform multi-provider", "Comparação custo + performance", "README inglês"]
+    }
+  ]
+}

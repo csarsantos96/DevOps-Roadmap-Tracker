@@ -1,0 +1,66 @@
+{
+  "tracks": [
+    "linux",
+    "docker",
+    "kubernetes",
+    "redes",
+    "aws",
+    "gcp",
+    "system-design",
+    "sql",
+    "nosql",
+    "algoritmos",
+    "eda",
+    "c",
+    "python",
+    "java",
+    "go",
+    "pos-fiap",
+    "alemao",
+    "ingles"
+  ],
+  "groups": [
+    {
+      "id": "infra",
+      "name": "Infraestrutura & DevOps",
+      "color": "#326ce5",
+      "tracks": ["linux", "docker", "kubernetes", "redes"]
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud",
+      "color": "#f59e0b",
+      "tracks": ["aws", "gcp"]
+    },
+    {
+      "id": "arquitetura",
+      "name": "Arquitetura & Dados",
+      "color": "#06b6d4",
+      "tracks": ["system-design", "sql", "nosql"]
+    },
+    {
+      "id": "fundamentos",
+      "name": "Fundamentos CS",
+      "color": "#10b981",
+      "tracks": ["algoritmos", "eda"]
+    },
+    {
+      "id": "linguagens",
+      "name": "Linguagens",
+      "color": "#a855f7",
+      "tracks": ["c", "python", "java", "go"]
+    },
+    {
+      "id": "academico",
+      "name": "Pós-graduação FIAP",
+      "color": "#ed145b",
+      "tracks": ["pos-fiap"]
+    },
+    {
+      "id": "idiomas",
+      "name": "Idiomas",
+      "color": "#3b82f6",
+      "tracks": ["alemao", "ingles"]
+    }
+  ]
+}

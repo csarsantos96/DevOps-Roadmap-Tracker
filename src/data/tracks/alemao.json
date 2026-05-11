@@ -1,0 +1,76 @@
+{
+  "id": "alemao",
+  "name": "Alemão",
+  "icon": "🇩🇪",
+  "color": "#3b82f6",
+  "tagline": "A2 → B1 → entrevista técnica",
+  "estimated_hours": 300,
+  "source_courses": ["Aulas particulares", "DW Learn German", "Anki", "Goethe-Zertifikat prep"],
+  "prereqs": [],
+  "feeds_certs": [],
+  "phase_relevance": ["fase1", "fase2", "fase3", "fase4", "encerramento"],
+  "modules": [
+    {
+      "id": "de.1",
+      "name": "A2 Consolidado",
+      "estimated_minutes": 1800,
+      "target_phase": "fase1",
+      "topics": [
+        { "id": "de.1.1", "name": "Casos: Nominativ e Akkusativ", "minutes": 240 },
+        { "id": "de.1.2", "name": "Caso Dativ", "minutes": 240 },
+        { "id": "de.1.3", "name": "Verbos modais (können, müssen, dürfen…)", "minutes": 180 },
+        { "id": "de.1.4", "name": "Perfekt e Präteritum", "minutes": 240 },
+        { "id": "de.1.5", "name": "Trennbare Verben", "minutes": 180 },
+        { "id": "de.1.6", "name": "Vocabulário cotidiano A2 (1500 palavras)", "minutes": 360 },
+        { "id": "de.1.7", "name": "Hörverstehen A2 (DW Nicos Weg)", "minutes": 240 },
+        { "id": "de.1.8", "name": "Schreiben — emails simples", "minutes": 120 }
+      ],
+      "exercises": [
+        { "id": "ex.de.1.a", "name": "20 cards Anki/dia (vocabulário)", "type": "drill" },
+        { "id": "ex.de.1.b", "name": "Episódio Nicos Weg/dia (compreensão)", "type": "input" }
+      ],
+      "checkpoint": "Conversar 30min só em alemão na conv (Ter/Qui)."
+    },
+    {
+      "id": "de.2",
+      "name": "B1 — Estruturas Avançadas",
+      "estimated_minutes": 1800,
+      "target_phase": "fase3",
+      "topics": [
+        { "id": "de.2.1", "name": "Genitiv e preposições com Genitiv", "minutes": 180 },
+        { "id": "de.2.2", "name": "Konjunktiv II (würde, wäre, hätte)", "minutes": 240 },
+        { "id": "de.2.3", "name": "Passivo (werden + Partizip II)", "minutes": 180 },
+        { "id": "de.2.4", "name": "Relativsätze", "minutes": 180 },
+        { "id": "de.2.5", "name": "Konnektoren (deshalb, trotzdem, obwohl…)", "minutes": 180 },
+        { "id": "de.2.6", "name": "Vocabulário B1 (mais 1500 palavras)", "minutes": 360 },
+        { "id": "de.2.7", "name": "Schreiben — texto opinativo", "minutes": 180 },
+        { "id": "de.2.8", "name": "Goethe B1 simulados", "minutes": 300 }
+      ],
+      "exercises": [
+        { "id": "ex.de.2.a", "name": "Texto B1 escrito por semana", "type": "output" },
+        { "id": "ex.de.2.b", "name": "Podcast Slow German episódio", "type": "input" }
+      ],
+      "checkpoint": "Goethe B1 simulado ≥ 70%."
+    },
+    {
+      "id": "de.3",
+      "name": "Alemão Técnico (TI)",
+      "estimated_minutes": 1200,
+      "target_phase": "fase4",
+      "topics": [
+        { "id": "de.3.1", "name": "Vocabulário DevOps/Cloud em alemão", "minutes": 240 },
+        { "id": "de.3.2", "name": "Ler documentação técnica em alemão", "minutes": 240 },
+        { "id": "de.3.3", "name": "Apresentar projeto técnico em alemão", "minutes": 300 },
+        { "id": "de.3.4", "name": "Stellenanzeigen — entender vagas", "minutes": 120 },
+        { "id": "de.3.5", "name": "Lebenslauf alemão (CV)", "minutes": 180 },
+        { "id": "de.3.6", "name": "Entrevista — perguntas comuns", "minutes": 120 }
+      ],
+      "exercises": [
+        { "id": "ex.de.3.a", "name": "Apresentar SecureOps Platform 5min em alemão", "type": "output" },
+        { "id": "ex.de.3.b", "name": "Mock interview com professor", "type": "output" }
+      ],
+      "checkpoint": "Conduzir entrevista técnica simulada de 30min em alemão."
+    }
+  ],
+  "projects": []
+}

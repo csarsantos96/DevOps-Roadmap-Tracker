@@ -1,0 +1,159 @@
+{
+  "id": "linux",
+  "name": "Linux Mastery",
+  "icon": "🐧",
+  "color": "#fbbf24",
+  "tagline": "Da shell ao sysadmin",
+  "estimated_hours": 120,
+  "source_courses": ["LinuxTips - Linux Essential (você tem)", "Alura - Cursos de Linux (você tem)", "LinuxTips LPI", "Sander van Vugt RHCSA", "TLCL"],
+  "prereqs": [],
+  "feeds_certs": ["lpic1", "rhcsa", "rhce", "cka", "ckad", "cks"],
+  "phase_relevance": ["fase1", "fase2", "fase3", "fase4"],
+  "modules": [
+    {
+      "id": "linux.0",
+      "name": "Linux Essential (LinuxTips + Alura)",
+      "source": "LinuxTips Linux Essential + Alura",
+      "estimated_minutes": 600,
+      "topics": [
+        { "id": "linux.0.1", "name": "História do Linux e distribuições", "minutes": 30 },
+        { "id": "linux.0.2", "name": "Instalação e primeiros passos", "minutes": 60 },
+        { "id": "linux.0.3", "name": "Terminal vs GUI — quando usar cada", "minutes": 30 },
+        { "id": "linux.0.4", "name": "Comandos básicos (ls, cd, pwd, mkdir, rm, cp, mv)", "minutes": 90 },
+        { "id": "linux.0.5", "name": "man pages e --help", "minutes": 30 },
+        { "id": "linux.0.6", "name": "Editor de texto (nano, vim básico)", "minutes": 60 },
+        { "id": "linux.0.7", "name": "Usuários e grupos básicos", "minutes": 45 },
+        { "id": "linux.0.8", "name": "Permissões básicas (rwx)", "minutes": 60 },
+        { "id": "linux.0.9", "name": "Pacotes (apt, dnf, yum)", "minutes": 60 },
+        { "id": "linux.0.10", "name": "Bash básico (variáveis, scripts simples)", "minutes": 60 },
+        { "id": "linux.0.11", "name": "Cursos Alura — labs práticos", "minutes": 75 }
+      ],
+      "exercises": [
+        { "id": "ex.linux.0.a", "name": "Instalar Ubuntu/Fedora numa VM", "type": "lab" },
+        { "id": "ex.linux.0.b", "name": "Completar Linux Essential da LinuxTips", "type": "lab" },
+        { "id": "ex.linux.0.c", "name": "Resolver 10 desafios do bandit (níveis 0-9)", "type": "shell" }
+      ],
+      "checkpoint": "Operar terminal Linux confortavelmente sem consultar comandos básicos."
+    },
+    {
+      "id": "linux.1",
+      "name": "Shell e Comandos Essenciais",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "linux.1.1", "name": "Estrutura do filesystem (FHS)", "minutes": 30 },
+        { "id": "linux.1.2", "name": "Navegação e manipulação de arquivos", "minutes": 30 },
+        { "id": "linux.1.3", "name": "Permissões (chmod, chown, ACLs)", "minutes": 60 },
+        { "id": "linux.1.4", "name": "Pipes, redirects e file descriptors", "minutes": 45 },
+        { "id": "linux.1.5", "name": "Text processing (grep, sed, awk, cut, sort, uniq)", "minutes": 90 },
+        { "id": "linux.1.6", "name": "find, xargs, locate", "minutes": 45 },
+        { "id": "linux.1.7", "name": "tar, gzip, rsync", "minutes": 30 },
+        { "id": "linux.1.8", "name": "Variáveis de ambiente e .bashrc", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.linux.1.a", "name": "One-liner: top 10 IPs em access.log", "type": "shell" },
+        { "id": "ex.linux.1.b", "name": "Script de backup incremental com rsync", "type": "shell" }
+      ],
+      "checkpoint": "Resolver 20 desafios no overthewire.org/wargames/bandit (níveis 0-15)."
+    },
+    {
+      "id": "linux.2",
+      "name": "Processos, Sinais e Boot",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "linux.2.1", "name": "Processos e threads (ps, top, htop)", "minutes": 45 },
+        { "id": "linux.2.2", "name": "Sinais (SIGTERM, SIGKILL, SIGHUP)", "minutes": 30 },
+        { "id": "linux.2.3", "name": "Jobs, nohup, screen, tmux", "minutes": 45 },
+        { "id": "linux.2.4", "name": "systemd — units, services, timers", "minutes": 60 },
+        { "id": "linux.2.5", "name": "Runlevels e targets", "minutes": 30 },
+        { "id": "linux.2.6", "name": "Boot process (BIOS → GRUB → kernel → init)", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.linux.2.a", "name": "Criar service systemd que roda script Python", "type": "lab" },
+        { "id": "ex.linux.2.b", "name": "Timer systemd substituindo cron", "type": "lab" }
+      ],
+      "checkpoint": "Service systemd com restart automático, log no journald, e timer rodando a cada 15min."
+    },
+    {
+      "id": "linux.3",
+      "name": "Networking no Linux",
+      "estimated_minutes": 300,
+      "topics": [
+        { "id": "linux.3.1", "name": "ip, ifconfig, route, ss, netstat", "minutes": 45 },
+        { "id": "linux.3.2", "name": "Configuração de interfaces (NetworkManager, netplan)", "minutes": 45 },
+        { "id": "linux.3.3", "name": "iptables / nftables", "minutes": 90 },
+        { "id": "linux.3.4", "name": "DNS local (resolv.conf, systemd-resolved)", "minutes": 30 },
+        { "id": "linux.3.5", "name": "SSH avançado (keys, agent forwarding, tunnels)", "minutes": 60 },
+        { "id": "linux.3.6", "name": "tcpdump e wireshark CLI", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.linux.3.a", "name": "Túnel SSH reverso pra acessar VM atrás de NAT", "type": "lab" },
+        { "id": "ex.linux.3.b", "name": "Firewall iptables: SSH só de IP fixo, web pública", "type": "lab" }
+      ],
+      "checkpoint": "Configurar VPS do zero: SSH key-only, firewall, fail2ban, nginx."
+    },
+    {
+      "id": "linux.4",
+      "name": "Storage, LVM e Filesystems",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "linux.4.1", "name": "Particionamento (fdisk, parted, gdisk)", "minutes": 45 },
+        { "id": "linux.4.2", "name": "Filesystems (ext4, xfs, btrfs)", "minutes": 45 },
+        { "id": "linux.4.3", "name": "LVM — PV, VG, LV, snapshots", "minutes": 90 },
+        { "id": "linux.4.4", "name": "RAID software (mdadm)", "minutes": 30 },
+        { "id": "linux.4.5", "name": "/etc/fstab e mount options", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.linux.4.a", "name": "LVM com snapshot, simular crash e restore", "type": "lab" },
+        { "id": "ex.linux.4.b", "name": "Crescer LV online sem downtime", "type": "lab" }
+      ],
+      "checkpoint": "Setup RHCSA-style: LVM com 3 PVs, snapshot, expansão e contração de LV."
+    },
+    {
+      "id": "linux.5",
+      "name": "Bash Scripting Avançado",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "linux.5.1", "name": "Variáveis, arrays, condicionais", "minutes": 30 },
+        { "id": "linux.5.2", "name": "Loops e funções", "minutes": 30 },
+        { "id": "linux.5.3", "name": "Substituição de processos e command", "minutes": 30 },
+        { "id": "linux.5.4", "name": "Tratamento de erros (set -e, trap)", "minutes": 30 },
+        { "id": "linux.5.5", "name": "Argumentos e getopts", "minutes": 30 },
+        { "id": "linux.5.6", "name": "ShellCheck e boas práticas", "minutes": 30 },
+        { "id": "linux.5.7", "name": "Logs estruturados em bash", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.linux.5.a", "name": "Script idempotente de provisioning de servidor", "type": "shell" },
+        { "id": "ex.linux.5.b", "name": "CLI bash com subcommands e flags", "type": "shell" }
+      ],
+      "checkpoint": "Script bash que cria usuário, configura SSH, instala pacotes, idempotente."
+    },
+    {
+      "id": "linux.6",
+      "name": "Hardening e Auditoria (RHCSA-level)",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "linux.6.1", "name": "SELinux — modos, contexts, booleans", "minutes": 90 },
+        { "id": "linux.6.2", "name": "SSH hardening (sshd_config, fail2ban)", "minutes": 30 },
+        { "id": "linux.6.3", "name": "PAM e autenticação", "minutes": 45 },
+        { "id": "linux.6.4", "name": "auditd e logs", "minutes": 45 },
+        { "id": "linux.6.5", "name": "CIS benchmarks", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.linux.6.a", "name": "Resolver problema de SELinux (semanage)", "type": "lab" },
+        { "id": "ex.linux.6.b", "name": "Servidor hardened seguindo CIS", "type": "lab" }
+      ],
+      "checkpoint": "RHCSA mock exam — completar tarefas em 2h30min."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.linux.1",
+      "name": "🛠️ VPS Hardened do Zero",
+      "level": "portfolio",
+      "tags": ["Linux", "Security", "Bash"],
+      "description": "Script bash idempotente que provisiona VPS Ubuntu/Rocky com hardening: SSH keys, firewall, fail2ban, monitoring básico, logs.",
+      "consumes_modules": ["linux.1", "linux.3", "linux.5", "linux.6"],
+      "deliverables": ["Repo com README", "Script idempotente", "Documentação CIS compliance"]
+    }
+  ]
+}

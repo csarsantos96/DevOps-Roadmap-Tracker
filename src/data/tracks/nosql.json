@@ -1,0 +1,99 @@
+{
+  "id": "nosql",
+  "name": "NoSQL",
+  "icon": "🍃",
+  "color": "#10b981",
+  "tagline": "MongoDB, Redis, Cassandra, DynamoDB",
+  "estimated_hours": 60,
+  "source_courses": ["MongoDB University", "Redis University", "DynamoDB Book (Alex DeBrie)"],
+  "prereqs": ["sql:1"],
+  "feeds_certs": [],
+  "phase_relevance": ["fase2", "fase3"],
+  "modules": [
+    {
+      "id": "nosql.1",
+      "name": "Fundamentos NoSQL",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "nosql.1.1", "name": "Por que NoSQL? Quando usar vs SQL", "minutes": 45 },
+        { "id": "nosql.1.2", "name": "4 famílias: Key-Value, Document, Column, Graph", "minutes": 60 },
+        { "id": "nosql.1.3", "name": "BASE vs ACID", "minutes": 30 },
+        { "id": "nosql.1.4", "name": "CAP Theorem aplicado", "minutes": 30 },
+        { "id": "nosql.1.5", "name": "Modelagem orientada a queries", "minutes": 45 },
+        { "id": "nosql.1.6", "name": "Escolhendo o NoSQL certo", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.nosql.1.a", "name": "Comparar 5 cases de uso e escolher SGBD", "type": "design" }
+      ],
+      "checkpoint": "Justificar escolha de NoSQL para 3 domínios diferentes."
+    },
+    {
+      "id": "nosql.2",
+      "name": "MongoDB — Document Store",
+      "estimated_minutes": 360,
+      "source": "MongoDB University M001 + M201",
+      "topics": [
+        { "id": "nosql.2.1", "name": "Conceitos: database, collection, document", "minutes": 30 },
+        { "id": "nosql.2.2", "name": "CRUD operations (insertOne, find, update, delete)", "minutes": 60 },
+        { "id": "nosql.2.3", "name": "Query operators ($eq, $gt, $in, $regex)", "minutes": 60 },
+        { "id": "nosql.2.4", "name": "Aggregation framework ($match, $group, $lookup)", "minutes": 90 },
+        { "id": "nosql.2.5", "name": "Indexes (single, compound, text)", "minutes": 45 },
+        { "id": "nosql.2.6", "name": "Schema design patterns (embedded vs referenced)", "minutes": 45 },
+        { "id": "nosql.2.7", "name": "Replica sets e Sharding", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.nosql.2.a", "name": "MongoDB University M001 — completar", "type": "drill" },
+        { "id": "ex.nosql.2.b", "name": "Aggregation pipeline complexa (3+ stages)", "type": "lab" },
+        { "id": "ex.nosql.2.c", "name": "Modelar e migrar de SQL pra Mongo", "type": "design" }
+      ],
+      "checkpoint": "Migrar app que usa Postgres para Mongo (ou vice-versa) explicando trade-offs."
+    },
+    {
+      "id": "nosql.3",
+      "name": "Redis — Key-Value e Caching",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "nosql.3.1", "name": "Strings, Lists, Sets, Hashes, Sorted Sets", "minutes": 60 },
+        { "id": "nosql.3.2", "name": "TTL e expiração", "minutes": 30 },
+        { "id": "nosql.3.3", "name": "Pub/Sub e Streams", "minutes": 45 },
+        { "id": "nosql.3.4", "name": "Persistência (RDB, AOF)", "minutes": 30 },
+        { "id": "nosql.3.5", "name": "Sentinel e Cluster", "minutes": 30 },
+        { "id": "nosql.3.6", "name": "Casos: cache, session, rate limiting, leaderboard", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.nosql.3.a", "name": "Cache aside pattern em app real", "type": "lab" },
+        { "id": "ex.nosql.3.b", "name": "Rate limiter usando Redis", "type": "lab" }
+      ],
+      "checkpoint": "Implementar 3 casos de uso clássicos do Redis."
+    },
+    {
+      "id": "nosql.4",
+      "name": "DynamoDB — NoSQL Cloud-native",
+      "estimated_minutes": 240,
+      "source": "Alex DeBrie - DynamoDB Book",
+      "topics": [
+        { "id": "nosql.4.1", "name": "Partition key, sort key, GSI, LSI", "minutes": 60 },
+        { "id": "nosql.4.2", "name": "Single-table design", "minutes": 90 },
+        { "id": "nosql.4.3", "name": "Query vs Scan", "minutes": 30 },
+        { "id": "nosql.4.4", "name": "Streams e triggers (Lambda)", "minutes": 30 },
+        { "id": "nosql.4.5", "name": "On-demand vs Provisioned capacity", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.nosql.4.a", "name": "Modelar Twitter timeline em single-table", "type": "design" },
+        { "id": "ex.nosql.4.b", "name": "Tabela DynamoDB com 3 access patterns diferentes", "type": "lab" }
+      ],
+      "checkpoint": "Single-table design para domínio com 5+ access patterns."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.nosql.1",
+      "name": "🍃 Multi-DB Comparison Lab",
+      "level": "portfolio",
+      "tags": ["MongoDB", "Redis", "DynamoDB"],
+      "description": "Mesmo domínio implementado em SQL, Mongo e Redis — com benchmarks de performance e justificativa de escolha.",
+      "consumes_modules": ["nosql.2", "nosql.3", "sql.1", "sql.2"],
+      "deliverables": ["Repo público", "Benchmark com gráficos", "README explicando trade-offs"]
+    }
+  ]
+}

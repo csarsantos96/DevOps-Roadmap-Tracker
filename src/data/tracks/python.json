@@ -1,0 +1,95 @@
+{
+  "id": "python",
+  "name": "Python",
+  "icon": "🐍",
+  "color": "#3b82f6",
+  "tagline": "Automação, segurança e APIs",
+  "estimated_hours": 120,
+  "source_courses": ["Real Python", "Automate the Boring Stuff", "Black Hat Python"],
+  "prereqs": [],
+  "feeds_certs": [],
+  "phase_relevance": ["fase4", "encerramento"],
+  "modules": [
+    {
+      "id": "py.1",
+      "name": "Python Idiomático",
+      "estimated_minutes": 300,
+      "topics": [
+        { "id": "py.1.1", "name": "Tipos, comprehensions, generators", "minutes": 60 },
+        { "id": "py.1.2", "name": "Funções, *args, **kwargs, lambdas", "minutes": 45 },
+        { "id": "py.1.3", "name": "OOP (classes, dataclasses, properties)", "minutes": 60 },
+        { "id": "py.1.4", "name": "Decorators e context managers", "minutes": 60 },
+        { "id": "py.1.5", "name": "Type hints e mypy", "minutes": 45 },
+        { "id": "py.1.6", "name": "Erros e exceptions custom", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.py.1.a", "name": "Refatorar script imperativo em OOP + type hints", "type": "lab" }
+      ],
+      "checkpoint": "Código Python passa em ruff + mypy --strict."
+    },
+    {
+      "id": "py.2",
+      "name": "Automação e Scripting",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "py.2.1", "name": "Arquivos, paths (pathlib), JSON, CSV", "minutes": 30 },
+        { "id": "py.2.2", "name": "subprocess e CLI (click, typer)", "minutes": 60 },
+        { "id": "py.2.3", "name": "requests e HTTP", "minutes": 30 },
+        { "id": "py.2.4", "name": "BeautifulSoup / scraping ético", "minutes": 30 },
+        { "id": "py.2.5", "name": "Schedule e cron-like", "minutes": 30 },
+        { "id": "py.2.6", "name": "Logging estruturado", "minutes": 30 },
+        { "id": "py.2.7", "name": "Empacotamento (poetry, uv, pyproject.toml)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.py.2.a", "name": "CLI typer com 3 subcomandos e logging", "type": "lab" },
+        { "id": "ex.py.2.b", "name": "Bot que monitora preço e envia notificação", "type": "lab" }
+      ],
+      "checkpoint": "CLI publicada em PyPI (test.pypi.org) com poetry."
+    },
+    {
+      "id": "py.3",
+      "name": "Python para Segurança",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "py.3.1", "name": "Sockets em Python", "minutes": 45 },
+        { "id": "py.3.2", "name": "Scapy — packet crafting", "minutes": 90 },
+        { "id": "py.3.3", "name": "Port scanner com asyncio", "minutes": 45 },
+        { "id": "py.3.4", "name": "Web fuzzer básico", "minutes": 30 },
+        { "id": "py.3.5", "name": "Análise de logs (regex, parsing)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.py.3.a", "name": "Port scanner async escaneando /24", "type": "lab" },
+        { "id": "ex.py.3.b", "name": "Parser de access.log detectando bruteforce", "type": "lab" }
+      ],
+      "checkpoint": "Toolkit pessoal de 5+ scripts publicado no GitHub."
+    },
+    {
+      "id": "py.4",
+      "name": "APIs e Web (FastAPI)",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "py.4.1", "name": "FastAPI — paths, query, body", "minutes": 60 },
+        { "id": "py.4.2", "name": "Pydantic v2 e validação", "minutes": 30 },
+        { "id": "py.4.3", "name": "Auth (JWT, OAuth)", "minutes": 60 },
+        { "id": "py.4.4", "name": "SQLAlchemy / SQLModel", "minutes": 60 },
+        { "id": "py.4.5", "name": "Testes com pytest", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.py.4.a", "name": "API REST CRUD completa com auth JWT", "type": "lab" },
+        { "id": "ex.py.4.b", "name": "API dockerizada deployada na AWS", "type": "lab" }
+      ],
+      "checkpoint": "API com 80%+ coverage, dockerizada, OpenAPI spec OK."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.py.1",
+      "name": "🐍 Security Automation Toolkit",
+      "level": "portfolio",
+      "tags": ["Python", "Security", "Async"],
+      "description": "Conjunto de scripts: port scanner, banner grabber, brute force detector, log analyzer.",
+      "consumes_modules": ["py.2", "py.3"],
+      "deliverables": ["Repo público", "Documentação inglês", "Tests pytest"]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": "eda",
+  "name": "Estruturas de Dados (em C)",
+  "icon": "⛓️",
+  "color": "#f97316",
+  "tagline": "Listas, árvores, grafos e hash em C",
+  "estimated_hours": 80,
+  "source_courses": ["Gus Caetano - Algoritmos e Estrutura de Dados em C", "Sedgewick - Algorithms in C", "FIAP EDA"],
+  "prereqs": ["c:1", "c:2", "c:3", "c:4"],
+  "feeds_certs": [],
+  "phase_relevance": ["fase2"],
+  "modules": [
+    {
+      "id": "eda.1",
+      "name": "Listas Lineares",
+      "estimated_minutes": 300,
+      "source": "Gus Caetano - Listas",
+      "topics": [
+        { "id": "eda.1.1", "name": "Arrays dinâmicos (vector style com realloc)", "minutes": 45 },
+        { "id": "eda.1.2", "name": "Lista encadeada simples", "minutes": 75 },
+        { "id": "eda.1.3", "name": "Lista duplamente encadeada", "minutes": 60 },
+        { "id": "eda.1.4", "name": "Lista circular", "minutes": 30 },
+        { "id": "eda.1.5", "name": "Pilha (stack) com array e com lista", "minutes": 45 },
+        { "id": "eda.1.6", "name": "Fila (queue) e deque", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.eda.1.a", "name": "Lista encadeada genérica (void*)", "type": "lab" },
+        { "id": "ex.eda.1.b", "name": "Stack para verificar parênteses balanceados", "type": "lab" },
+        { "id": "ex.eda.1.c", "name": "Reverter lista in-place", "type": "lab" }
+      ],
+      "checkpoint": "Lista encadeada com insert, remove, search, reverse — todos sem leak."
+    },
+    {
+      "id": "eda.2",
+      "name": "Árvores",
+      "estimated_minutes": 360,
+      "source": "Gus Caetano - Árvores",
+      "topics": [
+        { "id": "eda.2.1", "name": "Árvore binária — terminologia e representação", "minutes": 30 },
+        { "id": "eda.2.2", "name": "Travessias (pre, in, post, level-order)", "minutes": 60 },
+        { "id": "eda.2.3", "name": "BST — busca, inserção, remoção", "minutes": 90 },
+        { "id": "eda.2.4", "name": "Análise de altura e balanceamento", "minutes": 30 },
+        { "id": "eda.2.5", "name": "AVL — rotações", "minutes": 90 },
+        { "id": "eda.2.6", "name": "Heap binária (max e min heap)", "minutes": 30 },
+        { "id": "eda.2.7", "name": "Trie (árvore de prefixos)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.eda.2.a", "name": "BST em C com travessias", "type": "lab" },
+        { "id": "ex.eda.2.b", "name": "AVL com rotação simples e dupla", "type": "lab" },
+        { "id": "ex.eda.2.c", "name": "Heap min para job scheduler", "type": "lab" }
+      ],
+      "checkpoint": "AVL balanceada com inserção e remoção corretas, validada com testes."
+    },
+    {
+      "id": "eda.3",
+      "name": "Grafos",
+      "estimated_minutes": 360,
+      "source": "Gus Caetano - Grafos",
+      "topics": [
+        { "id": "eda.3.1", "name": "Representações (matriz de adj, lista de adj)", "minutes": 60 },
+        { "id": "eda.3.2", "name": "BFS em C (com fila)", "minutes": 60 },
+        { "id": "eda.3.3", "name": "DFS em C (recursivo e iterativo)", "minutes": 60 },
+        { "id": "eda.3.4", "name": "Dijkstra em C (com heap)", "minutes": 90 },
+        { "id": "eda.3.5", "name": "Detecção de ciclo", "minutes": 30 },
+        { "id": "eda.3.6", "name": "Topological sort", "minutes": 30 },
+        { "id": "eda.3.7", "name": "MST (Prim, Kruskal) — visão geral", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.eda.3.a", "name": "BFS e DFS imprimindo ordem de visita", "type": "lab" },
+        { "id": "ex.eda.3.b", "name": "Dijkstra resolvendo problema real (rotas)", "type": "lab" }
+      ],
+      "checkpoint": "Implementar grafo + Dijkstra integrado ao Network Mapper."
+    },
+    {
+      "id": "eda.4",
+      "name": "Hash Tables",
+      "estimated_minutes": 240,
+      "source": "Gus Caetano - Hash",
+      "topics": [
+        { "id": "eda.4.1", "name": "Hash functions e qualidade", "minutes": 60 },
+        { "id": "eda.4.2", "name": "Resolução: chaining (lista encadeada)", "minutes": 60 },
+        { "id": "eda.4.3", "name": "Resolução: open addressing (linear, quadrática, double hash)", "minutes": 60 },
+        { "id": "eda.4.4", "name": "Load factor e resize automático", "minutes": 30 },
+        { "id": "eda.4.5", "name": "Bloom filters", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.eda.4.a", "name": "Hash table genérica em C com chaining", "type": "lab" },
+        { "id": "ex.eda.4.b", "name": "Comparar performance: chaining vs open addressing", "type": "lab" }
+      ],
+      "checkpoint": "Hash table operando em O(1) amortizado com resize automático."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.eda.1",
+      "name": "⛓️ Scanner de Hosts em C",
+      "level": "portfolio",
+      "tags": ["C", "Lista Encadeada", "Redes"],
+      "description": "Scanner em C que usa lista encadeada para hosts, hash para histórico, verifica portas abertas e gera relatório.",
+      "consumes_modules": ["c.2", "c.3", "eda.1", "eda.4", "redes.1", "redes.2"],
+      "deliverables": ["Repo com Makefile", "README inglês", "Demo gif"]
+    }
+  ]
+}

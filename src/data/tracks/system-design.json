@@ -1,0 +1,128 @@
+{
+  "id": "system-design",
+  "name": "System Design",
+  "icon": "🔷",
+  "color": "#06b6d4",
+  "tagline": "Fundamentos → casos reais → interview-ready",
+  "estimated_hours": 120,
+  "source_courses": ["Alex Xu - System Design Interview Vol 1+2", "ByteByteGo", "Educative.io Grokking System Design"],
+  "prereqs": ["redes:1", "redes:2"],
+  "feeds_certs": [],
+  "phase_relevance": ["fase2", "fase3", "fase4", "fase5"],
+  "modules": [
+    {
+      "id": "sd.1",
+      "name": "Fundamentos de Sistemas Distribuídos",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "sd.1.1", "name": "Cliente-servidor, monolito vs microsserviços", "minutes": 45 },
+        { "id": "sd.1.2", "name": "CAP Theorem (Consistência, Disponibilidade, Partition)", "minutes": 60 },
+        { "id": "sd.1.3", "name": "PACELC e trade-offs reais", "minutes": 30 },
+        { "id": "sd.1.4", "name": "Latência vs Throughput", "minutes": 30 },
+        { "id": "sd.1.5", "name": "Vertical vs Horizontal scaling", "minutes": 30 },
+        { "id": "sd.1.6", "name": "Stateless vs Stateful services", "minutes": 30 },
+        { "id": "sd.1.7", "name": "Consistency models (eventual, strong, causal)", "minutes": 60 },
+        { "id": "sd.1.8", "name": "Idempotência e retries", "minutes": 45 },
+        { "id": "sd.1.9", "name": "Back-of-envelope estimation", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.sd.1.a", "name": "Estimar QPS e storage do Twitter (back-of-envelope)", "type": "design" },
+        { "id": "ex.sd.1.b", "name": "Desenhar CAP trade-offs do Cassandra vs Postgres", "type": "design" }
+      ],
+      "checkpoint": "Explicar Feynman: por que sistemas distribuídos sacrificam consistência?"
+    },
+    {
+      "id": "sd.2",
+      "name": "Building Blocks — Cache, Queue, LB",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "sd.2.1", "name": "Load Balancers (L4 vs L7, algoritmos)", "minutes": 60 },
+        { "id": "sd.2.2", "name": "Reverse proxy (nginx, HAProxy)", "minutes": 30 },
+        { "id": "sd.2.3", "name": "Caching (LRU, TTL, write-through, write-back)", "minutes": 60 },
+        { "id": "sd.2.4", "name": "CDN — edge caching", "minutes": 30 },
+        { "id": "sd.2.5", "name": "Message Queues (Kafka, RabbitMQ, SQS)", "minutes": 60 },
+        { "id": "sd.2.6", "name": "Pub/Sub patterns", "minutes": 45 },
+        { "id": "sd.2.7", "name": "Event-driven architecture", "minutes": 45 },
+        { "id": "sd.2.8", "name": "Rate limiting (token bucket, leaky bucket)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.sd.2.a", "name": "Desenhar URL Shortener com cache e DB", "type": "design" },
+        { "id": "ex.sd.2.b", "name": "Rate limiter para API pública", "type": "design" }
+      ],
+      "checkpoint": "Quando usar fila vs chamada síncrona? Trade-offs."
+    },
+    {
+      "id": "sd.3",
+      "name": "Storage — DB Sharding, Replication, Indexing",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "sd.3.1", "name": "Replication (master-slave, multi-master)", "minutes": 60 },
+        { "id": "sd.3.2", "name": "Sharding strategies (range, hash, geo)", "minutes": 60 },
+        { "id": "sd.3.3", "name": "Consistent hashing", "minutes": 45 },
+        { "id": "sd.3.4", "name": "Indexing (B-tree, LSM-tree)", "minutes": 60 },
+        { "id": "sd.3.5", "name": "ACID vs BASE", "minutes": 30 },
+        { "id": "sd.3.6", "name": "Quorum (R + W > N)", "minutes": 30 },
+        { "id": "sd.3.7", "name": "SQL vs NoSQL — quando escolher cada", "minutes": 45 },
+        { "id": "sd.3.8", "name": "Distributed transactions, 2PC, Saga", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.sd.3.a", "name": "Desenhar timeline social (Twitter feed)", "type": "design" },
+        { "id": "ex.sd.3.b", "name": "Sharding de banco de mensagens (WhatsApp)", "type": "design" }
+      ],
+      "checkpoint": "Por que Cassandra é AP? Como configurar consistency level?"
+    },
+    {
+      "id": "sd.4",
+      "name": "Casos Clássicos de Interview",
+      "estimated_minutes": 600,
+      "topics": [
+        { "id": "sd.4.1", "name": "Design URL Shortener (bit.ly)", "minutes": 60 },
+        { "id": "sd.4.2", "name": "Design Pastebin / Code Snippet", "minutes": 45 },
+        { "id": "sd.4.3", "name": "Design Twitter / Timeline", "minutes": 90 },
+        { "id": "sd.4.4", "name": "Design Instagram", "minutes": 60 },
+        { "id": "sd.4.5", "name": "Design WhatsApp / Chat", "minutes": 90 },
+        { "id": "sd.4.6", "name": "Design Uber / Ride sharing", "minutes": 60 },
+        { "id": "sd.4.7", "name": "Design Netflix / video streaming", "minutes": 60 },
+        { "id": "sd.4.8", "name": "Design Dropbox / file sync", "minutes": 60 },
+        { "id": "sd.4.9", "name": "Design Web Crawler", "minutes": 75 }
+      ],
+      "exercises": [
+        { "id": "ex.sd.4.a", "name": "Mock interview: URL Shortener (45min)", "type": "design" },
+        { "id": "ex.sd.4.b", "name": "Mock interview: Twitter timeline (45min)", "type": "design" }
+      ],
+      "checkpoint": "Resolver case clássico em 45min com requisitos, capacity, API e schema."
+    },
+    {
+      "id": "sd.5",
+      "name": "Padrões Avançados",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "sd.5.1", "name": "Circuit breaker, bulkhead, timeout", "minutes": 45 },
+        { "id": "sd.5.2", "name": "CQRS e Event Sourcing", "minutes": 60 },
+        { "id": "sd.5.3", "name": "Service mesh (Istio, Linkerd)", "minutes": 45 },
+        { "id": "sd.5.4", "name": "API Gateway patterns", "minutes": 30 },
+        { "id": "sd.5.5", "name": "Multi-region, geo-replication", "minutes": 30 },
+        { "id": "sd.5.6", "name": "Disaster Recovery (RPO, RTO)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.sd.5.a", "name": "Desenhar sistema multi-region active-active", "type": "design" }
+      ],
+      "checkpoint": "Aplicar padrão de resiliência em case dado."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.sd.1",
+      "name": "🔷 System Design Portfolio",
+      "level": "portfolio",
+      "tags": ["System Design", "Documentation"],
+      "description": "Repositório com 5+ casos de system design completos: requisitos, capacity estimation, API, DB schema, diagrama, trade-offs.",
+      "consumes_modules": ["sd.1", "sd.2", "sd.3", "sd.4"],
+      "deliverables": [
+        "Repo público com diagramas excalidraw",
+        "5 cases documentados",
+        "README explicando metodologia"
+      ]
+    }
+  ]
+}

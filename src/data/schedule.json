@@ -1,0 +1,286 @@
+{
+  "phases": [
+    {
+      "id": "fase1",
+      "name": "Arrancada",
+      "icon": "⚡",
+      "start": "2026-05-06",
+      "end": "2026-05-31",
+      "focus": ["docker-foco", "linux-essential", "python-base", "c-fundamentos", "pos-fiap-buffer", "alemao", "ingles"],
+      "primary_tracks": ["docker", "linux", "python", "c", "pos-fiap", "alemao", "ingles"],
+      "weight_per_track": { "docker": 30, "linux": 15, "python": 15, "c": 15, "pos-fiap": 15, "alemao": 5, "ingles": 5 },
+      "morning_focus": ["docker", "python", "c"],
+      "afternoon_focus": ["docker", "linux", "pos-fiap"]
+    },
+    {
+      "id": "fase2",
+      "name": "Base Programador",
+      "icon": "🧱",
+      "start": "2026-06-01",
+      "end": "2026-07-31",
+      "focus": ["c-eda-completo", "python-avancado", "sql", "nosql", "aws-cp", "gcp-ace", "algoritmos", "system-design-base", "pos-fiap"],
+      "primary_tracks": ["c", "eda", "python", "sql", "nosql", "aws", "gcp", "algoritmos", "system-design", "pos-fiap"],
+      "weight_per_track": { "c": 15, "eda": 15, "python": 10, "sql": 10, "nosql": 5, "aws": 15, "gcp": 5, "algoritmos": 10, "system-design": 5, "pos-fiap": 10 },
+      "morning_focus": ["c", "eda", "python"],
+      "afternoon_focus": ["sql", "nosql", "aws", "gcp", "system-design", "pos-fiap"]
+    },
+    {
+      "id": "fase3",
+      "name": "Cloud + Java",
+      "icon": "☁️",
+      "start": "2026-08-01",
+      "end": "2026-09-30",
+      "focus": ["aws-saa", "gcp-ace", "java-base-ebac", "docker", "kubernetes", "system-design-casos", "nosql-mongo"],
+      "primary_tracks": ["aws", "gcp", "java", "docker", "kubernetes", "system-design", "nosql", "pos-fiap"],
+      "weight_per_track": { "aws": 25, "gcp": 10, "java": 25, "docker": 5, "kubernetes": 10, "system-design": 10, "nosql": 10, "pos-fiap": 5 },
+      "morning_focus": ["java", "aws"],
+      "afternoon_focus": ["docker", "kubernetes", "system-design", "gcp", "nosql"]
+    },
+    {
+      "id": "fase4",
+      "name": "Java + Portfolio",
+      "icon": "🐍",
+      "start": "2026-10-01",
+      "end": "2026-11-30",
+      "focus": ["java-spring-ebac", "kubernetes-cka", "system-design-interview", "go-intro", "portfolio"],
+      "primary_tracks": ["java", "kubernetes", "system-design", "go", "aws"],
+      "weight_per_track": { "java": 30, "kubernetes": 20, "system-design": 15, "go": 15, "aws": 10, "alemao": 5, "ingles": 5 },
+      "morning_focus": ["java", "kubernetes"],
+      "afternoon_focus": ["system-design", "go", "portfolio"]
+    },
+    {
+      "id": "fase5",
+      "name": "Go + SecureOps + Encerramento",
+      "icon": "🎄",
+      "start": "2026-12-01",
+      "end": "2026-12-20",
+      "focus": ["go-projeto", "secureops-platform", "mock-interviews"],
+      "primary_tracks": ["go", "java", "kubernetes", "aws", "system-design"],
+      "weight_per_track": { "go": 30, "java": 20, "kubernetes": 15, "aws": 15, "system-design": 20 },
+      "morning_focus": ["go", "java"],
+      "afternoon_focus": ["secureops", "system-design"]
+    }
+  ],
+
+  "fixed_events": [
+    {
+      "id": "conv-alemao-ter",
+      "title": "🇩🇪 Conversação Alemão",
+      "description": "Aula ao vivo de conversação — fluência oral",
+      "track": "alemao",
+      "weekday": 2,
+      "start_time": "16:00",
+      "end_time": "17:30",
+      "until": "2026-12-20",
+      "priority": "fixed",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "conv-alemao-qui",
+      "title": "🇩🇪 Conversação Alemão",
+      "description": "Aula ao vivo de conversação — fluência oral",
+      "track": "alemao",
+      "weekday": 4,
+      "start_time": "16:00",
+      "end_time": "17:30",
+      "until": "2026-12-20",
+      "priority": "fixed",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "ingles-vivo-seg",
+      "title": "🇬🇧 Inglês ao vivo",
+      "description": "Aula ao vivo — 18h–18h40",
+      "track": "ingles",
+      "weekday": 1,
+      "start_time": "18:00",
+      "end_time": "18:40",
+      "until": "2026-12-20",
+      "priority": "fixed",
+      "color": "#0ea5e9"
+    },
+    {
+      "id": "ingles-vivo-qua",
+      "title": "🇬🇧 Inglês ao vivo",
+      "description": "Aula ao vivo — 18h–18h40",
+      "track": "ingles",
+      "weekday": 3,
+      "start_time": "18:00",
+      "end_time": "18:40",
+      "until": "2026-12-20",
+      "priority": "fixed",
+      "color": "#0ea5e9"
+    },
+    {
+      "id": "daily-linuxtips-pick",
+      "title": "💬 Daily PICK — LinuxTips",
+      "description": "Daily 30min com Jeferson e turma do PICK no Discord",
+      "track": "kubernetes",
+      "weekday": 4,
+      "start_time": "06:00",
+      "end_time": "06:30",
+      "until": "2027-03-31",
+      "priority": "fixed",
+      "color": "#326ce5"
+    },
+    {
+      "id": "alemao-sabado",
+      "title": "🇩🇪 Alemão ao vivo (sábado)",
+      "description": "Aula com professor — sábado 12h",
+      "track": "alemao",
+      "weekday": 6,
+      "start_time": "12:00",
+      "end_time": "13:00",
+      "until": "2026-12-20",
+      "priority": "fixed",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "academia",
+      "title": "🏋️ Academia",
+      "description": "Treino — base mental e física",
+      "weekdays": [1, 2, 3, 4, 5, 6],
+      "start_time": "06:30",
+      "end_time": "07:30",
+      "until": "2026-12-20",
+      "priority": "habit",
+      "color": "#f97316"
+    }
+  ],
+
+  "fiap_events": [
+    {
+      "date": "2026-05-21",
+      "time": "18:00",
+      "title": "🎓 Pós FIAP — Grupo de Estudos",
+      "description": "Preparação para Buffer Overflow",
+      "duration_min": 110,
+      "track": "pos-fiap",
+      "module_ref": "pos.4"
+    },
+    {
+      "date": "2026-05-25",
+      "time": "23:59",
+      "title": "🚨 DEADLINE — Buffer Overflow Challenge",
+      "description": "Entrega final do challenge — não perde!",
+      "duration_min": 0,
+      "track": "pos-fiap",
+      "module_ref": "pos.1",
+      "is_deadline": true
+    },
+    {
+      "date": "2026-05-28",
+      "time": "18:00",
+      "title": "🎓 Pós-Exploração em Linux",
+      "description": "Aula ao vivo Pós FIAP — privesc, persistência, pivoting",
+      "duration_min": 110,
+      "track": "pos-fiap",
+      "module_ref": "pos.2"
+    },
+    {
+      "date": "2026-06-18",
+      "time": "18:00",
+      "title": "🎓 Pós FIAP — Grupo de Estudos",
+      "description": "Discussão sobre Pós-Exploração",
+      "duration_min": 110,
+      "track": "pos-fiap",
+      "module_ref": "pos.4"
+    },
+    {
+      "date": "2026-06-23",
+      "time": "18:00",
+      "title": "🎓 Evasão de Defesas — Como o Malware se Disfarça",
+      "description": "Aula ao vivo Pós FIAP — anti-debug, obfuscation, EDR bypass",
+      "duration_min": 110,
+      "track": "pos-fiap",
+      "module_ref": "pos.3"
+    }
+  ],
+
+  "weekday_template": {
+    "1": {
+      "name": "Segunda",
+      "type": "normal",
+      "blocks": [
+        { "start": "08:00", "end": "12:00", "label": "Bloco principal — manhã (4h)", "track_hint": "morning_primary", "duration_min": 240 },
+        { "start": "13:00", "end": "16:00", "label": "Labs e projetos — tarde (3h)", "track_hint": "afternoon_primary", "duration_min": 180 },
+        { "start": "17:00", "end": "18:00", "label": "Alemão", "track_id": "alemao", "duration_min": 60 },
+        { "start": "19:00", "end": "20:00", "label": "Inglês ativo", "track_id": "ingles", "duration_min": 60 },
+        { "start": "20:30", "end": "21:00", "label": "Alemão revisão", "track_id": "alemao", "duration_min": 30 }
+      ]
+    },
+    "2": {
+      "name": "Terça",
+      "type": "conv",
+      "blocks": [
+        { "start": "08:00", "end": "12:00", "label": "Bloco principal — manhã (4h)", "track_hint": "morning_primary", "duration_min": 240 },
+        { "start": "13:00", "end": "15:30", "label": "Labs e projetos — tarde", "track_hint": "afternoon_primary", "duration_min": 150 },
+        { "start": "15:30", "end": "16:00", "label": "Aquecimento Alemão (pré-conv)", "track_id": "alemao", "duration_min": 30 },
+        { "start": "17:30", "end": "19:30", "label": "Estudo principal noite", "track_hint": "afternoon_secondary", "duration_min": 120 },
+        { "start": "20:30", "end": "21:00", "label": "Inglês passivo", "track_id": "ingles", "duration_min": 30 }
+      ]
+    },
+    "3": {
+      "name": "Quarta",
+      "type": "normal",
+      "blocks": [
+        { "start": "08:00", "end": "12:00", "label": "Bloco principal — manhã (4h)", "track_hint": "morning_primary", "duration_min": 240 },
+        { "start": "13:00", "end": "16:00", "label": "Labs e projetos — tarde (3h)", "track_hint": "afternoon_primary", "duration_min": 180 },
+        { "start": "17:00", "end": "18:00", "label": "Alemão", "track_id": "alemao", "duration_min": 60 },
+        { "start": "19:00", "end": "20:00", "label": "Inglês ativo", "track_id": "ingles", "duration_min": 60 },
+        { "start": "20:30", "end": "21:00", "label": "Alemão revisão", "track_id": "alemao", "duration_min": 30 }
+      ]
+    },
+    "4": {
+      "name": "Quinta",
+      "type": "conv",
+      "blocks": [
+        { "start": "07:00", "end": "12:00", "label": "Bloco principal — manhã (5h após Daily PICK)", "track_hint": "morning_primary", "duration_min": 300 },
+        { "start": "13:00", "end": "15:30", "label": "Labs e projetos — tarde", "track_hint": "afternoon_primary", "duration_min": 150 },
+        { "start": "15:30", "end": "16:00", "label": "Aquecimento Alemão (pré-conv)", "track_id": "alemao", "duration_min": 30 },
+        { "start": "17:30", "end": "19:30", "label": "Estudo principal noite", "track_hint": "afternoon_secondary", "duration_min": 120 },
+        { "start": "20:30", "end": "21:00", "label": "Inglês passivo", "track_id": "ingles", "duration_min": 30 }
+      ]
+    },
+    "5": {
+      "name": "Sexta",
+      "type": "light",
+      "blocks": [
+        { "start": "08:00", "end": "11:00", "label": "Revisão da semana — manhã (3h)", "track_hint": "review", "duration_min": 180 },
+        { "start": "13:00", "end": "15:00", "label": "Consolidação Feynman — tarde", "track_hint": "review", "duration_min": 120 },
+        { "start": "16:00", "end": "17:00", "label": "Alemão revisão semanal", "track_id": "alemao", "duration_min": 60 },
+        { "start": "17:30", "end": "18:00", "label": "Inglês passivo (leve)", "track_id": "ingles", "duration_min": 30 }
+      ]
+    },
+    "6": {
+      "name": "Sábado",
+      "type": "saturday",
+      "blocks": [
+        { "start": "08:00", "end": "11:00", "label": "Aulas PICK ao vivo + estudo Docker/K8s", "track_hint": "pick_live", "duration_min": 180 },
+        { "start": "13:30", "end": "14:30", "label": "Inglês pós aula alemão", "track_id": "ingles", "duration_min": 60 },
+        { "start": "15:00", "end": "18:00", "label": "Projetos / Pós FIAP / Cert", "track_hint": "afternoon_primary", "duration_min": 180 },
+        { "start": "19:00", "end": "20:30", "label": "PICK recuperação / labs Docker", "track_hint": "pick_recovery", "duration_min": 90 }
+      ]
+    },
+    "0": {
+      "name": "Domingo",
+      "type": "sacred",
+      "blocks": [
+        { "start": "00:00", "end": "23:59", "label": "🕊️ Domingo sagrado — zero estudo", "track_hint": "rest", "duration_min": 0 }
+      ]
+    }
+  },
+
+  "rules": [
+    { "icon": "🌅", "title": "Manhã (4h) é sagrada", "text": "08h–12h. Bloco principal de cada fase. Foco profundo, sem reuniões." },
+    { "icon": "☀️", "title": "Tarde (3h) é prática", "text": "13h–16h. Labs, projetos, exercícios. Mão na massa." },
+    { "icon": "🇩🇪", "title": "Alemão 1h/dia", "text": "30min estudo + 30min imersão. Ter+Qui: conversação 16h–17h30 (FIXO)." },
+    { "icon": "🇬🇧", "title": "Inglês 1h/dia", "text": "30min ao vivo (Seg+Qua) + 30min passivo todo dia." },
+    { "icon": "💬", "title": "Daily PICK quinta", "text": "Quinta 06h00–06h30. Daily com Jeferson e turma no Discord." },
+    { "icon": "📚", "title": "Sábado é PICK", "text": "Aulas ao vivo PICK 08h. Alemão 12h. Tarde livre pra projetos." },
+    { "icon": "⛪", "title": "Domingo sagrado", "text": "Igreja + família. Zero estudo. Sem culpa." },
+    { "icon": "💆", "title": "Sexta é leve", "text": "Pouco conteúdo. Livre a partir das 18h." },
+    { "icon": "🏋️", "title": "Academia 6h30", "text": "Não negocia. Saúde mental = base de tudo." },
+    { "icon": "🌙", "title": "21h é o fim", "text": "Acorda 6h. Dorme 22h30. 7h sono = foco total." }
+  ]
+}

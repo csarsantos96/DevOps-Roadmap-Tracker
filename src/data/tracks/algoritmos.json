@@ -1,0 +1,84 @@
+{
+  "id": "algoritmos",
+  "name": "Algoritmos",
+  "icon": "🧮",
+  "color": "#10b981",
+  "tagline": "Big-O, padrões e raciocínio",
+  "estimated_hours": 80,
+  "source_courses": ["CLRS", "NeetCode roadmap", "Sedgewick (Coursera)"],
+  "prereqs": [],
+  "feeds_certs": [],
+  "phase_relevance": ["fase2"],
+  "modules": [
+    {
+      "id": "alg.1",
+      "name": "Análise de Complexidade",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "alg.1.1", "name": "Big-O, Big-Theta, Big-Omega", "minutes": 60 },
+        { "id": "alg.1.2", "name": "Complexidade amortizada", "minutes": 30 },
+        { "id": "alg.1.3", "name": "Espaço vs tempo trade-offs", "minutes": 30 },
+        { "id": "alg.1.4", "name": "Master Theorem (recorrências)", "minutes": 60 },
+        { "id": "alg.1.5", "name": "Análise prática — quando otimizar", "minutes": 60 }
+      ],
+      "exercises": [
+        { "id": "ex.alg.1.a", "name": "Calcular Big-O de 20 funções", "type": "drill" }
+      ],
+      "checkpoint": "Olhar código e dizer Big-O em segundos."
+    },
+    {
+      "id": "alg.2",
+      "name": "Sorting e Searching",
+      "estimated_minutes": 300,
+      "topics": [
+        { "id": "alg.2.1", "name": "Bubble, insertion, selection sort", "minutes": 30 },
+        { "id": "alg.2.2", "name": "Merge sort", "minutes": 60 },
+        { "id": "alg.2.3", "name": "Quick sort e pivot strategies", "minutes": 60 },
+        { "id": "alg.2.4", "name": "Heap sort", "minutes": 45 },
+        { "id": "alg.2.5", "name": "Counting/Radix/Bucket sort", "minutes": 30 },
+        { "id": "alg.2.6", "name": "Binary search e variantes", "minutes": 60 }
+      ],
+      "exercises": [
+        { "id": "ex.alg.2.a", "name": "Implementar todos sorts em C", "type": "lab" },
+        { "id": "ex.alg.2.b", "name": "Binary search em array rotacionado", "type": "leetcode" }
+      ],
+      "checkpoint": "Decidir qual sort usar dado constraint (memória, estabilidade, dados)."
+    },
+    {
+      "id": "alg.3",
+      "name": "Padrões Clássicos",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "alg.3.1", "name": "Two pointers", "minutes": 45 },
+        { "id": "alg.3.2", "name": "Sliding window", "minutes": 45 },
+        { "id": "alg.3.3", "name": "Recursão e backtracking", "minutes": 60 },
+        { "id": "alg.3.4", "name": "Greedy", "minutes": 45 },
+        { "id": "alg.3.5", "name": "Divide and Conquer", "minutes": 45 },
+        { "id": "alg.3.6", "name": "Hash maps em problemas", "minutes": 60 },
+        { "id": "alg.3.7", "name": "Top-K e heap problems", "minutes": 60 }
+      ],
+      "exercises": [
+        { "id": "ex.alg.3.a", "name": "30 problemas NeetCode (Easy/Medium)", "type": "leetcode" }
+      ],
+      "checkpoint": "Resolver Two Sum, Valid Anagram, Container With Most Water em 15min cada."
+    },
+    {
+      "id": "alg.4",
+      "name": "Programação Dinâmica e Grafos",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "alg.4.1", "name": "DP — memoization vs tabulation", "minutes": 90 },
+        { "id": "alg.4.2", "name": "Knapsack, LIS, edit distance", "minutes": 90 },
+        { "id": "alg.4.3", "name": "BFS, DFS aplicados", "minutes": 60 },
+        { "id": "alg.4.4", "name": "Dijkstra, Bellman-Ford", "minutes": 60 },
+        { "id": "alg.4.5", "name": "Topological sort, Union-Find", "minutes": 60 }
+      ],
+      "exercises": [
+        { "id": "ex.alg.4.a", "name": "20 problemas DP (Climb Stairs → House Robber → LCS)", "type": "leetcode" },
+        { "id": "ex.alg.4.b", "name": "Dijkstra na rede do projeto Network Mapper", "type": "lab" }
+      ],
+      "checkpoint": "Identificar quando problema é DP em <2min."
+    }
+  ],
+  "projects": []
+}

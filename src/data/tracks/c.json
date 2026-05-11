@@ -1,0 +1,129 @@
+{
+  "id": "c",
+  "name": "C",
+  "icon": "⚙️",
+  "color": "#a3a3a3",
+  "tagline": "Linguagem do sistema operacional — base de tudo",
+  "estimated_hours": 120,
+  "source_courses": ["Gus Caetano - Algoritmos e Estrutura de Dados em C", "K&R The C Programming Language", "Beej's Guide to C"],
+  "prereqs": [],
+  "feeds_certs": [],
+  "phase_relevance": ["fase1", "fase2"],
+  "modules": [
+    {
+      "id": "c.1",
+      "name": "Fundamentos da Linguagem C",
+      "estimated_minutes": 360,
+      "source": "Gus Caetano - Módulo Inicial",
+      "topics": [
+        { "id": "c.1.1", "name": "História do C, compilação (gcc, clang)", "minutes": 30 },
+        { "id": "c.1.2", "name": "Hello World e estrutura de programa", "minutes": 30 },
+        { "id": "c.1.3", "name": "Tipos primitivos (int, char, float, double)", "minutes": 45 },
+        { "id": "c.1.4", "name": "Operadores (aritméticos, lógicos, bitwise)", "minutes": 45 },
+        { "id": "c.1.5", "name": "Controle de fluxo (if, else, switch)", "minutes": 30 },
+        { "id": "c.1.6", "name": "Loops (for, while, do-while, break/continue)", "minutes": 45 },
+        { "id": "c.1.7", "name": "Funções e parâmetros", "minutes": 60 },
+        { "id": "c.1.8", "name": "Escopo e variáveis (local, global, static)", "minutes": 30 },
+        { "id": "c.1.9", "name": "Header files e .c/.h", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.c.1.a", "name": "20 exercícios de lógica em C", "type": "lab" },
+        { "id": "ex.c.1.b", "name": "Calculadora CLI completa", "type": "lab" },
+        { "id": "ex.c.1.c", "name": "Programa que conta vogais/consoantes", "type": "lab" }
+      ],
+      "checkpoint": "Compilar e rodar programa multi-arquivo com Makefile básico."
+    },
+    {
+      "id": "c.2",
+      "name": "Memória e Ponteiros",
+      "estimated_minutes": 480,
+      "source": "Gus Caetano - Memória e Ponteiros",
+      "topics": [
+        { "id": "c.2.1", "name": "Modelo de memória (stack, heap, code, data)", "minutes": 60 },
+        { "id": "c.2.2", "name": "Endereços e operador & e *", "minutes": 60 },
+        { "id": "c.2.3", "name": "Aritmética de ponteiros", "minutes": 60 },
+        { "id": "c.2.4", "name": "malloc, calloc, realloc, free", "minutes": 60 },
+        { "id": "c.2.5", "name": "Memory leaks e detecção (valgrind)", "minutes": 60 },
+        { "id": "c.2.6", "name": "Ponteiro para ponteiro (**)", "minutes": 45 },
+        { "id": "c.2.7", "name": "Function pointers", "minutes": 45 },
+        { "id": "c.2.8", "name": "Ponteiros para structs", "minutes": 45 },
+        { "id": "c.2.9", "name": "Smashing the stack — buffer overflow básico", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.c.2.a", "name": "Implementar malloc/free próprio simplificado", "type": "lab" },
+        { "id": "ex.c.2.b", "name": "Detectar leak com valgrind em programa propositalmente errado", "type": "lab" },
+        { "id": "ex.c.2.c", "name": "Buffer overflow controlado (Pós FIAP)", "type": "lab" }
+      ],
+      "checkpoint": "Programa em C sem warnings (-Wall -Wextra) e zero leaks no valgrind."
+    },
+    {
+      "id": "c.3",
+      "name": "Strings e Arrays",
+      "estimated_minutes": 300,
+      "source": "Gus Caetano - Arrays e Strings",
+      "topics": [
+        { "id": "c.3.1", "name": "Arrays unidimensionais", "minutes": 30 },
+        { "id": "c.3.2", "name": "Arrays bidimensionais (matrizes)", "minutes": 60 },
+        { "id": "c.3.3", "name": "Strings em C (null-terminated)", "minutes": 60 },
+        { "id": "c.3.4", "name": "string.h (strlen, strcpy, strcat, strcmp)", "minutes": 45 },
+        { "id": "c.3.5", "name": "Argumentos de linha de comando (argc/argv)", "minutes": 30 },
+        { "id": "c.3.6", "name": "I/O de arquivos (fopen, fread, fwrite, fclose)", "minutes": 60 },
+        { "id": "c.3.7", "name": "I/O formatado (printf/scanf famílias)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.c.3.a", "name": "Implementar strcmp, strcpy, strlen manualmente", "type": "lab" },
+        { "id": "ex.c.3.b", "name": "Word counter (igual wc do Linux)", "type": "lab" },
+        { "id": "ex.c.3.c", "name": "Programa que lê CSV e imprime tabular", "type": "lab" }
+      ],
+      "checkpoint": "Implementar utilitário CLI estilo Unix (cat, wc, grep simplificado)."
+    },
+    {
+      "id": "c.4",
+      "name": "Structs, Unions e TADs",
+      "estimated_minutes": 240,
+      "source": "Gus Caetano - Structs e TADs",
+      "topics": [
+        { "id": "c.4.1", "name": "Definindo structs", "minutes": 30 },
+        { "id": "c.4.2", "name": "typedef e abstração", "minutes": 30 },
+        { "id": "c.4.3", "name": "Arrays de structs", "minutes": 30 },
+        { "id": "c.4.4", "name": "Ponteiros para structs (operador ->)", "minutes": 30 },
+        { "id": "c.4.5", "name": "Unions e enums", "minutes": 30 },
+        { "id": "c.4.6", "name": "TADs (Tipos Abstratos de Dados) em C", "minutes": 60 },
+        { "id": "c.4.7", "name": "Encapsulamento via .c/.h", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.c.4.a", "name": "TAD Pessoa com construtor/destrutor", "type": "lab" },
+        { "id": "ex.c.4.b", "name": "Sistema de cadastro (livraria/biblioteca)", "type": "lab" }
+      ],
+      "checkpoint": "Modelar TAD opaco com header público + implementação privada."
+    },
+    {
+      "id": "c.5",
+      "name": "Build, Debug e Boas Práticas",
+      "estimated_minutes": 180,
+      "topics": [
+        { "id": "c.5.1", "name": "Makefile do zero", "minutes": 60 },
+        { "id": "c.5.2", "name": "GDB básico (break, step, print, backtrace)", "minutes": 45 },
+        { "id": "c.5.3", "name": "Flags de compilador (-Wall -Wextra -O2 -g)", "minutes": 30 },
+        { "id": "c.5.4", "name": "ASan, UBSan", "minutes": 30 },
+        { "id": "c.5.5", "name": "Code style (clang-format, MISRA)", "minutes": 15 }
+      ],
+      "exercises": [
+        { "id": "ex.c.5.a", "name": "Debugar programa com segfault usando GDB", "type": "lab" },
+        { "id": "ex.c.5.b", "name": "Setup completo: Makefile + ASan + tests", "type": "lab" }
+      ],
+      "checkpoint": "Projeto em C com build limpo, debug funcional e zero warnings."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.c.1",
+      "name": "⚙️ Mini Shell em C",
+      "level": "portfolio",
+      "tags": ["C", "OS", "fork/exec"],
+      "description": "Shell básico em C com fork/exec, pipes, redirecionamento. Demonstra domínio profundo de ponteiros e syscalls.",
+      "consumes_modules": ["c.2", "c.3", "c.4", "c.5"],
+      "deliverables": ["Repo com Makefile", "README inglês", "Comandos: cd, exit, history, pipe"]
+    }
+  ]
+}

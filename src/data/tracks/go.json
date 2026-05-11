@@ -1,0 +1,104 @@
+{
+  "id": "go",
+  "name": "Go",
+  "icon": "🦫",
+  "color": "#00ADD8",
+  "tagline": "Linguagem padrão da nuvem moderna",
+  "estimated_hours": 80,
+  "source_courses": ["A Tour of Go (oficial)", "Go by Example", "Learning Go (Jon Bodner)", "Aprenda Go com Testes (TDD)"],
+  "prereqs": ["c:1"],
+  "feeds_certs": [],
+  "phase_relevance": ["fase4", "fase5"],
+  "modules": [
+    {
+      "id": "go.1",
+      "name": "Tour of Go — Fundamentos",
+      "estimated_minutes": 360,
+      "source": "Tour of Go oficial + Go by Example",
+      "topics": [
+        { "id": "go.1.1", "name": "Por que Go? Filosofia (CSP, simplicidade)", "minutes": 30 },
+        { "id": "go.1.2", "name": "Setup (go install, go mod, GOPATH)", "minutes": 30 },
+        { "id": "go.1.3", "name": "Tipos básicos e zero values", "minutes": 30 },
+        { "id": "go.1.4", "name": "Funções, multiple returns, named returns", "minutes": 45 },
+        { "id": "go.1.5", "name": "Controle de fluxo (if-init, switch, for)", "minutes": 30 },
+        { "id": "go.1.6", "name": "Slices, maps, arrays", "minutes": 60 },
+        { "id": "go.1.7", "name": "Structs e métodos", "minutes": 45 },
+        { "id": "go.1.8", "name": "Interfaces (implícitas)", "minutes": 60 },
+        { "id": "go.1.9", "name": "Erros como valores (idiomatic error handling)", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.go.1.a", "name": "Tour of Go inteiro (https://go.dev/tour)", "type": "drill" },
+        { "id": "ex.go.1.b", "name": "20 exercícios em Exercism Go track", "type": "drill" }
+      ],
+      "checkpoint": "Implementar interface Stringer e Reader em tipos próprios."
+    },
+    {
+      "id": "go.2",
+      "name": "Concorrência — Goroutines e Channels",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "go.2.1", "name": "Goroutines — leve vs threads", "minutes": 45 },
+        { "id": "go.2.2", "name": "Channels (buffered, unbuffered)", "minutes": 60 },
+        { "id": "go.2.3", "name": "Select statement", "minutes": 45 },
+        { "id": "go.2.4", "name": "WaitGroup, Mutex, RWMutex", "minutes": 60 },
+        { "id": "go.2.5", "name": "Context (cancellation, timeout, values)", "minutes": 60 },
+        { "id": "go.2.6", "name": "Padrões: worker pool, fan-out/fan-in, pipeline", "minutes": 90 }
+      ],
+      "exercises": [
+        { "id": "ex.go.2.a", "name": "Worker pool processando jobs", "type": "lab" },
+        { "id": "ex.go.2.b", "name": "Web crawler concorrente com context", "type": "lab" },
+        { "id": "ex.go.2.c", "name": "Pipeline de processamento (3 estágios)", "type": "lab" }
+      ],
+      "checkpoint": "Programa concorrente sem race condition (validado com -race)."
+    },
+    {
+      "id": "go.3",
+      "name": "Web e APIs em Go",
+      "estimated_minutes": 300,
+      "topics": [
+        { "id": "go.3.1", "name": "net/http — server e cliente", "minutes": 60 },
+        { "id": "go.3.2", "name": "Routers (chi, gin, echo, gorilla/mux)", "minutes": 45 },
+        { "id": "go.3.3", "name": "JSON encoding/decoding", "minutes": 30 },
+        { "id": "go.3.4", "name": "Middleware patterns", "minutes": 45 },
+        { "id": "go.3.5", "name": "Database/sql + drivers (pgx, mysql)", "minutes": 60 },
+        { "id": "go.3.6", "name": "Validação, configuração (viper)", "minutes": 30 },
+        { "id": "go.3.7", "name": "gRPC e Protocol Buffers básico", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.go.3.a", "name": "API REST CRUD com chi + Postgres", "type": "lab" },
+        { "id": "ex.go.3.b", "name": "Cliente HTTP que consome API externa", "type": "lab" }
+      ],
+      "checkpoint": "API REST em Go dockerizada e deployada localmente."
+    },
+    {
+      "id": "go.4",
+      "name": "Tools, Tests e Production",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "go.4.1", "name": "Testing (testing, table-driven tests)", "minutes": 60 },
+        { "id": "go.4.2", "name": "Benchmarks e profiling (pprof)", "minutes": 45 },
+        { "id": "go.4.3", "name": "go modules e versionamento", "minutes": 30 },
+        { "id": "go.4.4", "name": "Linting (golangci-lint)", "minutes": 30 },
+        { "id": "go.4.5", "name": "Build cross-platform e static binary", "minutes": 30 },
+        { "id": "go.4.6", "name": "Logging estruturado (slog, zap)", "minutes": 30 },
+        { "id": "go.4.7", "name": "Operator pattern (Kubernetes operator básico)", "minutes": 15 }
+      ],
+      "exercises": [
+        { "id": "ex.go.4.a", "name": "Suite de tests >70% coverage com table-driven", "type": "lab" },
+        { "id": "ex.go.4.b", "name": "CLI app empacotada com goreleaser", "type": "lab" }
+      ],
+      "checkpoint": "Binário Go estático rodando em distroless container <10MB."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.go.1",
+      "name": "🦫 SecureOps CLI em Go",
+      "level": "portfolio",
+      "tags": ["Go", "CLI", "DevOps"],
+      "description": "CLI em Go que orquestra deploys, scans de segurança e checks de saúde em clusters K8s. Faz parte do SecureOps Platform.",
+      "consumes_modules": ["go.1", "go.2", "go.3", "go.4"],
+      "deliverables": ["Binário static publicado", "GitHub releases via goreleaser", "Demo gif"]
+    }
+  ]
+}

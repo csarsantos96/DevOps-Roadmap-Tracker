@@ -1,0 +1,123 @@
+{
+  "id": "pos-fiap",
+  "name": "Pós FIAP — Cyber 10CRTT",
+  "icon": "🎓",
+  "color": "#ed145b",
+  "tagline": "Pós-graduação em Cybersecurity (Defensive + Offensive)",
+  "estimated_hours": 240,
+  "source_courses": ["FIAP — Pós Cybersecurity 10CRTT"],
+  "prereqs": ["linux:1", "redes:1"],
+  "feeds_certs": ["ejpt", "secplus"],
+  "phase_relevance": ["fase1", "fase2", "fase3", "fase4", "fase5"],
+  "modules": [
+    {
+      "id": "pos.1",
+      "name": "Buffer Overflow Challenge",
+      "source": "FIAP - Aula gravada + Challenge",
+      "estimated_minutes": 720,
+      "deadline": "2026-05-25",
+      "topics": [
+        { "id": "pos.1.1", "name": "Stack memory model e calling conventions", "minutes": 60 },
+        { "id": "pos.1.2", "name": "Smashing the stack (Aleph One classic)", "minutes": 60 },
+        { "id": "pos.1.3", "name": "ESP, EBP, EIP — control flow hijacking", "minutes": 90 },
+        { "id": "pos.1.4", "name": "Shellcode básico — execve /bin/sh", "minutes": 90 },
+        { "id": "pos.1.5", "name": "ASLR, NX bit, Stack Canaries", "minutes": 60 },
+        { "id": "pos.1.6", "name": "Setup do lab (Kali + binário vulnerável)", "minutes": 60 },
+        { "id": "pos.1.7", "name": "Fuzzing pra encontrar offset", "minutes": 60 },
+        { "id": "pos.1.8", "name": "Construção do payload com pattern_create", "minutes": 90 },
+        { "id": "pos.1.9", "name": "Resolução do challenge — entrega final", "minutes": 150 }
+      ],
+      "exercises": [
+        { "id": "ex.pos.1.a", "name": "🚨 ENTREGA: Buffer Overflow Challenge", "type": "lab" },
+        { "id": "ex.pos.1.b", "name": "Documentar exploit em PDF/markdown", "type": "lab" }
+      ],
+      "checkpoint": "Challenge entregue até 25/05/2026 23:59 ✅"
+    },
+    {
+      "id": "pos.2",
+      "name": "Pós-Exploração em Linux",
+      "source": "FIAP - Aula ao vivo 28/05/2026",
+      "estimated_minutes": 480,
+      "live_class": "2026-05-28T18:00",
+      "topics": [
+        { "id": "pos.2.1", "name": "Enumeração após acesso inicial", "minutes": 45 },
+        { "id": "pos.2.2", "name": "Privilege escalation (SUID, sudo misconfig)", "minutes": 90 },
+        { "id": "pos.2.3", "name": "Linux capabilities exploits", "minutes": 60 },
+        { "id": "pos.2.4", "name": "Kernel exploits (DirtyCow style)", "minutes": 45 },
+        { "id": "pos.2.5", "name": "Persistência (cron, systemd services, .bashrc)", "minutes": 60 },
+        { "id": "pos.2.6", "name": "Pivoting e lateral movement", "minutes": 60 },
+        { "id": "pos.2.7", "name": "Ferramentas: linpeas, LinEnum, pspy", "minutes": 60 },
+        { "id": "pos.2.8", "name": "Lab prático com VM vulnerável", "minutes": 60 }
+      ],
+      "exercises": [
+        { "id": "ex.pos.2.a", "name": "Resolver máquina HackTheBox tier easy de Linux", "type": "lab" },
+        { "id": "ex.pos.2.b", "name": "Linpeas em ambiente real e análise do output", "type": "lab" }
+      ],
+      "checkpoint": "Compreender 5 técnicas de PrivEsc e aplicar pelo menos 2."
+    },
+    {
+      "id": "pos.3",
+      "name": "Evasão de Defesas — Como o Malware se Disfarça",
+      "source": "FIAP - Aula ao vivo 23/06/2026",
+      "estimated_minutes": 480,
+      "live_class": "2026-06-23T18:00",
+      "topics": [
+        { "id": "pos.3.1", "name": "Detecção: signatures vs heurística vs comportamento", "minutes": 60 },
+        { "id": "pos.3.2", "name": "Anti-debugging techniques", "minutes": 60 },
+        { "id": "pos.3.3", "name": "Anti-VM / Anti-sandbox", "minutes": 45 },
+        { "id": "pos.3.4", "name": "Code obfuscation e packers", "minutes": 60 },
+        { "id": "pos.3.5", "name": "Process injection (DLL injection, Process Hollowing)", "minutes": 90 },
+        { "id": "pos.3.6", "name": "Living off the Land (LOLBAS / LOLBins)", "minutes": 45 },
+        { "id": "pos.3.7", "name": "AMSI bypass e PowerShell evasion", "minutes": 60 },
+        { "id": "pos.3.8", "name": "EDR bypass — visão geral", "minutes": 60 }
+      ],
+      "exercises": [
+        { "id": "ex.pos.3.a", "name": "Análise estática de malware sample (lab)", "type": "lab" },
+        { "id": "ex.pos.3.b", "name": "Implementar técnica de obfuscation simples", "type": "lab" }
+      ],
+      "checkpoint": "Documentar 3 técnicas de evasão e como detectá-las."
+    },
+    {
+      "id": "pos.4",
+      "name": "Grupos de Estudos",
+      "source": "FIAP - Encontros ao vivo (21/05 e 18/06/2026)",
+      "estimated_minutes": 220,
+      "topics": [
+        { "id": "pos.4.1", "name": "Grupo 21/05 — preparação Buffer Overflow", "minutes": 110 },
+        { "id": "pos.4.2", "name": "Grupo 18/06 — discussão Pós-Exploração", "minutes": 110 }
+      ],
+      "exercises": [
+        { "id": "ex.pos.4.a", "name": "Participar ativamente dos grupos de estudos", "type": "lab" }
+      ],
+      "checkpoint": "Comparecer e contribuir nos 2 grupos."
+    },
+    {
+      "id": "pos.5",
+      "name": "Próximas aulas e projetos (a definir)",
+      "source": "FIAP - cronograma vai sendo liberado",
+      "estimated_minutes": 1200,
+      "topics": [
+        { "id": "pos.5.1", "name": "Aula a definir 1", "minutes": 240 },
+        { "id": "pos.5.2", "name": "Aula a definir 2", "minutes": 240 },
+        { "id": "pos.5.3", "name": "Aula a definir 3", "minutes": 240 },
+        { "id": "pos.5.4", "name": "Aula a definir 4", "minutes": 240 },
+        { "id": "pos.5.5", "name": "TCC / Projeto final", "minutes": 240 }
+      ],
+      "exercises": [
+        { "id": "ex.pos.5.a", "name": "Atualizar tópicos conforme aulas forem liberadas", "type": "lab" }
+      ],
+      "checkpoint": "Manter este módulo sincronizado com o cronograma da FIAP."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.pos.1",
+      "name": "🎓 Portfolio Cyber FIAP",
+      "level": "portfolio",
+      "tags": ["Cybersecurity", "Pentest", "Forensics"],
+      "description": "Repositório com writeups de todos os challenges da pós: Buffer Overflow, máquinas resolvidas, análises de malware, etc.",
+      "consumes_modules": ["pos.1", "pos.2", "pos.3"],
+      "deliverables": ["Repo público", "Writeups em markdown", "PoCs documentadas"]
+    }
+  ]
+}

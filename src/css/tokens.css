@@ -1,0 +1,27 @@
+/* tokens.css — variáveis globais */
+:root {
+  --bg: #07070f;
+  --s1: #0d0d1a;
+  --s2: #111120;
+  --s3: #16162a;
+  --border: #1e1e32;
+  --border2: #28284a;
+  --text: #c8c8e0;
+  --muted: #6868a0;
+  --muted2: #484868;
+  --bright: #eeeeff;
+  --accent: #7c6dfa;
+  --pos: #22c55e;
+  --warn: #f59e0b;
+  --err: #ef4444;
+  --info: #3b82f6;
+
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --radius-l: 16px;
+  --radius-xl: 24px;
+
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', 'Fira Code', monospace;
+  --font-display: 'Barlow Condensed', 'Bebas Neue', sans-serif;
+  --font-body: 'Barlow', system-ui, -apple-system, sans-serif;
+}

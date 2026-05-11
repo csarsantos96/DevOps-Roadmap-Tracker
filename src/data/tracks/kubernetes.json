@@ -1,0 +1,212 @@
+{
+  "id": "kubernetes",
+  "name": "Kubernetes (PICK)",
+  "icon": "⎈",
+  "color": "#326ce5",
+  "tagline": "Descomplicando o Kubernetes — PICK / LinuxTips",
+  "estimated_hours": 240,
+  "source_courses": ["LinuxTips PICK — Descomplicando o Kubernetes 2024 (você está cursando)", "Descomplicando o Helm", "Descomplicando o GitOps com ArgoCD", "Kubernetes.io docs"],
+  "prereqs": ["docker:6", "linux:3"],
+  "feeds_certs": ["kcna", "kcsa", "ckad", "cka", "cks"],
+  "phase_relevance": ["fase2", "fase3", "fase4", "fase5"],
+  "modules": [
+    {
+      "id": "k8s.1",
+      "name": "Módulo 1 — Fundamentos de Containers e K8s",
+      "source": "PICK / Descomplicando Kubernetes - Módulo 1",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "k8s.1.1", "name": "Por que Kubernetes? Histórico (Borg, Omega, K8s)", "minutes": 30 },
+        { "id": "k8s.1.2", "name": "Arquitetura: Control Plane (api-server, etcd, scheduler, controller-manager)", "minutes": 90 },
+        { "id": "k8s.1.3", "name": "Workers: kubelet, kube-proxy, container runtime (containerd)", "minutes": 60 },
+        { "id": "k8s.1.4", "name": "Setup local: kind, minikube, k3d", "minutes": 60 },
+        { "id": "k8s.1.5", "name": "kubectl — comandos essenciais", "minutes": 60 },
+        { "id": "k8s.1.6", "name": "API objects, manifests YAML, namespaces", "minutes": 60 }
+      ],
+      "exercises": [
+        { "id": "ex.k8s.1.a", "name": "Subir cluster kind 3 nodes (1 master, 2 workers)", "type": "lab" },
+        { "id": "ex.k8s.1.b", "name": "Explorar control plane com kubectl get componentstatuses", "type": "lab" }
+      ],
+      "checkpoint": "Explicar o que cada componente do control plane faz."
+    },
+    {
+      "id": "k8s.2",
+      "name": "Módulo 2 — Pods, Recursos e Probes",
+      "source": "PICK / Descomplicando Kubernetes - Módulo 2",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "k8s.2.1", "name": "Pod — unidade mínima, multi-container patterns", "minutes": 60 },
+        { "id": "k8s.2.2", "name": "Init containers e sidecars", "minutes": 45 },
+        { "id": "k8s.2.3", "name": "Resource requests e limits (CPU, memory)", "minutes": 60 },
+        { "id": "k8s.2.4", "name": "QoS classes (Guaranteed, Burstable, BestEffort)", "minutes": 30 },
+        { "id": "k8s.2.5", "name": "Liveness, Readiness, Startup probes", "minutes": 60 },
+        { "id": "k8s.2.6", "name": "Lifecycle hooks (postStart, preStop)", "minutes": 30 },
+        { "id": "k8s.2.7", "name": "Pod scheduling — visão geral", "minutes": 30 },
+        { "id": "k8s.2.8", "name": "Troubleshooting Pods (CrashLoopBackOff, ImagePullBackOff)", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.k8s.2.a", "name": "Pod com 3 probes corretas em app real", "type": "lab" },
+        { "id": "ex.k8s.2.b", "name": "Debugar Pod em CrashLoopBackOff (cenário dado)", "type": "lab" }
+      ],
+      "checkpoint": "Diagnosticar Pod com problema em <5min usando kubectl describe/logs/events."
+    },
+    {
+      "id": "k8s.3",
+      "name": "Módulo 3 — Workloads (Deployments, DaemonSets, Jobs)",
+      "source": "PICK / Descomplicando Kubernetes - Módulo 3",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "k8s.3.1", "name": "ReplicaSets e Deployments", "minutes": 60 },
+        { "id": "k8s.3.2", "name": "Estratégias de rollout (RollingUpdate, Recreate)", "minutes": 60 },
+        { "id": "k8s.3.3", "name": "Rollback e história de revisions", "minutes": 30 },
+        { "id": "k8s.3.4", "name": "DaemonSets — agentes em todo node", "minutes": 30 },
+        { "id": "k8s.3.5", "name": "StatefulSets — apps com identidade", "minutes": 60 },
+        { "id": "k8s.3.6", "name": "Jobs e CronJobs", "minutes": 45 },
+        { "id": "k8s.3.7", "name": "HPA (Horizontal Pod Autoscaler)", "minutes": 45 },
+        { "id": "k8s.3.8", "name": "VPA e Cluster Autoscaler — visão", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.k8s.3.a", "name": "Deploy com rolling update zero-downtime", "type": "lab" },
+        { "id": "ex.k8s.3.b", "name": "CronJob de backup rodando a cada 6h", "type": "lab" },
+        { "id": "ex.k8s.3.c", "name": "HPA escalando app por CPU", "type": "lab" }
+      ],
+      "checkpoint": "Subir, atualizar e fazer rollback de aplicação real sem perder requests."
+    },
+    {
+      "id": "k8s.4",
+      "name": "Módulo 4 — Services, ConfigMaps, Secrets, Ingress",
+      "source": "PICK / Descomplicando Kubernetes - Módulo 4",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "k8s.4.1", "name": "Services: ClusterIP, NodePort, LoadBalancer, ExternalName", "minutes": 60 },
+        { "id": "k8s.4.2", "name": "Headless services e StatefulSets", "minutes": 30 },
+        { "id": "k8s.4.3", "name": "Endpoints e EndpointSlices", "minutes": 30 },
+        { "id": "k8s.4.4", "name": "ConfigMaps — como prover configuração", "minutes": 45 },
+        { "id": "k8s.4.5", "name": "Secrets — boas práticas e limitações", "minutes": 60 },
+        { "id": "k8s.4.6", "name": "Ingress controllers (nginx, traefik)", "minutes": 60 },
+        { "id": "k8s.4.7", "name": "TLS no Ingress + cert-manager", "minutes": 60 },
+        { "id": "k8s.4.8", "name": "External DNS e service discovery", "minutes": 15 }
+      ],
+      "exercises": [
+        { "id": "ex.k8s.4.a", "name": "App + db com ConfigMap + Secret + ingress TLS", "type": "lab" },
+        { "id": "ex.k8s.4.b", "name": "cert-manager emitindo cert Let's Encrypt", "type": "lab" }
+      ],
+      "checkpoint": "App público acessível via HTTPS com cert válido em cluster real."
+    },
+    {
+      "id": "k8s.5",
+      "name": "Módulo 5 — Storage, PV, PVC, StorageClass",
+      "source": "PICK / Descomplicando Kubernetes - Módulo 5",
+      "estimated_minutes": 240,
+      "topics": [
+        { "id": "k8s.5.1", "name": "Volumes: emptyDir, hostPath, configMap", "minutes": 30 },
+        { "id": "k8s.5.2", "name": "PersistentVolume e PersistentVolumeClaim", "minutes": 60 },
+        { "id": "k8s.5.3", "name": "StorageClass e dynamic provisioning", "minutes": 45 },
+        { "id": "k8s.5.4", "name": "Access modes (RWO, ROX, RWX, RWOP)", "minutes": 30 },
+        { "id": "k8s.5.5", "name": "Reclaim policies (Retain, Delete, Recycle)", "minutes": 30 },
+        { "id": "k8s.5.6", "name": "CSI drivers — visão geral", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.k8s.5.a", "name": "StatefulSet Postgres com PVC dinâmico", "type": "lab" },
+        { "id": "ex.k8s.5.b", "name": "Migrar dados entre PVCs", "type": "lab" }
+      ],
+      "checkpoint": "Subir DB stateful em K8s com PVC e backup funcionando."
+    },
+    {
+      "id": "k8s.6",
+      "name": "Módulo 6 — RBAC, Network Policies, Segurança",
+      "source": "PICK / Descomplicando Kubernetes - Módulo 6",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "k8s.6.1", "name": "ServiceAccounts e tokens", "minutes": 30 },
+        { "id": "k8s.6.2", "name": "RBAC: Role, ClusterRole, RoleBinding", "minutes": 90 },
+        { "id": "k8s.6.3", "name": "Auditing kubectl auth can-i", "minutes": 30 },
+        { "id": "k8s.6.4", "name": "Network Policies (default deny + allow rules)", "minutes": 60 },
+        { "id": "k8s.6.5", "name": "Pod Security Standards (Privileged, Baseline, Restricted)", "minutes": 60 },
+        { "id": "k8s.6.6", "name": "Taints, Tolerations, Affinity, AntiAffinity", "minutes": 60 },
+        { "id": "k8s.6.7", "name": "Admission Controllers e OPA/Gatekeeper", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.k8s.6.a", "name": "Setup RBAC: dev pode listar pods, admin pode tudo", "type": "lab" },
+        { "id": "ex.k8s.6.b", "name": "Default-deny + allow seletivo com NetworkPolicy", "type": "lab" }
+      ],
+      "checkpoint": "Cluster com least-privilege RBAC + NetPol bloqueando tráfego não autorizado."
+    },
+    {
+      "id": "k8s.7",
+      "name": "Módulo 7 — Helm, Kustomize, Observabilidade",
+      "source": "PICK / Descomplicando Kubernetes + Descomplicando Helm + Prometheus",
+      "estimated_minutes": 480,
+      "topics": [
+        { "id": "k8s.7.1", "name": "Helm — charts, releases, repos", "minutes": 60 },
+        { "id": "k8s.7.2", "name": "Helm templates e values.yaml", "minutes": 60 },
+        { "id": "k8s.7.3", "name": "Helm hooks e tests", "minutes": 30 },
+        { "id": "k8s.7.4", "name": "Kustomize — overlays, patches, bases", "minutes": 60 },
+        { "id": "k8s.7.5", "name": "Helm vs Kustomize — quando usar cada", "minutes": 30 },
+        { "id": "k8s.7.6", "name": "Kube-Prometheus Stack (Prometheus + Grafana + Alertmanager)", "minutes": 90 },
+        { "id": "k8s.7.7", "name": "ServiceMonitors, PodMonitors, PrometheusRules", "minutes": 60 },
+        { "id": "k8s.7.8", "name": "Logging: Loki, Fluent Bit, OpenTelemetry", "minutes": 60 },
+        { "id": "k8s.7.9", "name": "Tracing: Jaeger, OpenTelemetry", "minutes": 30 }
+      ],
+      "exercises": [
+        { "id": "ex.k8s.7.a", "name": "Criar Helm chart próprio + publicar em repo", "type": "lab" },
+        { "id": "ex.k8s.7.b", "name": "Stack monitoramento completa em cluster", "type": "lab" }
+      ],
+      "checkpoint": "App em produção com metrics + alertas + dashboards customizados."
+    },
+    {
+      "id": "k8s.8",
+      "name": "Módulo 8 — GitOps com ArgoCD",
+      "source": "PICK / Descomplicando GitOps com ArgoCD",
+      "estimated_minutes": 360,
+      "topics": [
+        { "id": "k8s.8.1", "name": "Filosofia GitOps (Weaveworks principles)", "minutes": 30 },
+        { "id": "k8s.8.2", "name": "ArgoCD — instalação e arquitetura", "minutes": 60 },
+        { "id": "k8s.8.3", "name": "Applications, Projects, ApplicationSets", "minutes": 60 },
+        { "id": "k8s.8.4", "name": "Sync waves, hooks e auto-sync policies", "minutes": 60 },
+        { "id": "k8s.8.5", "name": "Multi-cluster e multi-environment", "minutes": 45 },
+        { "id": "k8s.8.6", "name": "Rollbacks via Git", "minutes": 30 },
+        { "id": "k8s.8.7", "name": "ArgoCD vs FluxCD — comparação", "minutes": 30 },
+        { "id": "k8s.8.8", "name": "Estratégias progressive delivery (Argo Rollouts)", "minutes": 45 }
+      ],
+      "exercises": [
+        { "id": "ex.k8s.8.a", "name": "Repo GitOps (app + manifests) deployando via ArgoCD", "type": "lab" },
+        { "id": "ex.k8s.8.b", "name": "Promotion entre dev/stg/prod via PR", "type": "lab" }
+      ],
+      "checkpoint": "Pipeline GitOps end-to-end: PR → merge → ArgoCD sync → app atualizada."
+    },
+    {
+      "id": "k8s.9",
+      "name": "Módulo 9 — CKA Prep (com João Freire)",
+      "source": "PICK - Preparatório CKA/CKAD",
+      "estimated_minutes": 480,
+      "topics": [
+        { "id": "k8s.9.1", "name": "Estrutura da prova CKA — escopo e tempo", "minutes": 30 },
+        { "id": "k8s.9.2", "name": "Cluster architecture e installation", "minutes": 60 },
+        { "id": "k8s.9.3", "name": "ETCD backup e restore", "minutes": 60 },
+        { "id": "k8s.9.4", "name": "Cluster upgrade (kubeadm)", "minutes": 60 },
+        { "id": "k8s.9.5", "name": "Troubleshooting: control plane, kubelet, networking", "minutes": 90 },
+        { "id": "k8s.9.6", "name": "Storage avançado (volumeMode, expand, snapshots)", "minutes": 45 },
+        { "id": "k8s.9.7", "name": "Networking deep-dive (CNI plugins, DNS)", "minutes": 60 },
+        { "id": "k8s.9.8", "name": "Killer.sh simulator — sessões cronometradas", "minutes": 75 }
+      ],
+      "exercises": [
+        { "id": "ex.k8s.9.a", "name": "Killer.sh #1 — completar em 2h", "type": "lab" },
+        { "id": "ex.k8s.9.b", "name": "ETCD backup, deletar tudo, restore", "type": "lab" },
+        { "id": "ex.k8s.9.c", "name": "Upgrade cluster v1.29 → v1.30", "type": "lab" }
+      ],
+      "checkpoint": "Killer.sh ≥ 80% em 2h corridos."
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj.k8s.1",
+      "name": "⎈ Cluster Production-Ready",
+      "level": "portfolio",
+      "tags": ["Kubernetes", "GitOps", "Observability"],
+      "description": "Cluster K8s completo: ArgoCD + Prometheus + Loki + cert-manager + RBAC + NetworkPolicies, declarado em Helm/Kustomize.",
+      "consumes_modules": ["k8s.4", "k8s.6", "k8s.7", "k8s.8"],
+      "deliverables": ["Repo GitOps", "Diagrama de arquitetura", "README inglês"]
+    }
+  ]
+}
