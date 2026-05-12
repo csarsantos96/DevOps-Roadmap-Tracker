@@ -1,0 +1,2546 @@
+<div id="toast"
+    style="position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);background:#1e1e32;border:1px solid #28284a;color:#eeeeff;padding:10px 18px;border-radius:100px;font-family:monospace;font-size:11px;z-index:99999;opacity:0;transition:all .3s;white-space:nowrap;max-width:90vw;text-align:center;pointer-events:none;">
+  </div>
+
+  <nav class="nav">
+    <div class="nav-tab active" onclick="showPanel('home',this)">🏠 Início</div>
+    <div class="nav-tab" onclick="showPanel('planner',this);initPlanner()">📋 Planner</div>
+    <div class="nav-tab" onclick="showPanel('planner-hist',this);renderHistory()">📊 Histórico</div>
+    <div class="nav-tab" onclick="showPanel('fase1',this)">⚡ Fase 1</div>
+    <div class="nav-tab" onclick="showPanel('fase2',this)">🧱 Fase 2</div>
+    <div class="nav-tab" onclick="showPanel('fase3',this)">☁️ Fase 3</div>
+    <div class="nav-tab" onclick="showPanel('fase4',this)">🐍 Fase 4</div>
+    <div class="nav-tab" onclick="showPanel('semana',this)">📅 Semana</div>
+    <div class="nav-tab" onclick="showPanel('regras',this)">⚡ Regras</div>
+    <div class="nav-tab" onclick="showPanel('pick',this)">🐳 PICK</div>
+
+    <div class="nav-tab" onclick="showPanel('cert-home',this)">🎯 Certs</div>
+    <div class="nav-tab" onclick="showPanel('cert-linux',this)">🐧 Linux</div>
+    <div class="nav-tab" onclick="showPanel('cert-containers',this)">🐳 Containers</div>
+    <div class="nav-tab" onclick="showPanel('cert-cloud',this)">☁️ Cloud</div>
+    <div class="nav-tab" onclick="showPanel('cert-k8s',this)">⎈ K8s</div>
+    <div class="nav-tab" onclick="showPanel('cert-iac',this)">⚙️ IaC</div>
+    <div class="nav-tab" onclick="showPanel('cert-sec',this)">🔒 Security</div>
+    <div class="nav-tab" onclick="showPanel('cert-astro',this)">🚀 Astronaut</div>
+    <div class="nav-tab" onclick="showPanel('cert-roadmap',this)">🗺️ Cert Roadmap</div>
+  </nav>
+
+  <!-- HOME -->
+  <div id="home" class="panel active">
+    <div class="hero">
+      <div class="hero-eye">PLANO DE ESTUDOS PESSOAL</div>
+      <div class="hero-title">CESAR<span class="g">'S</span><br>DevOps<span class="g"> Roadmap Tracker</span></div>
+      <div class="hero-sub">Abr → Dez 2025 · 18h–22h seg–sex · sáb 15h–20h<br>Academia 5h30 · Trabalho 7h–16h · Domingo
+        sagrado</div>
+      <div class="hero-goal">🎯 Alemanha ou $5k+/mês remoto — 2026</div>
+      <div class="pills">
+        <div class="pill pill-r">
+          <div class="dot-p" style="background:#ef4444"></div>Pós FIAP challenge: 25/MAI
+        </div>
+        <div class="pill pill-b">
+          <div class="dot-p" style="background:#6366f1"></div>PICK: contínuo até mar/27
+        </div>
+        <div class="pill pill-g">
+          <div class="dot-p" style="background:#22c55e"></div>Alemão: todo dia + sáb 12h
+        </div>
+        <div class="pill pill-a">
+          <div class="dot-p" style="background:#f59e0b"></div>AWS Treina: jun em diante
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="sec-label">// visão geral · 4 fases + encerramento</div>
+      <div class="phase-card">
+        <div class="phase-header ph-pick">
+          <div class="phase-num">FASE 01 · ABR 20 → MAI 25</div>
+          <div class="phase-name">⚡ Deadline Sprint</div>
+          <div class="phase-dates">Entregar challenge Pós FIAP · Recuperar atraso PICK · Redes essencial · Alemão +
+            Inglês todo dia</div>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-header ph-eda">
+          <div class="phase-num">FASE 02 · JUN → JUL</div>
+          <div class="phase-name">🧱 Base Técnica</div>
+          <div class="phase-dates">EDA/C profundo · Redes completo · AWS Treina começa · PICK ritmo · Alemão + Inglês
+          </div>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-header ph-aws">
+          <div class="phase-num">FASE 03 · AGO → SET</div>
+          <div class="phase-name">☁️ Cloud + Certificação</div>
+          <div class="phase-dates">AWS Cloud Practitioner · EDA projetos · Inglês avançado · Alemão B1 · PICK</div>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-header ph-python">
+          <div class="phase-num">FASE 04 · OUT → NOV</div>
+          <div class="phase-name">🐍 Python + Java</div>
+          <div class="phase-dates">Python automação · Java OOP · Portfolio + LinkedIn · Alemão entrevista · PICK</div>
+        </div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-header ph-final">
+          <div class="phase-num">ENCERRAMENTO · DEZ 1 → 25</div>
+          <div class="phase-name">🎄 Super Projeto + Natal</div>
+          <div class="phase-dates">SecureOps Platform — projeto final integrando tudo · 25/dez plano encerra</div>
+        </div>
+      </div>
+      <div class="sec-label">// regras que nunca quebram</div>
+      <div class="rules">
+        <div class="rule">
+          <div class="rule-ico">🇩🇪</div>
+          <div class="rule-title">Alemão todo dia</div>
+          <div class="rule-txt">30min às 21h30. Imóvel. Porta pra Alemanha.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-ico">⛪</div>
+          <div class="rule-title">Domingo sagrado</div>
+          <div class="rule-txt">Igreja + família. Zero estudo. Sem culpa.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-ico">🍺</div>
+          <div class="rule-title">1–2 folgas/mês</div>
+          <div class="rule-txt">Amigos, tio, fazenda. O plano absorve.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-ico">💆</div>
+          <div class="rule-title">Sexta é leve</div>
+          <div class="rule-txt">Pouco conteúdo. Livre a partir das 20h.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FASE 1 -->
+  <div id="fase1" class="panel">
+    <div class="section">
+      <div class="phase-card">
+        <div class="phase-header ph-pick">
+          <div class="phase-num">FASE 01 · ABR 20 → MAI 25 · 5 SEMANAS</div>
+          <div class="phase-name">⚡ Deadline Sprint</div>
+          <div class="phase-dates">Prioridade: challenge Pós FIAP até 25/mai · PICK 3 vídeos/dia · Alemão e Inglês todos
+            os dias</div>
+        </div>
+      </div>
+      <div class="sec-label">// agenda semanal fase 1</div>
+      <div class="agenda-grid">
+        <div class="agenda-day">
+          <div class="ad-day">SEG</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-ingles">18h</span><span class="ad-title">Inglês ao vivo — fixo
+                40min</span></div>
+            <div class="ad-block"><span class="tag t-pick">18h45</span><span class="ad-title">PICK — 3 vídeos
+                Docker/K8s</span></div>
+            <div class="ad-block"><span class="tag t-pos">20h30</span><span class="ad-title">Pós FIAP —
+                leitura/exercício</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">TER</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-pick">18h</span><span class="ad-title">PICK — 3–4 vídeos (foco
+                total)</span></div>
+            <div class="ad-block"><span class="tag t-redes">20h</span><span class="ad-title">Redes essencial — TCP/IP,
+                portas, scanning</span></div>
+            <div class="ad-note">Base obrigatória pro challenge pentest</div>
+            <div class="ad-block"><span class="tag t-ingles">21h</span><span class="ad-title">Inglês passivo — série
+                30min</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">QUA</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-ingles">18h</span><span class="ad-title">Inglês ao vivo — fixo
+                40min</span></div>
+            <div class="ad-block"><span class="tag t-pos">18h45</span><span class="ad-title">Pós FIAP — challenge Buffer
+                Overflow</span></div>
+            <div class="ad-note">A partir 30/abr: challenge é prioridade 1</div>
+            <div class="ad-block"><span class="tag t-alemao">21h</span><span class="ad-title">Alemão 30–40min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">QUI</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-fixo">06h</span><span class="ad-title">Daily Discord — Jefferson
+                15min (fixo até mar/26)</span></div>
+            <div class="ad-block"><span class="tag t-fixo">18h</span><span class="ad-title">Red Team FIAP Zoom
+                18h–19h50</span></div>
+            <div class="ad-block"><span class="tag t-pick">20h</span><span class="ad-title">PICK — 2 vídeos</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">SEX LEVE</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-pick">18h</span><span class="ad-title">PICK — 1 vídeo só</span>
+            </div>
+            <div class="ad-block"><span class="tag t-ingles">19h</span><span class="ad-title">Série/YouTube em inglês —
+                lazer</span></div>
+            <div class="ad-block"><span class="tag t-rest">20h</span><span class="ad-title">Tempo livre — sexta é
+                sua</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 20–30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">SAB</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-fixo">7h ou 9h</span><span class="ad-title">PICK ao vivo — confirma
+                no email</span></div>
+            <div class="ad-block"><span class="tag t-fixo">12h</span><span class="ad-title">Alemão ao vivo com
+                professor</span></div>
+            <div class="ad-block"><span class="tag t-pos">15h</span><span class="ad-title">Pós FIAP — challenge ou
+                conteúdo</span></div>
+            <div class="ad-block"><span class="tag t-pick">18h</span><span class="ad-title">PICK — recuperação de
+                atraso</span></div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">DOM</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-rest">LIVRE</span><span class="ad-title">Igreja + família +
+                descanso — zero estudo</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// checklist fase 1</div>
+      <div class="checklist" id="cl1">
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">PICK Day 2 — Docker prático completo</div>
+            <div class="check-sub">Em andamento</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">PICK Day 3 — Distroless e Segurança</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">PICK Day 4 — Volumes</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">PICK Day 5 — Networks no Docker</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">PICK Day 6 — Docker Compose</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Redes — TCP/IP, portas, scanning</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Pós FIAP — última aula ao vivo 29/abr</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Challenge — VM baixada e configurada</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Challenge — exploit Buffer Overflow desenvolvido</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">🎯 Challenge Pós FIAP — ENTREGUE (25/mai)</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// projetos portfólio fase 1</div>
+      <div class="projects">
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-name">🐳 Pipeline Docker Seguro</div><span class="tag t-proj">PORTFÓLIO</span>
+          </div>
+          <div class="proj-stack"><span class="tag t-pick">Docker</span><span class="tag t-pick">Trivy</span><span
+              class="tag t-pick">GitHub Actions</span></div>
+          <div class="proj-desc">CI/CD que faz build, escaneia vulnerabilidades com Trivy e bloqueia deploy com CVEs
+            críticos. README em inglês.</div>
+          <div class="proj-impact">🎯 DevSecOps na prática — muito valorizado na Europa</div>
+        </div>
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-name">💀 Buffer Overflow Write-up</div><span class="tag t-proj">PORTFÓLIO</span>
+          </div>
+          <div class="proj-stack"><span class="tag t-pos">Red Team</span><span class="tag t-redes">Redes</span></div>
+          <div class="proj-desc">Documentação técnica do challenge em formato CTF write-up. Publica no GitHub e
+            LinkedIn.</div>
+          <div class="proj-impact">🎯 Write-ups = melhor portfólio de segurança ofensiva</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FASE 2 -->
+  <div id="fase2" class="panel">
+    <div class="section">
+      <div class="phase-card">
+        <div class="phase-header ph-eda">
+          <div class="phase-num">FASE 02 · JUN → JUL · 2 MESES</div>
+          <div class="phase-name">🧱 Base Técnica</div>
+          <div class="phase-dates">EDA/C · Redes completo · AWS Treina começa · PICK 2–3/dia · Alemão + Inglês</div>
+        </div>
+      </div>
+      <div class="sec-label">// agenda semanal fase 2</div>
+      <div class="agenda-grid">
+        <div
+          style="background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.2);border-radius:8px;padding:10px 14px;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#fb923c;display:flex;align-items:center;gap:8px;">
+          🏋️ <strong>04h30 acorda · 05h30–06h30 academia · 07h–16h trabalho</strong> — todo dia, fixo</div>
+        <div class="agenda-day">
+          <div class="ad-day">SEG</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-ingles">18h</span><span class="ad-title">Inglês ao vivo
+                40min</span></div>
+            <div class="ad-block"><span class="tag t-eda">18h45</span><span class="ad-title">EDA/C — listas, árvores,
+                grafos</span></div>
+            <div class="ad-block"><span class="tag t-pick">20h30</span><span class="ad-title">PICK — 2–3 vídeos
+                K8s</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">TER</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-eda">18h</span><span class="ad-title">EDA/C — implementação em
+                C</span></div>
+            <div class="ad-block"><span class="tag t-aws">20h</span><span class="ad-title">AWS Treina Brasil</span>
+            </div>
+            <div class="ad-block"><span class="tag t-ingles">21h</span><span class="ad-title">Inglês passivo
+                30min</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">QUA</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-ingles">18h</span><span class="ad-title">Inglês ao vivo
+                40min</span></div>
+            <div class="ad-block"><span class="tag t-redes">18h45</span><span class="ad-title">Redes — OSI, DNS, HTTP,
+                segurança</span></div>
+            <div class="ad-block"><span class="tag t-pick">20h30</span><span class="ad-title">PICK — 2 vídeos</span>
+            </div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">QUI</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-fixo">06h</span><span class="ad-title">Daily Discord — Jefferson
+                15min</span></div>
+            <div class="ad-block"><span class="tag t-eda">18h</span><span class="ad-title">EDA/C — projeto
+                prático</span></div>
+            <div class="ad-block"><span class="tag t-pick">20h</span><span class="ad-title">PICK — 2 vídeos</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">SEX LEVE</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-redes">18h</span><span class="ad-title">Redes — revisão leve</span>
+            </div>
+            <div class="ad-block"><span class="tag t-ingles">19h</span><span class="ad-title">Inglês —
+                entretenimento</span></div>
+            <div class="ad-block"><span class="tag t-rest">20h</span><span class="ad-title">Livre</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 20min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">SAB</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-fixo">7h ou 9h</span><span class="ad-title">PICK ao vivo</span>
+            </div>
+            <div class="ad-block"><span class="tag t-fixo">12h</span><span class="ad-title">Alemão ao vivo com
+                professor</span></div>
+            <div class="ad-block"><span class="tag t-eda">15h</span><span class="ad-title">EDA/C — projeto +
+                GitHub</span></div>
+            <div class="ad-block"><span class="tag t-aws">18h</span><span class="ad-title">AWS Treina</span></div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">DOM</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-rest">LIVRE</span><span class="ad-title">Igreja + família +
+                descanso</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// checklist fase 2</div>
+      <div class="checklist" id="cl2">
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">EDA — Listas encadeadas simples e dupla em C</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">EDA — Árvores Binárias BST em C</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">EDA — Grafos BFS + DFS em C</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Redes — OSI + TCP/IP completo</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Redes — DNS, HTTP/S, TLS</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">AWS Treina — fundamentos cloud iniciados</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">PICK — Kubernetes Days 1–4 completos</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Alemão — A2 consolidado</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">🏖️ Jul — 1 semana de folga merecida</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// projetos portfólio fase 2</div>
+      <div class="projects">
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-name">⛓️ Scanner de Hosts em C</div><span class="tag t-proj">PORTFÓLIO</span>
+          </div>
+          <div class="proj-stack"><span class="tag t-eda">C</span><span class="tag t-eda">Lista Encadeada</span><span
+              class="tag t-redes">Redes</span></div>
+          <div class="proj-desc">Scanner que usa lista encadeada, verifica portas abertas e gera relatório. EDA + Redes
+            num projeto real.</div>
+          <div class="proj-impact">🎯 C + estruturas + redes — combo raro no portfólio</div>
+        </div>
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-name">🌐 Mapa de Rede com Grafos</div><span class="tag t-proj">PORTFÓLIO</span>
+          </div>
+          <div class="proj-stack"><span class="tag t-eda">Grafos C</span><span class="tag t-redes">Topologia</span>
+          </div>
+          <div class="proj-desc">Mapeia topologia de rede com grafos e Dijkstra. Algoritmos clássicos em contexto real.
+          </div>
+          <div class="proj-impact">🎯 Demonstra EDA aplicado em segurança</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FASE 3 -->
+  <div id="fase3" class="panel">
+    <div class="section">
+      <div class="phase-card">
+        <div class="phase-header ph-aws">
+          <div class="phase-num">FASE 03 · AGO → SET · 2 MESES</div>
+          <div class="phase-name">☁️ Cloud + Certificação AWS</div>
+          <div class="phase-dates">AWS Cloud Practitioner · EDA projetos · Inglês avançado · Alemão B1 · PICK</div>
+        </div>
+      </div>
+      <div class="sec-label">// agenda semanal fase 3</div>
+      <div class="agenda-grid">
+        <div
+          style="background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.2);border-radius:8px;padding:10px 14px;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#fb923c;display:flex;align-items:center;gap:8px;">
+          🏋️ <strong>04h30 acorda · 05h30–06h30 academia · 07h–16h trabalho</strong> — todo dia, fixo</div>
+        <div class="agenda-day">
+          <div class="ad-day">SEG</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-ingles">18h</span><span class="ad-title">Inglês ao vivo + mock
+                interview técnica</span></div>
+            <div class="ad-block"><span class="tag t-aws">18h45</span><span class="ad-title">AWS — Cloud
+                Practitioner</span></div>
+            <div class="ad-block"><span class="tag t-pick">21h</span><span class="ad-title">PICK — 2 vídeos</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min —
+                vocabulário TI</span></div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">TER</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-aws">18h</span><span class="ad-title">AWS — simulados e labs</span>
+            </div>
+            <div class="ad-block"><span class="tag t-eda">20h</span><span class="ad-title">EDA — projeto
+                portfólio</span></div>
+            <div class="ad-block"><span class="tag t-ingles">21h</span><span class="ad-title">Inglês passivo
+                30min</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">QUA</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-ingles">18h</span><span class="ad-title">Inglês ao vivo — foco
+                conversação</span></div>
+            <div class="ad-block"><span class="tag t-aws">18h45</span><span class="ad-title">AWS — EC2, S3, VPC,
+                IAM</span></div>
+            <div class="ad-block"><span class="tag t-pick">21h</span><span class="ad-title">PICK — 2 vídeos</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">QUI</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-fixo">06h</span><span class="ad-title">Daily Discord — Jefferson
+                15min</span></div>
+            <div class="ad-block"><span class="tag t-aws">18h</span><span class="ad-title">AWS — simulado
+                completo</span></div>
+            <div class="ad-block"><span class="tag t-pick">20h</span><span class="ad-title">PICK — 2 vídeos</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão — conversação
+                técnica</span></div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">SEX LEVE</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-aws">18h</span><span class="ad-title">AWS — revisão 1 tópico</span>
+            </div>
+            <div class="ad-block"><span class="tag t-ingles">19h</span><span class="ad-title">Inglês —
+                entretenimento</span></div>
+            <div class="ad-block"><span class="tag t-rest">20h</span><span class="ad-title">Livre</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 20min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">SAB</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-fixo">7h ou 9h</span><span class="ad-title">PICK ao vivo</span>
+            </div>
+            <div class="ad-block"><span class="tag t-fixo">12h</span><span class="ad-title">Alemão ao vivo com
+                professor</span></div>
+            <div class="ad-block"><span class="tag t-aws">15h</span><span class="ad-title">AWS — labs + portfólio</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">DOM</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-rest">LIVRE</span><span class="ad-title">Igreja + família +
+                descanso</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// checklist fase 3</div>
+      <div class="checklist" id="cl3">
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">AWS — EC2, S3, VPC, IAM dominados</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">AWS — RDS, Lambda, CloudWatch</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">🎯 AWS Cloud Practitioner — APROVADO</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">PICK — Kubernetes Days 5–8 completos</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Inglês — mock interview técnica</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Alemão — B1 · vocabulário TI em alemão</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">LinkedIn em inglês e alemão</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// projeto portfólio fase 3</div>
+      <div class="projects">
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-name">☁️ Infra Segura na AWS</div><span class="tag t-proj">PORTFÓLIO</span>
+          </div>
+          <div class="proj-stack"><span class="tag t-aws">AWS</span><span class="tag t-aws">Terraform</span><span
+              class="tag t-pick">Docker</span><span class="tag t-pick">K8s</span></div>
+          <div class="proj-desc">Deploy containerizado na AWS com VPC privada, IAM least privilege, CloudWatch e CI/CD
+            com Trivy.</div>
+          <div class="proj-impact">🎯 DevSecOps cloud — o que empresas europeias buscam</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FASE 4 -->
+  <div id="fase4" class="panel">
+    <div class="section">
+      <div class="phase-card">
+        <div class="phase-header ph-python">
+          <div class="phase-num">FASE 04 · OUT → NOV · 2 MESES</div>
+          <div class="phase-name">🐍 Python + Java + Portfolio</div>
+          <div class="phase-dates">Python automação · Java OOP · Portfolio completo · Alemão entrevista · PICK · Inglês
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// agenda semanal fase 4</div>
+      <div class="agenda-grid">
+        <div
+          style="background:rgba(249,115,22,.06);border:1px solid rgba(249,115,22,.2);border-radius:8px;padding:10px 14px;margin-bottom:6px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:#fb923c;display:flex;align-items:center;gap:8px;">
+          🏋️ <strong>04h30 acorda · 05h30–06h30 academia · 07h–16h trabalho</strong> — todo dia, fixo</div>
+        <div class="agenda-day">
+          <div class="ad-day">SEG</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-ingles">18h</span><span class="ad-title">Inglês ao vivo</span>
+            </div>
+            <div class="ad-block"><span class="tag t-python">18h45</span><span class="ad-title">Python — scripts,
+                automação, segurança</span></div>
+            <div class="ad-block"><span class="tag t-pick">21h</span><span class="ad-title">PICK — 2 vídeos</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão — prep
+                entrevista</span></div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">TER</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-python">18h</span><span class="ad-title">Python — projeto
+                prático</span></div>
+            <div class="ad-block"><span class="tag t-python">20h</span><span class="ad-title">Java — OOP,
+                estruturas</span></div>
+            <div class="ad-block"><span class="tag t-ingles">21h</span><span class="ad-title">Inglês passivo
+                30min</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">QUA</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-ingles">18h</span><span class="ad-title">Inglês ao vivo</span>
+            </div>
+            <div class="ad-block"><span class="tag t-python">18h45</span><span class="ad-title">Java — Spring
+                básico</span></div>
+            <div class="ad-block"><span class="tag t-pick">21h</span><span class="ad-title">PICK — 2 vídeos</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão — simulação
+                entrevista</span></div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">QUI</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-fixo">06h</span><span class="ad-title">Daily Discord — Jefferson
+                15min</span></div>
+            <div class="ad-block"><span class="tag t-python">18h</span><span class="ad-title">Python/Java — super
+                projeto SecureOps</span></div>
+            <div class="ad-block"><span class="tag t-pick">20h</span><span class="ad-title">PICK — 2 vídeos</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 30min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">SEX LEVE</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-python">18h</span><span class="ad-title">1 exercício Python ou
+                Java</span></div>
+            <div class="ad-block"><span class="tag t-ingles">19h</span><span class="ad-title">Inglês —
+                entretenimento</span></div>
+            <div class="ad-block"><span class="tag t-rest">20h</span><span class="ad-title">Livre</span></div>
+            <div class="ad-block"><span class="tag t-alemao">21h30</span><span class="ad-title">Alemão 20min</span>
+            </div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">SAB</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-fixo">7h ou 9h</span><span class="ad-title">PICK ao vivo</span>
+            </div>
+            <div class="ad-block"><span class="tag t-fixo">12h</span><span class="ad-title">Alemão ao vivo — simulação
+                entrevista</span></div>
+            <div class="ad-block"><span class="tag t-python">15h</span><span class="ad-title">Super projeto
+                SecureOps</span></div>
+          </div>
+        </div>
+        <div class="agenda-day">
+          <div class="ad-day">DOM</div>
+          <div class="ad-content">
+            <div class="ad-block"><span class="tag t-rest">LIVRE</span><span class="ad-title">Igreja + família +
+                descanso</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// checklist fase 4</div>
+      <div class="checklist" id="cl4">
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Python — scripts de automação</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Python — ferramentas segurança (Scapy, requests)</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Java — OOP dominado</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Java — Spring Boot básico</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">PICK — Days 9–12 completos</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Alemão — entrevista técnica simulada com professor</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">GitHub — 4+ projetos com README em inglês</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">LinkedIn em inglês + alemão</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// projetos portfólio fase 4</div>
+      <div class="projects">
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-name">🐍 Security Automation Toolkit</div><span class="tag t-proj">PORTFÓLIO</span>
+          </div>
+          <div class="proj-stack"><span class="tag t-python">Python</span><span class="tag t-redes">Redes</span><span
+              class="tag t-pos">Red Team</span></div>
+          <div class="proj-desc">Scripts Python: port scanner, banner grabber, brute force detector, log analyzer.
+            Documentado em inglês.</div>
+          <div class="proj-impact">🎯 Python + segurança = muito valorizado na Europa</div>
+        </div>
+        <div class="project-card">
+          <div class="proj-header">
+            <div class="proj-name">☕ API REST de Monitoramento</div><span class="tag t-proj">PORTFÓLIO</span>
+          </div>
+          <div class="proj-stack"><span class="tag t-python">Java</span><span class="tag t-python">Spring
+              Boot</span><span class="tag t-aws">AWS</span><span class="tag t-pick">Docker</span></div>
+          <div class="proj-desc">API REST em Java/Spring pra monitorar serviços. Deploy na AWS com Docker.</div>
+          <div class="proj-impact">🎯 Java + Spring + AWS = stack padrão na Alemanha</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEMANA -->
+  <div id="semana" class="panel">
+    <div class="section">
+      <div class="sec-label">// 🏋️ academia — marque cada treino da semana</div>
+      <div
+        style="background:var(--s1);border:1px solid rgba(249,115,22,.3);border-radius:14px;overflow:hidden;margin-bottom:16px;">
+        <div
+          style="padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--bright);">
+              🏋️ Academia — 05h30 todo dia</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);">04h30 acorda ·
+              05h30–06h30 treino · 07h trabalho</div>
+          </div>
+          <div id="gym-streak"
+            style="font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:700;color:#fb923c;">0/7</div>
+        </div>
+        <div style="padding:12px 16px;">
+          <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:12px;" id="gym-days">
+            <div onclick="toggleGym(this,'seg')" data-day="seg"
+              style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;background:var(--s2);border:1px solid var(--border2);border-radius:8px;transition:all .15s;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);">SEG</div>
+              <div style="font-size:16px;">🏋️</div>
+              <div class="gym-check"
+                style="width:14px;height:14px;border-radius:3px;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;">
+              </div>
+            </div>
+            <div onclick="toggleGym(this,'ter')" data-day="ter"
+              style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;background:var(--s2);border:1px solid var(--border2);border-radius:8px;transition:all .15s;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);">TER</div>
+              <div style="font-size:16px;">🏋️</div>
+              <div class="gym-check"
+                style="width:14px;height:14px;border-radius:3px;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;">
+              </div>
+            </div>
+            <div onclick="toggleGym(this,'qua')" data-day="qua"
+              style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;background:var(--s2);border:1px solid var(--border2);border-radius:8px;transition:all .15s;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);">QUA</div>
+              <div style="font-size:16px;">🏋️</div>
+              <div class="gym-check"
+                style="width:14px;height:14px;border-radius:3px;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;">
+              </div>
+            </div>
+            <div onclick="toggleGym(this,'qui')" data-day="qui"
+              style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;background:var(--s2);border:1px solid var(--border2);border-radius:8px;transition:all .15s;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);">QUI</div>
+              <div style="font-size:16px;">🏋️</div>
+              <div class="gym-check"
+                style="width:14px;height:14px;border-radius:3px;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;">
+              </div>
+            </div>
+            <div onclick="toggleGym(this,'sex')" data-day="sex"
+              style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;background:var(--s2);border:1px solid var(--border2);border-radius:8px;transition:all .15s;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);">SEX</div>
+              <div style="font-size:16px;">🏋️</div>
+              <div class="gym-check"
+                style="width:14px;height:14px;border-radius:3px;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;">
+              </div>
+            </div>
+            <div onclick="toggleGym(this,'sab')" data-day="sab"
+              style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;background:var(--s2);border:1px solid var(--border2);border-radius:8px;transition:all .15s;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);">SÁB</div>
+              <div style="font-size:16px;">🏋️</div>
+              <div class="gym-check"
+                style="width:14px;height:14px;border-radius:3px;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;">
+              </div>
+            </div>
+            <div onclick="toggleGym(this,'dom')" data-day="dom"
+              style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;background:var(--s2);border:1px solid var(--border2);border-radius:8px;transition:all .15s;">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);">DOM</div>
+              <div style="font-size:16px;">🏋️</div>
+              <div class="gym-check"
+                style="width:14px;height:14px;border-radius:3px;border:2px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:#000;">
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div id="gym-msg" style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);">Toque nos
+              dias que treinou 💪</div>
+            <button onclick="resetGym()"
+              style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);background:none;border:1px solid var(--border2);border-radius:6px;padding:4px 8px;cursor:pointer;">reset
+              semana</button>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// semana tipo · modelo geral</div>
+      <div class="day-card">
+        <div class="day-hd">
+          <div>
+            <div class="day-name">Segunda-feira</div>
+            <div class="day-vibe">Inglês ao vivo + estudo principal</div>
+          </div><span class="tag t-ingles">AO VIVO</span>
+        </div>
+        <div class="day-body">
+          <div class="blk">
+            <div class="blk-t">18h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-fixo">FIXO</span><span class="tag t-ingles">INGLÊS</span><span
+                  class="blk-title">Aula ao vivo 40min</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">18h45</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="blk-title">Estudo principal da fase</span></div>
+              <div class="blk-note">2h foco. Feynman no final.</div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">21h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-pick">PICK</span><span class="blk-title">2 vídeos</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">21h30</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-fixo">TODO DIA</span><span class="tag t-alemao">ALEMÃO</span><span
+                  class="blk-title">30min — imóvel</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-hd">
+          <div>
+            <div class="day-name">Quarta-feira</div>
+            <div class="day-vibe">Inglês ao vivo + conteúdo secundário</div>
+          </div><span class="tag t-ingles">AO VIVO</span>
+        </div>
+        <div class="day-body">
+          <div class="blk">
+            <div class="blk-t">18h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-fixo">FIXO</span><span class="tag t-ingles">INGLÊS</span><span
+                  class="blk-title">Aula ao vivo 40min</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">18h45</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="blk-title">Conteúdo secundário da fase</span></div>
+              <div class="blk-note">2h. Alterna com segunda.</div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">21h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-pick">PICK</span><span class="blk-title">2 vídeos</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">21h30</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-fixo">TODO DIA</span><span class="tag t-alemao">ALEMÃO</span><span
+                  class="blk-title">30min</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-hd">
+          <div>
+            <div class="day-name">Quinta-feira</div>
+            <div class="day-vibe">Daily 6h + PICK + Alemão</div>
+          </div><span class="tag t-fixo">DAILY 6H</span>
+        </div>
+        <div class="day-body">
+          <div class="blk">
+            <div class="blk-t">06h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-fixo">FIXO ATÉ MAR/26</span><span class="blk-title">Daily Discord
+                  — Jefferson 15min</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">18h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="blk-title">Estudo da fase (ou Zoom FIAP na fase 1)</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">20h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-pick">PICK</span><span class="blk-title">2–3 vídeos</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">21h30</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-fixo">TODO DIA</span><span class="tag t-alemao">ALEMÃO</span><span
+                  class="blk-title">30min</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-hd">
+          <div>
+            <div class="day-name">Sexta-feira</div>
+            <div class="day-vibe">Dia leve — respira</div>
+          </div><span class="tag t-rest">LEVE</span>
+        </div>
+        <div class="day-body">
+          <div class="blk">
+            <div class="blk-t">18h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="blk-title">1 vídeo PICK ou revisão leve</span></div>
+              <div class="blk-note">45min máximo. Sem pressão.</div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">19h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-ingles">INGLÊS</span><span class="blk-title">Série, filme, YouTube
+                  — lazer</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">20h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-rest">LIVRE</span><span class="blk-title">Sexta pertence a
+                  você</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">21h30</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-fixo">TODO DIA</span><span class="tag t-alemao">ALEMÃO</span><span
+                  class="blk-title">20–30min revisão</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="day-card">
+        <div class="day-hd">
+          <div>
+            <div class="day-name">Sábado</div>
+            <div class="day-vibe">PICK ao vivo + Alemão 12h + tarde produtiva</div>
+          </div><span class="tag t-alemao">AULA 12H</span>
+        </div>
+        <div class="day-body">
+          <div class="blk">
+            <div class="blk-t">7h/9h</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-fixo">FIXO</span><span class="tag t-pick">PICK</span><span
+                  class="blk-title">LINUXtips ao vivo — confirma no email</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">12h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="tag t-fixo">FIXO</span><span class="tag t-alemao">ALEMÃO</span><span
+                  class="blk-title">Aula ao vivo com professor</span></div>
+              <div class="blk-note">Prioridade máxima. Chega com 1 dúvida.</div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">15h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="blk-title">Estudo principal da fase</span></div>
+            </div>
+          </div>
+          <div class="blk-sep"></div>
+          <div class="blk">
+            <div class="blk-t">18h00</div>
+            <div class="blk-c">
+              <div class="blk-top"><span class="blk-title">Projeto portfólio ou PICK</span></div>
+              <div class="blk-note">Até 20h. Depois é seu.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="rest-banner">
+        <div class="rest-ico">⛪</div>
+        <div class="rest-msg"><strong style="color:var(--bright);">Domingo — sagrado.</strong><br>Igreja + família +
+          descanso total.<br>Zero estudo. Zero culpa.<br><span style="color:var(--accent);">Quem descansa aprende mais
+            rápido.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGRAS -->
+  <div id="regras" class="panel">
+    <div class="section">
+      <div class="sec-label">// regras que nunca quebram</div>
+      <div class="rules" style="margin-bottom:14px;">
+        <div class="rule">
+          <div class="rule-ico">🇩🇪</div>
+          <div class="rule-title">Alemão todo dia</div>
+          <div class="rule-txt">30min às 21h30. Imóvel. Porta pra Alemanha.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-ico">📌</div>
+          <div class="rule-title">Fixos não movem</div>
+          <div class="rule-txt">Inglês seg/qua 18h. Alemão sáb 12h. PICK sáb manhã. Daily qui 6h.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-ico">⛪</div>
+          <div class="rule-title">Domingo sagrado</div>
+          <div class="rule-txt">Igreja + família. Zero estudo. Sem culpa.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-ico">🍺</div>
+          <div class="rule-title">1–2 folgas/mês</div>
+          <div class="rule-txt">Amigos, tio, fazenda. O plano absorve.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-ico">🌙</div>
+          <div class="rule-title">22h é o fim</div>
+          <div class="rule-txt">Você acorda 4h30. Dormir é parte do plano.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-ico">🏋️</div>
+          <div class="rule-title">Academia não mexe</div>
+          <div class="rule-txt">5h30–6h30. Saúde mental = base de tudo.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-ico">💆</div>
+          <div class="rule-title">Sexta é leve</div>
+          <div class="rule-txt">1 vídeo só. Livre a partir das 20h.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-ico">🌾</div>
+          <div class="rule-title">Vida acontece</div>
+          <div class="rule-txt">Saída com tio, fazenda — vai sem culpa.</div>
+        </div>
+      </div>
+      <div class="sec-label">// super projeto final · dez 2025</div>
+      <div
+        style="background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(34,197,94,.08));border:1px solid rgba(251,191,36,.25);border-radius:16px;padding:20px;">
+        <div
+          style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--gold);margin-bottom:8px;">
+          PROJETO FINAL · DEZ 2025</div>
+        <div
+          style="font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:var(--bright);margin-bottom:10px;line-height:1;">
+          🚀 SecureOps Platform</div>
+        <div style="font-size:13px;color:var(--text);line-height:1.6;margin-bottom:12px;">Plataforma que integra tudo
+          que você aprendeu. O projeto principal do seu LinkedIn e GitHub.</div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;"><span
+            class="tag t-python">Python</span><span class="tag t-python">Java/Spring</span><span
+            class="tag t-pick">Docker</span><span class="tag t-pick">Kubernetes</span><span
+            class="tag t-aws">AWS</span><span class="tag t-pos">Red Team</span><span class="tag t-eda">C/EDA</span><span
+            class="tag t-redes">Redes</span></div>
+        <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;">
+          <div style="display:flex;gap:8px;font-size:12px;color:var(--text);"><span
+              style="color:var(--gold);">→</span>Scanner de hosts em C + lista encadeada + SQLite</div>
+          <div style="display:flex;gap:8px;font-size:12px;color:var(--text);"><span
+              style="color:var(--gold);">→</span>API REST em Java/Spring que consome o scanner</div>
+          <div style="display:flex;gap:8px;font-size:12px;color:var(--text);"><span
+              style="color:var(--gold);">→</span>Scripts Python de automação e análise de logs</div>
+          <div style="display:flex;gap:8px;font-size:12px;color:var(--text);"><span
+              style="color:var(--gold);">→</span>Docker + Kubernetes na AWS com CI/CD Trivy</div>
+          <div style="display:flex;gap:8px;font-size:12px;color:var(--text);"><span
+              style="color:var(--gold);">→</span>README em inglês e alemão</div>
+        </div>
+        <div style="font-size:12px;color:#6366f1;font-weight:700;">🎯 Esse projeto diferencia você de 95% dos candidatos
+          no mercado europeu.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PICK -->
+  <div id="pick" class="panel">
+    <div class="section">
+      <div class="sec-label">// pick tracker · contínuo até mar/2027</div>
+      <div
+        style="background:var(--s1);border:1px solid rgba(99,102,241,.3);border-radius:14px;padding:16px;margin-bottom:14px;">
+        <div
+          style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:#818cf8;margin-bottom:4px;">
+          🐳 PICK / LINUXtips</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:14px;">
+          Programa contínuo · Meta: 3 vídeos/dia · Até mar/2027 · Sáb ao vivo (confirma no email)</div>
+        <div class="pt-stats">
+          <div class="pt-stat">
+            <div class="pt-num" style="color:var(--pos);">~30</div>
+            <div class="pt-lbl">vídeos atrasados</div>
+          </div>
+          <div class="pt-stat">
+            <div class="pt-num" style="color:var(--gold);">3</div>
+            <div class="pt-lbl">meta por dia</div>
+          </div>
+          <div class="pt-stat">
+            <div class="pt-num" style="color:var(--accent);">~10</div>
+            <div class="pt-lbl">dias p/ zerar</div>
+          </div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-rl">Fase 1</div>
+          <div class="pt-bw">
+            <div class="pt-b" style="width:100%"></div>
+          </div>
+          <div class="pt-rv">3–4/dia</div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-rl">Fases 2–4</div>
+          <div class="pt-bw">
+            <div class="pt-b" style="width:65%"></div>
+          </div>
+          <div class="pt-rv">2–3/dia</div>
+        </div>
+        <div class="pt-row">
+          <div class="pt-rl">Manutenção</div>
+          <div class="pt-bw">
+            <div class="pt-b" style="width:40%"></div>
+          </div>
+          <div class="pt-rv">2/dia</div>
+        </div>
+      </div>
+      <div class="sec-label">// checklist PICK — containers days 1–6</div>
+      <div class="checklist" id="clp1">
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Day 1 — Fundamentos de containers</div>
+            <div class="check-sub">Concluído</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Day 2 — Docker prático</div>
+            <div class="check-sub">Em andamento</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Day 3 — Distroless e Segurança</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Day 4 — Volumes e Storage</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Day 5 — Networks no Docker</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Day 6 — Docker Compose</div>
+          </div>
+        </div>
+      </div>
+      <div class="sec-label">// checklist PICK — kubernetes</div>
+      <div class="checklist" id="clp2">
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Kubernetes Day 1 — kind + kubectl</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Kubernetes Day 2</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Kubernetes Day 3</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Kubernetes Day 4</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Kubernetes Day 5</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Kubernetes Day 6</div>
+          </div>
+        </div>
+        <div class="check-item" onclick="toggleCheck(this)">
+          <div class="check-box">
+            <div class="check-inner">✓</div>
+          </div>
+          <div>
+            <div class="check-label">Aulas ao vivo sábado — em dia</div>
+            <div class="check-sub">Confirma horário (7h ou 9h) no email</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CERT GUIDE INTEGRADO -->
+
+
+  <!-- HOME -->
+  <div id="cert-home" class="panel">
+    <div class="hero">
+      <div class="hero-eye">GUIA DE CERTIFICAÇÕES — CESAR SANTOS</div>
+      <div class="hero-title">CERT<span class="g">S</span><br><span class="b">ROAD</span>MAP</div>
+      <div class="hero-sub">Linux → Docker → K8s → Cloud → IaC → Security → 🚀<br>Do PICK ao Kube Astronaut ·
+        Alemanha 2026</div>
+      <div class="hero-goal">🎯 Remote $5k+/mês ou Alemanha — 2026</div>
+      <div class="pills">
+        <div class="pill pill-g">
+          <div class="dot-p" style="background:#22c55e"></div>PICK em andamento
+        </div>
+        <div class="pill pill-b">
+          <div class="dot-p" style="background:#326ce5"></div>CKA · meta principal
+        </div>
+        <div class="pill pill-a">
+          <div class="dot-p" style="background:#f59e0b"></div>AWS SAA-C03
+        </div>
+        <div class="pill pill-r">
+          <div class="dot-p" style="background:#ef4444"></div>RHCSA · Red Hat
+        </div>
+        <div class="pill pill-p">
+          <div class="dot-p" style="background:#a855f7"></div>Terraform Associate
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="stats-bar">
+        <div class="stat-box">
+          <div class="stat-num" style="color:#f97316">4</div>
+          <div class="stat-lbl">trilhas<br>base</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" style="color:#326ce5">24</div>
+          <div class="stat-lbl">certs<br>mapeadas</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" style="color:#fbbf24">3</div>
+          <div class="stat-lbl">certs<br>astronaut</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num" style="color:#6366f1">0</div>
+          <div class="stat-lbl">concluídas<br>até agora</div>
+        </div>
+      </div>
+
+      <div class="sec-label">Progresso por trilha</div>
+      <div class="prog-bar-wrap">
+        <div class="prog-label-row"><span class="prog-name">🐧 Linux</span><span class="prog-val"
+            id="pv-linux">0%</span></div>
+        <div class="prog-track">
+          <div class="prog-fill" id="pf-linux" style="width:0%;background:#f97316"></div>
+        </div>
+      </div>
+      <div class="prog-bar-wrap">
+        <div class="prog-label-row"><span class="prog-name">🐳 Containers</span><span class="prog-val"
+            id="pv-cont">0%</span></div>
+        <div class="prog-track">
+          <div class="prog-fill" id="pf-cont" style="width:0%;background:#0ea5e9"></div>
+        </div>
+      </div>
+      <div class="prog-bar-wrap">
+        <div class="prog-label-row"><span class="prog-name">☁️ AWS</span><span class="prog-val" id="pv-aws">0%</span>
+        </div>
+        <div class="prog-track">
+          <div class="prog-fill" id="pf-aws" style="width:0%;background:#f59e0b"></div>
+        </div>
+      </div>
+      <div class="prog-bar-wrap">
+        <div class="prog-label-row"><span class="prog-name">🌐 GCP</span><span class="prog-val" id="pv-gcp">0%</span>
+        </div>
+        <div class="prog-track">
+          <div class="prog-fill" id="pf-gcp" style="width:0%;background:#34a853"></div>
+        </div>
+      </div>
+      <div class="prog-bar-wrap">
+        <div class="prog-label-row"><span class="prog-name">⎈ Kubernetes</span><span class="prog-val"
+            id="pv-k8s">0%</span></div>
+        <div class="prog-track">
+          <div class="prog-fill" id="pf-k8s" style="width:0%;background:#326ce5"></div>
+        </div>
+      </div>
+      <div class="prog-bar-wrap">
+        <div class="prog-label-row"><span class="prog-name">⚙️ IaC / Automação</span><span class="prog-val"
+            id="pv-iac">0%</span></div>
+        <div class="prog-track">
+          <div class="prog-fill" id="pf-iac" style="width:0%;background:#a855f7"></div>
+        </div>
+      </div>
+      <div class="prog-bar-wrap">
+        <div class="prog-label-row"><span class="prog-name">🔒 Security / DevSecOps</span><span class="prog-val"
+            id="pv-sec">0%</span></div>
+        <div class="prog-track">
+          <div class="prog-fill" id="pf-sec" style="width:0%;background:#ef4444"></div>
+        </div>
+      </div>
+
+      <div class="sec-label" style="margin-top:24px">Para a Alemanha</div>
+      <div class="germany-box">
+        <div class="de-title">🇩🇪 Stack para vagas DevOps em Berlin/Munich</div>
+        <div class="de-sub">Combinação mais pedida em vagas europeias · Fonte: LinkedIn DE / Glassdoor DE</div>
+        <div class="de-list">
+          <div class="de-item">
+            <div class="de-dot"></div>RHCSA + RHCE — Red Hat domina infraestrutura empresarial europeia
+          </div>
+          <div class="de-item">
+            <div class="de-dot"></div>CKA + CKAD — Kubernetes é obrigatório em ~80% das vagas sênior DE
+          </div>
+          <div class="de-item">
+            <div class="de-dot"></div>AWS ou GCP Pro — ao menos um provider nível Professional
+          </div>
+          <div class="de-item">
+            <div class="de-dot"></div>Terraform Associate — IaC é expectativa mínima em DevOps EU
+          </div>
+          <div class="de-item">
+            <div class="de-dot"></div>Alemão B1+ — mesmo em empresa inglesa, conta muito no visto
+          </div>
+          <div class="de-item">
+            <div class="de-dot"></div>GitHub portfolio com projetos reais (SecureOps Platform conta!)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINUX -->
+  <div id="cert-linux" class="panel">
+    <div class="section">
+      <div class="sec-label">Trilha Linux — Base de tudo</div>
+
+      <div class="track-header">
+        <div class="track-hd th-linux">
+          <div class="track-icon">🐧</div>
+          <div class="track-info">
+            <div class="track-name">Linux Foundation</div>
+            <div class="track-sub">LPI + Red Hat · Do iniciante ao sênior</div>
+          </div>
+        </div>
+        <div class="track-body">
+
+          <div class="cert-card" onclick="toggleCert(this,'linux')" data-id="lpic1">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">LPIC-1</div>
+                <div class="cert-code">LPI · Linux Professional Institute Level 1</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Fundamentos: sistema de arquivos, comandos shell, permissões,
+              gerenciamento de pacotes, processos e boot. Porta de entrada para qualquer trilha Linux.
+            </div>
+            <div class="cert-tags">
+              <span class="tag t-linux">Linux</span>
+              <span class="tag t-lv-ini">Iniciante</span>
+              <span class="tag t-devops">Base DevOps</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'linux')" data-id="lpic2">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">LPIC-2</div>
+                <div class="cert-code">LPI · Linux Professional Institute Level 2</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Administração avançada de servidores: DNS, HTTP, FTP, SMTP, NFS, Samba,
+              firewall, VPN e kernel. Pré-req: LPIC-1.</div>
+            <div class="cert-tags">
+              <span class="tag t-linux">Linux</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'linux')" data-id="lpic-devops">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">LPIC DevOps Tools Engineer</div>
+                <div class="cert-code">LPI · 701 — DevOps Tools Engineer</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">CI/CD (Jenkins, Git), containers, orquestração, virtualização, IaC
+              (Ansible, Chef, Puppet), monitoramento e logging. Criada especialmente para DevOps.</div>
+            <div class="cert-tags">
+              <span class="tag t-linux">LPI</span>
+              <span class="tag t-devops">DevOps</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'linux')" data-id="rhcsa">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">RHCSA ⭐</div>
+                <div class="cert-code">Red Hat Certified System Administrator — EX200</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">A mais respeitada certificação Linux no mercado corporativo mundial e
+              europeu. Prova 100% prática (lab) — sem múltipla escolha. Muito pedida em vagas DE.</div>
+            <div class="cert-tags">
+              <span class="tag t-rh">Red Hat</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+              <span class="tag t-gold">🏆 Top</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'linux')" data-id="rhce">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">RHCE</div>
+                <div class="cert-code">Red Hat Certified Engineer — EX294 (Ansible)</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Automação de infraestrutura com Ansible. Foco em playbooks, roles,
+              inventários e automação de configuração. Pré-req: RHCSA.</div>
+            <div class="cert-tags">
+              <span class="tag t-rh">Red Hat</span>
+              <span class="tag t-iac">Ansible</span>
+              <span class="tag t-lv-adv">Avançado</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTAINERS -->
+  <div id="cert-containers" class="panel">
+    <div class="section">
+      <div class="sec-label">Containers — Docker</div>
+      <div class="track-header">
+        <div class="track-hd th-containers">
+          <div class="track-icon">🐳</div>
+          <div class="track-info">
+            <div class="track-name">Docker</div>
+            <div class="track-sub">Certificação oficial Docker · PICK te prepara para isso</div>
+          </div>
+        </div>
+        <div class="track-body">
+
+          <div class="cert-card" onclick="toggleCert(this,'cont')" data-id="dca">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">DCA ⭐</div>
+                <div class="cert-code">Docker Certified Associate</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Imagens, containers, volumes, redes, Docker Compose, Swarm e segurança.
+              6–12 meses de uso prático recomendado. O PICK te dá essa base.</div>
+            <div class="cert-tags">
+              <span class="tag t-docker">Docker</span>
+              <span class="tag t-pick">PICK base</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+              <span class="tag t-gold">🏆 Top</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOUD -->
+  <div id="cert-cloud" class="panel">
+    <div class="section">
+      <div class="sec-label">AWS — Amazon Web Services</div>
+      <div class="track-header">
+        <div class="track-hd th-aws">
+          <div class="track-icon">☁️</div>
+          <div class="track-info">
+            <div class="track-name">AWS Certified</div>
+            <div class="track-sub">Trilha DevOps · Cloud Practitioner → Pro</div>
+          </div>
+        </div>
+        <div class="track-body">
+
+          <div class="cert-card" onclick="toggleCert(this,'aws')" data-id="awscp">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">AWS Cloud Practitioner</div>
+                <div class="cert-code">CLF-C02 · Fundação</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Conceitos gerais de cloud AWS. Já está no seu roadmap (Fase 3 Ago/Set).
+              Pule se já tiver experiência sólida com AWS.</div>
+            <div class="cert-tags">
+              <span class="tag t-aws">AWS</span>
+              <span class="tag t-lv-ini">Iniciante</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'aws')" data-id="awssaa">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">Solutions Architect Associate ⭐</div>
+                <div class="cert-code">SAA-C03 · Associate</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Projeta soluções resilientes, seguras e de alta performance na AWS. Base
+              obrigatória antes do DevOps Pro. Muito pedida isoladamente.</div>
+            <div class="cert-tags">
+              <span class="tag t-aws">AWS</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+              <span class="tag t-gold">🏆 Top</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'aws')" data-id="awssysops">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">SysOps Administrator Associate</div>
+                <div class="cert-code">SOA-C02 · Associate</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Operações, monitoramento, automação e segurança na AWS. Complementa muito
+              bem a trilha DevOps. Opcional mas valioso.</div>
+            <div class="cert-tags">
+              <span class="tag t-aws">AWS</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'aws')" data-id="awsdop">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">DevOps Engineer Professional 🔥</div>
+                <div class="cert-code">DOP-C02 · Professional · Pré-req: SAA ou SysOps</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">CI/CD, automação de deployments, monitoramento, segurança e alta
+              disponibilidade na AWS. A mais pedida em vagas DevOps mundialmente.</div>
+            <div class="cert-tags">
+              <span class="tag t-aws">AWS</span>
+              <span class="tag t-devops">DevOps</span>
+              <span class="tag t-lv-adv">Avançado</span>
+              <span class="tag t-gold">🏆 Top</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="sec-label">GCP — Google Cloud Platform</div>
+      <div class="track-header">
+        <div class="track-hd th-gcp">
+          <div class="track-icon">🌐</div>
+          <div class="track-info">
+            <div class="track-name">Google Cloud Certified</div>
+            <div class="track-sub">Trilha DevOps / SRE · ACE → Professional</div>
+          </div>
+        </div>
+        <div class="track-body">
+
+          <div class="cert-card" onclick="toggleCert(this,'gcp')" data-id="gcpace">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">Associate Cloud Engineer ⭐</div>
+                <div class="cert-code">ACE · Associate</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Deploy, monitoramento e gerenciamento de soluções no GCP. Base necessária
+              antes do Professional. Cobre GKE (Kubernetes no GCP).</div>
+            <div class="cert-tags">
+              <span class="tag t-gcp">GCP</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+              <span class="tag t-gold">🏆 Top</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'gcp')" data-id="gcpdevops">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">Professional Cloud DevOps Engineer 🔥</div>
+                <div class="cert-code">PCDE · Professional · 3+ anos recomendados</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">CI/CD, SRE (Site Reliability Engineering), observabilidade, Cloud Build e
+              confiabilidade em produção no Google Cloud. Diferencial enorme no mercado.</div>
+            <div class="cert-tags">
+              <span class="tag t-gcp">GCP</span>
+              <span class="tag t-devops">SRE/DevOps</span>
+              <span class="tag t-lv-adv">Avançado</span>
+              <span class="tag t-gold">🏆 Top</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'gcp')" data-id="gcparch">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">Professional Cloud Architect</div>
+                <div class="cert-code">PCA · Professional</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Arquitetura de soluções GCP. Complementar ao DevOps Pro e muito
+              valorizado em vagas sênior. Abre portas para Lead/Principal Engineer.</div>
+            <div class="cert-tags">
+              <span class="tag t-gcp">GCP</span>
+              <span class="tag t-lv-adv">Avançado</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KUBERNETES -->
+  <div id="cert-k8s" class="panel">
+    <div class="section">
+      <div class="sec-label">Kubernetes — CNCF Trilha Completa</div>
+      <div class="track-header">
+        <div class="track-hd th-k8s">
+          <div class="track-icon">⎈</div>
+          <div class="track-info">
+            <div class="track-name">Kubernetes Certified</div>
+            <div class="track-sub">CNCF · Do admin ao security · PICK é base</div>
+          </div>
+        </div>
+        <div class="track-body">
+
+          <div class="cert-card" onclick="toggleCert(this,'k8s')" data-id="ckad">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">CKAD</div>
+                <div class="cert-code">Certified Kubernetes Application Developer</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Deploy e gerenciamento de aplicações em K8s: pods, deployments, services,
+              ConfigMaps, probes e namespaces. Boa porta de entrada antes do CKA.</div>
+            <div class="cert-tags">
+              <span class="tag t-k8s">Kubernetes</span>
+              <span class="tag t-cncf">CNCF</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+              <span class="tag t-pick">PICK base</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'k8s')" data-id="cka">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">CKA 🔥 META PRINCIPAL</div>
+                <div class="cert-code">Certified Kubernetes Administrator · Válida 3 anos</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Instalação, configuração e gerenciamento de clusters K8s em produção.
+              Troubleshooting, networking, armazenamento e schedulers. Pedida em 80%+ das vagas sênior
+              DevOps/SRE.</div>
+            <div class="cert-tags">
+              <span class="tag t-k8s">Kubernetes</span>
+              <span class="tag t-cncf">CNCF</span>
+              <span class="tag t-lv-adv">Avançado</span>
+              <span class="tag t-gold">🏆 Top</span>
+              <span class="tag t-pick">PICK prepara</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'k8s')" data-id="cks">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">CKS</div>
+                <div class="cert-code">Certified Kubernetes Security Specialist · Pré-req: CKA</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Segurança em clusters K8s: RBAC, políticas de rede, scanning de imagens,
+              hardening de pods e auditoria. Pré-requisito: CKA válida.</div>
+            <div class="cert-tags">
+              <span class="tag t-k8s">Kubernetes</span>
+              <span class="tag t-sec">Security</span>
+              <span class="tag t-cncf">CNCF</span>
+              <span class="tag t-lv-adv">Avançado</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="sec-label">CNCF — Outras certificações do ecossistema</div>
+      <div class="track-header">
+        <div class="track-hd th-k8s">
+          <div class="track-icon">☸️</div>
+          <div class="track-info">
+            <div class="track-name">CNCF Ecosystem</div>
+            <div class="track-sub">Prometheus · Argo · Istio · PCA</div>
+          </div>
+        </div>
+        <div class="track-body">
+
+          <div class="cert-card" onclick="toggleCert(this,'k8s')" data-id="pca">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">PCA — Prometheus Certified Associate</div>
+                <div class="cert-code">CNCF · Observabilidade</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Monitoramento com Prometheus e Grafana. Queries PromQL, alertas, service
+              discovery e exporters. Cada vez mais pedida em vagas SRE/DevOps.</div>
+            <div class="cert-tags">
+              <span class="tag t-k8s">Prometheus</span>
+              <span class="tag t-cncf">CNCF</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'k8s')" data-id="kca">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">KCA — Kubestronaut Capstone</div>
+                <div class="cert-code">CNCF · Pré-req: CKA + CKAD + CKS + KCNA + KCSA</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Completar o conjunto de 5 certificações CNCF K8s te dá o título oficial
+              de Kubestronaut com jacket exclusivo, badge e benefícios na comunidade CNCF.</div>
+            <div class="cert-tags">
+              <span class="tag t-gold">🚀 Kubestronaut</span>
+              <span class="tag t-cncf">CNCF</span>
+              <span class="tag t-lv-adv">Avançado</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IAC -->
+  <div id="cert-iac" class="panel">
+    <div class="section">
+      <div class="sec-label">IaC & Automação</div>
+      <div class="track-header">
+        <div class="track-hd th-iac">
+          <div class="track-icon">⚙️</div>
+          <div class="track-info">
+            <div class="track-name">Infrastructure as Code</div>
+            <div class="track-sub">Terraform · Ansible · GitOps</div>
+          </div>
+        </div>
+        <div class="track-body">
+
+          <div class="cert-card" onclick="toggleCert(this,'iac')" data-id="terraform">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">HashiCorp Terraform Associate ⭐</div>
+                <div class="cert-code">HashiCorp · 003</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Provisonamento de infra com Terraform: state, modules, providers (AWS,
+              GCP, K8s). Expectativa mínima em vagas DevOps EU/US. Valida por 2 anos.</div>
+            <div class="cert-tags">
+              <span class="tag t-iac">Terraform</span>
+              <span class="tag t-lv-ini">Iniciante/Mid</span>
+              <span class="tag t-gold">🏆 Top</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'iac')" data-id="ansible">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">Red Hat Ansible Automation</div>
+                <div class="cert-code">RHCE · EX294 — via Red Hat (incluso no RHCE)</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Automação de configuração, orquestração de infraestrutura e CI/CD com
+              Ansible. O RHCE (EX294) já te certifica em Ansible também — dupla certificação.</div>
+            <div class="cert-tags">
+              <span class="tag t-iac">Ansible</span>
+              <span class="tag t-rh">Red Hat</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'iac')" data-id="gitlab">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">GitLab CI/CD Certified</div>
+                <div class="cert-code">GitLab · Associate / Professional</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Pipelines GitLab CI/CD, GitOps com ArgoCD, runners e segurança de
+              pipeline. GitLab é muito usado em empresas europeias (especialmente DE).</div>
+            <div class="cert-tags">
+              <span class="tag t-devops">CI/CD</span>
+              <span class="tag t-iac">GitOps</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECURITY -->
+  <div id="cert-sec" class="panel">
+    <div class="section">
+      <div class="sec-label">Security — Redes & DevSecOps</div>
+
+      <div class="track-header">
+        <div class="track-hd th-network">
+          <div class="track-icon">🌐</div>
+          <div class="track-info">
+            <div class="track-name">Cisco / Redes</div>
+            <div class="track-sub">Base de networking para infraestrutura</div>
+          </div>
+        </div>
+        <div class="track-body">
+
+          <div class="cert-card" onclick="toggleCert(this,'sec')" data-id="ccna">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">CCNA ⭐</div>
+                <div class="cert-code">Cisco Certified Network Associate · 200-301</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Fundamentos de redes: IP/subnetting, VLANs, roteamento, switching, ACLs,
+              NAT, Wi-Fi e fundamentos de segurança. Base crítica para entender infraestrutura de verdade.
+            </div>
+            <div class="cert-tags">
+              <span class="tag t-net">Cisco</span>
+              <span class="tag t-net">Redes</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+              <span class="tag t-gold">🏆 Top</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="track-header">
+        <div class="track-hd th-sec">
+          <div class="track-icon">🔒</div>
+          <div class="track-info">
+            <div class="track-name">Cybersecurity & DevSecOps</div>
+            <div class="track-sub">CompTIA · EXIN · eLearnSecurity</div>
+          </div>
+        </div>
+        <div class="track-body">
+
+          <div class="cert-card" onclick="toggleCert(this,'sec')" data-id="secplus">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">CompTIA Security+ ⭐</div>
+                <div class="cert-code">SY0-701 · CompTIA</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Fundamentos de segurança: criptografia, PKI, controle de acesso,
+              gerenciamento de ameaças, resposta a incidentes. Reconhecida globalmente, pedida em vagas
+              EU/US.</div>
+            <div class="cert-tags">
+              <span class="tag t-sec">Security</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+              <span class="tag t-gold">🏆 Top</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'sec')" data-id="ejpt">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">eJPT</div>
+                <div class="cert-code">eLearnSecurity Junior Penetration Tester</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Pentest básico prático: reconhecimento, exploração, web app hacking e
+              pivoting. Ótima para quem tem a pós FIAP Pentest. Barata e respeitada.</div>
+            <div class="cert-tags">
+              <span class="tag t-sec">Pentest</span>
+              <span class="tag t-lv-ini">Iniciante</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'sec')" data-id="devsecops-exin">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">EXIN DevSecOps Professional</div>
+                <div class="cert-code">EXIN · Pré-req: DevOps Foundation</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Segurança integrada ao pipeline DevOps: SAST, DAST, threat modeling,
+              secrets management e compliance em CI/CD. Combina seu background de Pentest + DevOps.</div>
+            <div class="cert-tags">
+              <span class="tag t-sec">DevSecOps</span>
+              <span class="tag t-devops">DevOps</span>
+              <span class="tag t-lv-mid">Intermediário</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'sec')" data-id="cks-sec">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">CKS — Kubernetes Security Specialist</div>
+                <div class="cert-code">CNCF · Pré-req: CKA ativa</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Hardening de clusters K8s, RBAC, network policies, scanning de
+              vulnerabilidades em imagens, audit logs e secrets management. DevSecOps de infra.</div>
+            <div class="cert-tags">
+              <span class="tag t-sec">K8s Security</span>
+              <span class="tag t-k8s">Kubernetes</span>
+              <span class="tag t-lv-adv">Avançado</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'sec')" data-id="awssec">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">AWS Security Specialty</div>
+                <div class="cert-code">SCS-C02 · AWS Specialty</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">IAM avançado, KMS, CloudTrail, GuardDuty, Shield, WAF e arquiteturas
+              seguras na AWS. Salary premium de ~20% sobre DevOps Pro. Pré-req: SAA ou equivalente.</div>
+            <div class="cert-tags">
+              <span class="tag t-sec">Security</span>
+              <span class="tag t-aws">AWS</span>
+              <span class="tag t-lv-adv">Avançado</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ASTRONAUT -->
+  <div id="cert-astro" class="panel">
+    <div class="section">
+      <div class="sec-label">🚀 Kubestronaut — Título oficial CNCF</div>
+
+      <div class="astro-card">
+        <div class="astro-title">🚀 Kube Astronaut Path</div>
+        <div class="astro-sub">5 certificações CNCF · Jacket exclusivo · Badge permanente · Comunidade global
+        </div>
+        <div class="astro-steps">
+          <div class="astro-step">
+            <div class="astro-num">01</div>
+            <div class="astro-info">
+              <div class="astro-cert">KCNA — Kubernetes and Cloud Native Associate</div>
+              <div class="astro-note">Conceitos K8s, cloud native, containers e ecossistema CNCF. Porta de
+                entrada oficial para a trilha astronaut. Iniciante.</div>
+            </div>
+          </div>
+          <div class="astro-step">
+            <div class="astro-num">02</div>
+            <div class="astro-info">
+              <div class="astro-cert">KCSA — Kubernetes and Cloud Native Security Associate</div>
+              <div class="astro-note">Segurança cloud native: postura de segurança, compliance e conceitos
+                de proteção em K8s. Associado / Intermediário.</div>
+            </div>
+          </div>
+          <div class="astro-step">
+            <div class="astro-num">03</div>
+            <div class="astro-info">
+              <div class="astro-cert">CKAD — Certified Kubernetes Application Developer</div>
+              <div class="astro-note">Deploy, configuração e troubleshooting de aplicações em K8s. Prova
+                100% prática (2h lab). Intermediário.</div>
+            </div>
+          </div>
+          <div class="astro-step">
+            <div class="astro-num">04</div>
+            <div class="astro-info">
+              <div class="astro-cert">CKA — Certified Kubernetes Administrator 🔥</div>
+              <div class="astro-note">Administração completa de clusters K8s em produção. A mais
+                importante e mais pedida. Meta principal pós-PICK.</div>
+            </div>
+          </div>
+          <div class="astro-step">
+            <div class="astro-num">05</div>
+            <div class="astro-info">
+              <div class="astro-cert">CKS — Certified Kubernetes Security Specialist</div>
+              <div class="astro-note">Segurança avançada em K8s: hardening, policies, RBAC, imagens e
+                auditoria. Pré-req: CKA ativa. Avançado.</div>
+            </div>
+          </div>
+          <div class="astro-step" style="background:rgba(251,191,36,.06);border-color:rgba(251,191,36,.2)">
+            <div class="astro-num" style="color:var(--gold)">🏆</div>
+            <div class="astro-info">
+              <div class="astro-cert" style="color:var(--gold)">KUBESTRONAUT — Título Oficial CNCF</div>
+              <div class="astro-note">Conclua todas as 5 certs acima e receba: jacket exclusivo, badge
+                permanente no LinkedIn, acesso ao Slack exclusivo Kubestronauts e desconto em eventos
+                CNCF/KubeCon.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-label">Bônus astronaut — diferencial a mais</div>
+      <div class="track-header">
+        <div class="track-hd th-astro">
+          <div class="track-icon">🌟</div>
+          <div class="track-info">
+            <div class="track-name">Além do Kubestronaut</div>
+            <div class="track-sub">Stack que eleva ao nível Staff / Principal</div>
+          </div>
+        </div>
+        <div class="track-body">
+
+          <div class="cert-card" onclick="toggleCert(this,'astro')" data-id="pca-prom">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">PCA — Prometheus Certified Associate</div>
+                <div class="cert-code">CNCF · Observabilidade</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Monitoramento, alertas e visualização com Prometheus + Grafana. Cada vez
+              mais pedida em vagas SRE/Platform Engineering.</div>
+            <div class="cert-tags"><span class="tag t-k8s">Observabilidade</span><span class="tag t-cncf">CNCF</span>
+            </div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'astro')" data-id="argocd">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">Argo Certified Associate</div>
+                <div class="cert-code">CNCF · GitOps com ArgoCD</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">GitOps com ArgoCD e Argo Workflows. Deploy contínuo declarativo em K8s.
+              Cada vez mais adotado por empresas que usam K8s em produção.</div>
+            <div class="cert-tags"><span class="tag t-k8s">GitOps</span><span class="tag t-iac">ArgoCD</span><span
+                class="tag t-cncf">CNCF</span></div>
+          </div>
+
+          <div class="cert-card" onclick="toggleCert(this,'astro')" data-id="istio">
+            <div class="cert-top">
+              <div class="cert-left">
+                <div class="cert-name">Istio Certified Associate</div>
+                <div class="cert-code">CNCF · Service Mesh</div>
+              </div>
+              <div class="cert-check"></div>
+            </div>
+            <div class="cert-desc">Service mesh com Istio: traffic management, mTLS, observabilidade de
+              microsserviços e políticas de acesso. Nível Staff/Principal Engineering.</div>
+            <div class="cert-tags"><span class="tag t-k8s">Service Mesh</span><span class="tag t-cncf">CNCF</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROADMAP -->
+  <div id="cert-roadmap" class="panel">
+    <div class="section">
+      <div class="sec-label">Roadmap integrado ao seu planner</div>
+
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot active"></div>
+          <div class="tl-label">Abr – Mai 2025 · Agora</div>
+          <div class="tl-title">Fase 1 — Deadline Sprint · PICK começa</div>
+          <div class="tl-certs">
+            <span class="tl-cert hi">PICK / Docker base</span>
+            <span class="tl-cert hi">Pós FIAP Pentest</span>
+            <span class="tl-cert">eJPT (opcional)</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot next"></div>
+          <div class="tl-label">Jun – Jul 2025</div>
+          <div class="tl-title">Fase 2 — Base Técnica · Networking + Linux</div>
+          <div class="tl-certs">
+            <span class="tl-cert hi">CCNA (estudo)</span>
+            <span class="tl-cert hi">LPIC-1</span>
+            <span class="tl-cert">CompTIA Sec+ (estudo)</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-label">Ago – Set 2025</div>
+          <div class="tl-title">Fase 3 — Cloud & Certs · AWS principal</div>
+          <div class="tl-certs">
+            <span class="tl-cert hi">AWS Cloud Practitioner ✓</span>
+            <span class="tl-cert hi">AWS SAA-C03</span>
+            <span class="tl-cert">KCNA (K8s entry)</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-label">Out – Nov 2025</div>
+          <div class="tl-title">Fase 4 — Python/Java + Portefólio + RHCSA</div>
+          <div class="tl-certs">
+            <span class="tl-cert hi">RHCSA (EX200)</span>
+            <span class="tl-cert hi">Terraform Associate</span>
+            <span class="tl-cert">DCA Docker</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-label">Dezembro 2025</div>
+          <div class="tl-title">SecureOps Platform + CKAD</div>
+          <div class="tl-certs">
+            <span class="tl-cert hi">CKAD</span>
+            <span class="tl-cert hi">Projeto SecureOps</span>
+            <span class="tl-cert">GCP ACE (estudo)</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-label">Jan – Jun 2026</div>
+          <div class="tl-title">🎯 Meta Alemanha / $5k — CKA + Cloud Pro</div>
+          <div class="tl-certs">
+            <span class="tl-cert hi">CKA 🔥</span>
+            <span class="tl-cert hi">AWS DOP-C02</span>
+            <span class="tl-cert hi">GCP ACE → PCDE</span>
+            <span class="tl-cert">RHCE (Ansible)</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot future"></div>
+          <div class="tl-label">2026 – 2027 · Pós-chegada</div>
+          <div class="tl-title">🚀 Kube Astronaut Path</div>
+          <div class="tl-certs">
+            <span class="tl-cert hi">CKS</span>
+            <span class="tl-cert hi">KCSA</span>
+            <span class="tl-cert hi">Kubestronaut 🏆</span>
+            <span class="tl-cert">Prometheus PCA</span>
+            <span class="tl-cert">ArgoCD</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- PLANNER DIÁRIO                                          -->
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <div id="planner" class="panel">
+    <style>
+      .pl-day-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:20px 20px 0}
+      .pl-weekday{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--pick);margin-bottom:4px}
+      .pl-date{font-family:'Barlow Condensed',sans-serif;font-size:40px;font-weight:900;color:var(--bright);line-height:1}
+      .pl-nav{display:flex;gap:6px;margin-top:4px}
+      .pl-btn{background:var(--s2);border:1px solid var(--border);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:10px;padding:5px 12px;cursor:pointer;border-radius:3px;letter-spacing:1px;transition:all .15s}
+      .pl-btn:hover{border-color:var(--border2);color:var(--bright)}
+      .pl-btn-today{background:var(--pick);border-color:var(--pick);color:#fff}
+      .pl-btn-today:hover{background:#4f46e5;color:#fff}
+      .pl-prog-wrap{padding:12px 20px 0}
+      .pl-prog-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+      .pl-prog-fill{height:100%;background:linear-gradient(90deg,var(--pick),var(--accent));border-radius:2px;transition:width .4s}
+      .pl-stats{display:flex;gap:16px;flex-wrap:wrap;padding:8px 20px 0;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted)}
+      .pl-stats b{color:var(--text)}
+      .pl-sec-inner{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--muted);padding:14px 20px 8px;border-bottom:1px solid var(--border);margin-bottom:8px}
+      .pl-blocks{display:flex;flex-direction:column;gap:3px;padding:0 20px}
+      .pl-block{display:grid;grid-template-columns:68px 1fr;border:1px solid var(--border);border-radius:3px;overflow:hidden;transition:border-color .15s}
+      .pl-block:hover{border-color:var(--border2)}
+      .pl-block.is-done{border-color:rgba(99,102,241,.3)}
+      .pl-block.is-break{opacity:.55}
+      .pl-time{background:var(--s1);border-right:1px solid var(--border);padding:10px 8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
+      .pl-time-s{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--bright)}
+      .pl-time-e{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted)}
+      .pl-time-d{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--pick);letter-spacing:.5px;margin-top:1px}
+      .pl-body{background:var(--s2);padding:8px 12px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+      .pl-break-lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:2px;flex:1}
+      .pl-tag{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 6px;border-radius:2px;letter-spacing:.5px;display:none}
+      .pl-tag.vis{display:inline-block}
+      .pl-sel,.pl-inp{background:var(--s1);border:1px solid var(--border);color:var(--text);font-family:'Barlow',sans-serif;font-size:13px;padding:5px 9px;border-radius:3px;transition:border-color .15s}
+      .pl-sel{min-width:170px;cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%23484868'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center;padding-right:24px}
+      .pl-sel option{background:var(--s1)}
+      .pl-inp{flex:2;min-width:160px}
+      .pl-sel:focus,.pl-inp:focus{outline:none;border-color:var(--pick)}
+      .pl-inp::placeholder{color:var(--muted)}
+      .pl-stars{display:flex;gap:3px}
+      .pl-star{font-size:15px;cursor:pointer;color:var(--muted);transition:color .1s;user-select:none;line-height:1}
+      .pl-star.on{color:var(--gold)}
+      .pl-check{width:26px;height:26px;border:1px solid var(--border);border-radius:3px;background:var(--s1);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;color:transparent;transition:all .15s;flex-shrink:0}
+      .pl-check.on{background:var(--pick);border-color:var(--pick);color:#fff}
+      .pl-notes-toggle{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);cursor:pointer;letter-spacing:1px;user-select:none;width:100%;margin-top:2px}
+      .pl-notes{width:100%;background:transparent;border:none;border-top:1px solid var(--border);color:var(--muted);font-family:'Barlow',sans-serif;font-size:12px;padding:6px 0 2px;resize:none;outline:none;display:none;transition:color .15s}
+      .pl-notes.vis{display:block}
+      .pl-notes:focus{color:var(--text)}
+      .pl-notes::placeholder{color:var(--muted)}
+      .pl-save-row{display:flex;gap:8px;flex-wrap:wrap;padding:12px 20px 24px}
+      .pl-save{background:var(--pick);border:none;color:#fff;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:1px;padding:8px 20px;cursor:pointer;border-radius:3px;transition:background .15s}
+      .pl-save:hover{background:#4f46e5}
+      .ptag-devops{background:rgba(99,102,241,.15);color:#818cf8;border:1px solid rgba(99,102,241,.25)}
+      .ptag-redes{background:rgba(168,85,247,.15);color:#c084fc;border:1px solid rgba(168,85,247,.25)}
+      .ptag-aws{background:rgba(245,158,11,.15);color:#fbbf24;border:1px solid rgba(245,158,11,.25)}
+      .ptag-gcp{background:rgba(66,133,244,.15);color:#60a5fa;border:1px solid rgba(66,133,244,.25)}
+      .ptag-eda{background:rgba(249,115,22,.15);color:#fb923c;border:1px solid rgba(249,115,22,.25)}
+      .ptag-python{background:rgba(59,130,246,.15);color:#60a5fa;border:1px solid rgba(59,130,246,.25)}
+      .ptag-java{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.25)}
+      .ptag-ingles{background:rgba(14,165,233,.15);color:#38bdf8;border:1px solid rgba(14,165,233,.25)}
+      .ptag-alemao{background:rgba(34,197,94,.15);color:#4ade80;border:1px solid rgba(34,197,94,.25)}
+      .ptag-pos{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.25)}
+      .ptag-sysdesign{background:rgba(236,72,153,.15);color:#f472b6;border:1px solid rgba(236,72,153,.25)}
+      .ptag-linux{background:rgba(249,115,22,.15);color:#fb923c;border:1px solid rgba(249,115,22,.25)}
+      .ptag-sql{background:rgba(6,182,212,.15);color:#22d3ee;border:1px solid rgba(6,182,212,.25)}
+      .ph-filters{display:flex;gap:6px;flex-wrap:wrap;padding:0 20px 12px}
+      .ph-filter{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:4px 11px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;border-radius:2px;letter-spacing:1px;transition:all .15s}
+      .ph-filter.on,.ph-filter:hover{border-color:var(--pick);color:var(--pick);background:rgba(99,102,241,.08)}
+      .ps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px;padding:0 20px 16px}
+      .ps-card{background:var(--s1);border:1px solid var(--border);border-radius:3px;padding:14px}
+      .ps-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:2px;margin-bottom:4px}
+      .ps-val{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;color:var(--bright);line-height:1}
+      .ps-sub{font-size:10px;color:var(--muted);margin-top:2px}
+      .ps-bar-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)}
+      .ps-bar-row:last-child{border-bottom:none}
+      .ps-bar-name{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text);min-width:90px}
+      .ps-bar-track{flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+      .ps-bar-fill{height:100%;border-radius:3px;transition:width .5s}
+      .ps-bar-cnt{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);min-width:55px;text-align:right}
+      .ph-entry-day{border:1px solid var(--border);border-radius:3px;margin:0 20px 6px;overflow:hidden}
+      .ph-day-hdr{background:var(--s1);padding:10px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none}
+      .ph-day-hdr:hover{background:var(--s2)}
+      .ph-day-date{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bright);font-weight:700}
+      .ph-day-meta{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted);flex:1}
+      .ph-day-pills{display:flex;gap:3px;flex-wrap:wrap}
+      .ph-mini{font-size:8px;font-family:'IBM Plex Mono',monospace;padding:1px 5px;border-radius:2px}
+      .ph-day-body{display:none;padding:10px 14px;border-top:1px solid var(--border)}
+      .ph-day-body.open{display:block}
+      .ph-row{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid var(--border)}
+      .ph-row:last-child{border-bottom:none}
+      .ph-row-time{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);min-width:50px;flex-shrink:0}
+      .ph-row-subj{font-size:13px;color:var(--bright);font-weight:600}
+      .ph-row-topic{font-size:11px;color:var(--muted);margin-top:1px}
+      .ph-row-stars{font-size:11px;color:var(--gold);margin-left:auto;flex-shrink:0}
+      .ph-empty{text-align:center;padding:40px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:2px}
+    </style>
+
+    <div class="pl-day-header">
+      <div>
+        <div class="pl-weekday" id="pl-weekday">SEGUNDA-FEIRA</div>
+        <div class="pl-date" id="pl-date">11 MAIO 2026</div>
+      </div>
+      <div class="pl-nav">
+        <button class="pl-btn" onclick="plChangeDay(-1)">&#8592; ONTEM</button>
+        <button class="pl-btn pl-btn-today" onclick="plGoToday()">HOJE</button>
+        <button class="pl-btn" onclick="plChangeDay(1)">AMANHA &#8594;</button>
+      </div>
+    </div>
+    <div class="pl-prog-wrap">
+      <div class="pl-prog-bar"><div class="pl-prog-fill" id="pl-prog" style="width:0%"></div></div>
+    </div>
+    <div class="pl-stats">
+      <span>CONCLUIDOS: <b id="pl-done">0</b></span>
+      <span>BLOCOS: <b id="pl-total">0</b></span>
+      <span>HORAS ESTUDO: <b id="pl-hours">0h</b></span>
+      <span id="pl-day-note"></span>
+    </div>
+    <div class="pl-sec-inner">// blocos de estudo &middot; 1h30 cada &middot; intervalo 15min</div>
+    <div class="pl-blocks" id="pl-blocks"></div>
+    <div class="pl-save-row">
+      <button class="pl-save" onclick="plSaveDay()">&#128190; SALVAR DIA</button>
+      <button class="pl-btn" onclick="plClearDay()" style="font-size:10px">LIMPAR</button>
+    </div>
+  </div>
+
+  <!-- HISTORICO DO PLANNER -->
+  <div id="planner-hist" class="panel">
+    <div class="section">
+      <div class="sec-label">// historico de estudos</div>
+      <div class="ph-filters" id="ph-filters">
+        <button class="ph-filter on" onclick="phFilter('all',this)">TUDO</button>
+        <button class="ph-filter" onclick="phFilter('devops',this)">DEVOPS</button>
+        <button class="ph-filter" onclick="phFilter('aws',this)">AWS</button>
+        <button class="ph-filter" onclick="phFilter('redes',this)">REDES</button>
+        <button class="ph-filter" onclick="phFilter('gcp',this)">GCP</button>
+        <button class="ph-filter" onclick="phFilter('eda',this)">ALGORITMOS</button>
+        <button class="ph-filter" onclick="phFilter('python',this)">PYTHON</button>
+        <button class="ph-filter" onclick="phFilter('java',this)">JAVA</button>
+        <button class="ph-filter" onclick="phFilter('ingles',this)">INGLES</button>
+        <button class="ph-filter" onclick="phFilter('alemao',this)">ALEMAO</button>
+        <button class="ph-filter" onclick="phFilter('pos',this)">POS FIAP</button>
+        <button class="ph-filter" onclick="phFilter('sysdesign',this)">SYSTEM DESIGN</button>
+        <button class="ph-filter" onclick="phFilter('linux',this)">LINUX</button>
+        <button class="ph-filter" onclick="phFilter('sql',this)">SQL / DB</button>
+      </div>
+      <div class="sec-label">// estatisticas</div>
+      <div class="ps-grid" id="ps-grid"></div>
+      <div class="sec-label">// horas por materia</div>
+      <div style="background:var(--s1);border:1px solid var(--border);border-radius:3px;padding:14px;margin-bottom:16px;" id="ps-bars"></div>
+      <div class="sec-label">// dias registrados</div>
+      <div id="ph-list" style="padding-bottom:24px"></div>
+    </div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="bottom-bar">
+    <button id="notif-btn" onclick="ativarNotificacoes()"
+      style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.25);border-radius:10px;color:#818cf8;font-family:monospace;font-size:10px;cursor:pointer;font-weight:700;">🔔
+      Ativar lembretes</button>
+    <button id="install-btn" onclick="installApp()"
+      style="display:none;flex:1;align-items:center;justify-content:center;gap:6px;padding:10px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:10px;color:#6366f1;font-family:monospace;font-size:10px;cursor:pointer;font-weight:700;">📲
+      Instalar app</button>
+  </div>

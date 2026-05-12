@@ -11,11 +11,11 @@ export default function middleware(request) {
   const USER = process.env.BASIC_AUTH_USER;
   const PASS = process.env.BASIC_AUTH_PASS;
 
-  if (!USER || !PASS) {
-    return new Response('Basic Auth environment variables are missing', {
-      status: 500,
-    });
-  }
+  if (auth) {
+    
+    const encoded = auth.split(' ')[1] || '';
+    const decoded = atob(encoded);
+    const [user, pass] = decoded.split(':');
 
   if (auth) {
     try {
