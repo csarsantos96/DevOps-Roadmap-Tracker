@@ -1,5 +1,5 @@
 // views/home.js — tela "Hoje" (prioridade #1 conforme escolha do user)
-import { getCurrentBlock, getCurrentPhase, getNextFixedEvent, suggestTrackForBlock, daysToDeadline, getFiapEventsThisWeek } from '../js/schedule.js';
+import { getCurrentBlock, getCurrentPhase, getNextFixedEvent, getSchedule, suggestTrackForBlock, daysToDeadline, getFiapEventsThisWeek } from '../js/schedule.js';
 import { Store } from '../js/store.js';
 import { trackProgress, todayStreak } from '../js/progress.js';
 
@@ -30,6 +30,7 @@ export function renderHome(ctx) {
       ${renderNowCard(block, phase, tracks, focus, focusActive, now)}
       ${nextEvent ? renderNextEvent(nextEvent, now) : ''}
       ${fiapWeek.length > 0 ? renderFiapWeek(fiapWeek) : ''}
+      ${renderLangPanel(now)}
 
       <div class="sec-label">// progresso geral</div>
       <div class="stat-row">
@@ -106,12 +107,21 @@ function renderNowCard(block, phase, tracks, focus, focusActive, now) {
 
   if (block.type === 'fixed') {
     const ev = block.event;
+    const isLang = ev.track === 'alemao' || ev.track === 'ingles';
+    const langKey = isLang ? `${ev.id}:${toDateStr(now)}` : null;
+    const langDone = langKey ? Store.isLangEventDone(langKey) : false;
     return `
-      <div class="now-card now-fixed" style="--accent:${ev.color || '#a78bfa'}">
+      <div class="now-card now-fixed ${langDone ? 'now-lang-done' : ''}" style="--accent:${ev.color || '#a78bfa'}">
         <div class="now-tag">🔒 AGORA · FIXO</div>
         <div class="now-title">${ev.title}</div>
         <div class="now-desc">${ev.description || ''}</div>
         <div class="now-time">${ev.start_time} → ${ev.end_time}</div>
+        ${isLang ? `
+          <button class="lang-check-btn lang-check-now ${langDone ? 'lang-checked' : ''}"
+                  data-lang-key="${langKey}">
+            ${langDone ? '✓ Feita!' : '○ Marcar como feita'}
+          </button>
+        ` : ''}
       </div>
     `;
   }
@@ -223,4 +233,68 @@ function countTopicsDone(tracks) {
 function formatDate(iso) {
   const d = new Date(iso + 'T00:00:00');
   return `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}`;
+}
+
+function toDateStr(d) {
+  return d.toISOString().slice(0, 10);
+}
+
+function renderLangPanel(now) {
+  const schedule = getSchedule();
+  if (!schedule) return '';
+
+  const { fixed_events } = schedule;
+  const langTracks = ['alemao', 'ingles'];
+  const DAYS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+  const todayStr = toDateStr(now);
+
+  // segunda-feira da semana atual
+  const dow = now.getDay();
+  const monday = new Date(now);
+  monday.setDate(now.getDate() - (dow === 0 ? 6 : dow - 1));
+  monday.setHours(0, 0, 0, 0);
+
+  const items = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
+    const dayDow = d.getDay();
+    const dateStr = toDateStr(d);
+    const isToday = dateStr === todayStr;
+    const isPast = dateStr < todayStr;
+
+    for (const ev of fixed_events) {
+      if (!langTracks.includes(ev.track)) continue;
+      if (ev.weekday !== dayDow) continue;
+      if (ev.until && d > new Date(ev.until + 'T23:59:59')) continue;
+      items.push({ ev, d, dateStr, isToday, isPast, key: `${ev.id}:${dateStr}`, dayLabel: isToday ? 'Hoje' : DAYS[dayDow] });
+    }
+  }
+
+  if (items.length === 0) return '';
+
+  return `
+    <div class="sec-label">// aulas ao vivo — semana</div>
+    <div class="lang-panel">
+      ${items.map(({ ev, isPast, isToday, key, dayLabel, d }) => {
+        const done = Store.isLangEventDone(key);
+        const stateClass = done ? 'lang-done' : isPast ? 'lang-missed' : isToday ? 'lang-today' : '';
+        return `
+          <div class="lang-item ${stateClass}" style="--accent:${ev.color || '#a78bfa'}">
+            <div class="lang-item-main">
+              <span class="lang-item-day">${dayLabel} ${d.getDate()}</span>
+              <span class="lang-item-title">${ev.title}</span>
+              <span class="lang-item-time">${ev.start_time}–${ev.end_time}</span>
+              ${done ? '<span class="lang-badge lang-badge-done">feita</span>' : isPast ? '<span class="lang-badge lang-badge-miss">faltou</span>' : ''}
+            </div>
+            <button class="lang-check-btn ${done ? 'lang-checked' : ''}"
+                    data-lang-key="${key}"
+                    aria-label="${done ? 'Desmarcar' : 'Marcar como feita'}">
+              ${done ? '✓' : '○'}
+            </button>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
 }

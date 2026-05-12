@@ -12,6 +12,7 @@ const defaultState = {
   gym: {},
   weekly_plan: {},
   weekly_completion: {},
+  lang_events: {},
   focus: { track_id: null, until: null, mode: 'priority' },
   settings: {
     notifications_enabled: false,
@@ -149,6 +150,14 @@ export const Store = {
     state.weekly_completion[key] = !state.weekly_completion[key];
     save();
     return state.weekly_completion[key];
+  },
+
+  // frequência de aulas de idiomas — chave: "eventId:YYYY-MM-DD"
+  isLangEventDone: (key) => !!state.lang_events[key],
+  toggleLangEvent(key) {
+    state.lang_events[key] = !state.lang_events[key];
+    save();
+    return state.lang_events[key];
   },
 
   // settings

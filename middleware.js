@@ -1,5 +1,7 @@
 // middleware.js — Basic Auth para proteger todo o site
-// Roda no Vercel Edge antes de qualquer arquivo estático ser servido.
+// Roda no Vercel Edge antes de qualquer arquivo estático ou API ser servido.
+
+import { NextResponse } from 'next/server';
 
 export const config = {
   // Aplica em tudo, exceto rotas internas da Vercel/Next e o favicon.
@@ -19,11 +21,8 @@ export default function middleware(request) {
     const [user, pass] = decoded.split(':');
 
     if (user === USER && pass === PASS) {
-      // Credenciais ok → deixa passar
-      return new Response(null, {
-        status: 200,
-        headers: { 'x-middleware-next': '1' },
-      });
+      // Credenciais ok → deixa passar para o destino real
+      return NextResponse.next();
     }
   }
 

@@ -82,7 +82,12 @@ roadmap-app/
 ├── index.html              ← shell limpo
 ├── manifest.json
 ├── sw.js                   ← service worker v4
+├── middleware.js           ← Basic Auth (Vercel Edge)
+├── vercel.json             ← cleanUrls + trailingSlash
+├── package.json            ← @upstash/redis
 ├── icons/
+├── api/
+│   └── planner.js          ← serverless: lê/grava planner no Upstash Redis
 └── src/
     ├── css/
     │   ├── tokens.css      ← design tokens
@@ -98,6 +103,7 @@ roadmap-app/
     │   └── notifications.js
     ├── views/
     │   ├── home.js         ← "Hoje" contextual
+    │   ├── week.js         ← planejador semanal editável
     │   ├── track.js
     │   └── lists.js
     └── data/
@@ -120,6 +126,7 @@ roadmap-app/
             ├── python.json         (4 módulos)
             ├── java.json           (5 módulos, 46 itens — Ebac)
             ├── go.json             (4 módulos)
+            ├── pos-fiap.json       (módulos Pós FIAP)
             ├── alemao.json         (3 módulos)
             └── ingles.json         (3 módulos)
 ```
@@ -141,6 +148,7 @@ A cada minuto o app calcula:
 4. **Próximo evento fixo** dos próximos 7 dias
 
 ### Eventos fixos (priority absoluta)
+
 | Evento | Quando |
 |--------|--------|
 | 🇩🇪 Conv. Alemão | Ter+Qui 16:00–17:30 |
@@ -154,10 +162,13 @@ A cada minuto o app calcula:
 ## ✨ Como expandir
 
 ### Adicionar módulo a uma trilha
+
 Edite `src/data/tracks/{trilha}.json`, adicione em `modules[]`. Não precisa tocar em código.
 
 ### Adicionar uma certificação
+
 Edite `src/data/certs.json`, em `certs[]`, referenciando módulos por ID:
+
 ```json
 {
   "id": "minha-cert",
@@ -167,7 +178,9 @@ Edite `src/data/certs.json`, em `certs[]`, referenciando módulos por ID:
 ```
 
 ### Trocar template da semana
+
 Edite `src/data/schedule.json` → `weekday_template`. Cada bloco aceita:
+
 - `track_id`: trilha fixa (ex: `"alemao"`)
 - `track_hint`: `morning_primary` | `afternoon_primary` | `afternoon_secondary` | `review` | `lab` | `rest`
 

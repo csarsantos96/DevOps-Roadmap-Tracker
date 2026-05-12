@@ -145,6 +145,15 @@ function attachEventDelegation() {
       mod?.classList.toggle('expanded');
       return;
     }
+
+    // toggle frequência de aula de idioma
+    const langBtn = e.target.closest('[data-lang-key]');
+    if (langBtn) {
+      e.stopPropagation();
+      Store.toggleLangEvent(langBtn.dataset.langKey);
+      if (currentRoute() === 'home') renderRoute();
+      return;
+    }
   });
 }
 
