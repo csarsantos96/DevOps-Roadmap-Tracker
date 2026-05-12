@@ -15,7 +15,7 @@ export default function middleware(request) {
   const PASS = process.env.BASIC_AUTH_PASS;
 
   if (auth) {
-    // Header chega como: "Basic base64(user:pass)"
+    
     const encoded = auth.split(' ')[1] || '';
     const decoded = atob(encoded);
     const [user, pass] = decoded.split(':');
